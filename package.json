@@ -1,0 +1,33 @@
+{
+    "name": "infinitytrain",
+    "version": "1.0.0",
+    "description": "",
+    "homepage": "https://github.com/AndrewMulert/infinitytrain#readme",
+    "bugs": {
+      "url": "https://github.com/AndrewMulert/infinitytrain/issues"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/AndrewMulert/infinitytrain.git"
+    },
+    "license": "MIT",
+    "author": "",
+    "type": "module",
+    "main": "postgres-connection.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "nodemon --env-file=.env server.js",
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "connect-pg-simple": "^10.0.0",
+      "ejs": "^3.1.10",
+      "express": "^4.21.2",
+      "express-session": "^1.18.1",
+      "express-validator": "^7.2.1",
+      "formidable": "^3.5.2",
+      "nodemon": "^3.1.9",
+      "pg": "^8.13.3",
+      "ws": "^8.18.1"
+    }
+  }
