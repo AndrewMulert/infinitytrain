@@ -1,13 +1,13 @@
-import configNodeEnv from '.src/middleware/node-env.js';
+import configNodeEnv from './src/middleware/node-env.js';
 import express from 'express';
-import homeRoute from '.src/routes/index.js';
-import aboutRoute from '.src/routes/about/index.js';
-import contactRoute from '.src/routes/contact/index.js';
-import merchRoute from '.src/routes/merch/index.js';
-import supportRoute from '.src/routes/support/index.js';
-import layouts from '.src/middleware/layouts.js';
+import homeRoute from './src/routes/index.js';
+import aboutRoute from './src/routes/about/index.js';
+import contactRoute from './src/routes/contact/index.js';
+import merchRoute from './src/routes/merch/index.js';
+import supportRoute from './src/routes/support/index.js';
+import layouts from './src/middleware/layouts.js';
 import path from 'path';
-import { configureStaticPaths } from '.src/utils/index.js'
+import { configureStaticPaths } from './src/utils/index.js'
 import { fileURLToPath } from 'url';
 
 

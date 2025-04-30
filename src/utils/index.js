@@ -8,13 +8,7 @@ const staticPaths = [
     { route: '/images', dir: 'public/images' }
  ];
  
- /**
-  * THIS IS A CUSTOM FUNCTION. This code is specifically needed to support Brother Keers' layout
-  * middleware. If you decide not to use Brother Keers' layout middleware, you can remove this and
-  * will need to add the normal express.static middleware to your server.js file.
-  * 
-  * Configures static paths for the given Express application.
-  *
+ /** Brother Keer's Unique Function
   * @param {Object} app - The Express application instance.
   */
  const configureStaticPaths = (app) => {
@@ -40,3 +34,24 @@ const staticPaths = [
      // Update the app settings with the newly registered paths
      app.set('staticPaths', Array.from(registeredPaths));
  };
+
+ /**
+ * Returns the navigation menu.
+ *
+ * @returns {string} The navigation menu.
+ */
+
+const getNav = () => {
+    return `
+    <nav class="nav_bar">
+        <ul class="nav_items">
+            <li class="nav_link_container"><a href="/" class="nav_links" id="home_link"><svg id="home_svg" width="200px" height="45px"><image width="200px" height="45px" href="images/infinity_train_logo_black_bold.svg"></image></svg></a><button id="dropDown">▼</button></li>
+            <li class="nav_link_container"><a href="/about" class="page_link">About</a></li>
+            <li class="nav_link_container"><a href="/merch" class="page_link">Merchandise and Art</a></li>
+            <li class="nav_link_container"><a href="/support" class="page_link">Support the Show</a></li>
+            <li class="nav_link_container"><a href="/contact" class="page_link">Contact</a></li>
+        </ul>
+    </nav>`;
+}
+
+export { configureStaticPaths, getNav};
