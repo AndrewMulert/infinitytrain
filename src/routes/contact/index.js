@@ -2,7 +2,7 @@ import { Router } from 'express';
 
 const router = Router();
 
-router.get('/', (res, req) => {
+router.get('/', (req, res) => {
     res.render('contact/index', {title: 'Contact - Infinity Train'});
 });
 
