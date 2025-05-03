@@ -1,0 +1,281 @@
+@import "base.scss";
+
+@mixin box-style-animated($background: $lighter-primary-color, $shadow: $secondary-font-color, $value: $pixel-0, $value2: $pixel-20) {
+    background-color: $background;
+    box-shadow: $value $value 50px $value2 $shadow;
+  }
+  
+@media screen and (min-width: 40em) {
+  
+  
+      /*article{
+          grid-column: 2 / span 3;
+          grid-row: 1 / span 2;
+      }*/
+    
+      footer{
+          display: flex;
+          max-height: 70px;
+  
+          > p {
+              width: 60%;
+              padding: 10px;
+              padding-top: 0px;
+              padding-bottom: 20px;
+          }
+      }
+    
+      main {
+        height: 100%;
+      }
+    
+      nav{
+        transition: top 0.3s;
+      }
+    
+    
+        
+    /*Classes*/
+    
+      .banner {
+        padding: 10px;
+        margin-top: -35px;
+        max-width: 97%;
+        height: 16px;
+      }
+
+      .circle{
+        bottom: 70px;
+        right: 30px;
+        font-size: 2em;
+  
+        &:hover {
+          width: 60px;
+          height: 60px;
+          border-radius: 30px;
+          transition: width 0.5s, height 0.5s, border-radius 0.5s;
+          @include colors($light-grey, $secondary-font-color);
+          animation: lightGlow 2s ease-in-out;
+          box-shadow: 0px 0px 50px 20px $secondary-font-color;
+  
+          &.dark-mode{
+            @include colors($dark-grey, $primary-font-color);
+              border-color: $light-grey;
+              animation: darkGlow 2s ease-in-out;
+              box-shadow: 0px 0px 50px 20px $light-grey;
+            }
+        }
+      }
+    
+      .footer_social{
+        text-align: right;
+        width: 40%;
+        margin-bottom: 9px;
+        padding: 15px;
+      }
+    
+      .hero {
+        overflow: hidden;
+        position: relative;
+        
+        &_text {
+          position: absolute;
+          top: 15%;
+          margin-left: auto;
+          margin-right: auto;
+          left: 0;
+          right: 0;
+          min-width: 325px;
+          width: 60%;
+          max-width: 550px;
+          border-radius: 25px;
+          margin-bottom: 20px;
+          box-shadow: 10px 10px 50px $secondary-font-color;
+
+          &:hover{
+            width: 100%;
+            max-width: 630px;
+            height: 100%;
+            max-height: 230px;
+            z-index: 2;
+            background-color: $transparent-lighter-secondary-color;
+        }
+
+          svg {
+            width: 400px;
+
+            image {
+                width: 400px;
+            }
+        }
+        }
+  
+        &_image {
+          max-height: 725px;
+        }
+
+        &_countdown {
+            min-width: 325px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+      }
+    
+      .nav_link_container {
+        float: left;
+        margin-left: 0%;
+        width: 20%;
+      }
+    
+      .page_link {
+        display: block;
+      }
+    
+      .row {
+          &_1 {
+            margin-top: 40px;
+            grid-column: 2 / span 1;
+            /*grid-row: 2 / span 1;*/
+            max-width: 400px;
+            margin-right: auto;
+            margin-left: auto;
+          }
+
+          &_2 {
+            margin-top: 40px;
+            grid-column: 4 / span 1;
+            grid-row: 2 / span 1;
+          }
+  
+          &_image {
+  
+              &_horizontal {
+                  width: 100%;
+                  max-width: 500px;
+                  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+                  transform: scale(1);
+                  width: 100%;
+  
+                  &:hover {
+                      transform: scale(1.75);
+                      box-shadow: 10px 10px 50px $secondary-font-color;
+                      animation: glowAnimation 1s ease-in-out;
+                  }
+              }
+  
+              &_vertical {
+                  width: 100%;
+                  max-height: 500px;
+                  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  
+                  &:hover {
+                      transform: scale(1.75);
+                      box-shadow: 10px 10px 50px $secondary-font-color;
+                      animation: glowAnimation 1s ease-in-out;
+                  }
+              }
+          }
+      }
+    
+      @keyframes glowAnimation {
+      
+        0% {
+      
+          box-shadow: 10px 10px 50px rgba(127, 204, 112, 0);
+      
+        }
+    
+        25% {
+          box-shadow: 10px 10px 50px rgba(112, 204, 152, 0.441);
+        }
+      
+        50% {
+          box-shadow: 10px 10px 50px rgba(113, 204, 204);
+        }
+      
+      }
+  
+      @keyframes lightGlow {
+        0% {
+          @include box-style-animated($primary-font-color, $secondary-font-color, $pixel-0, $pixel-0);
+        }
+  
+        50% {
+          @include box-style-animated($primary-font-color, $secondary-font-color, $pixel-0, $pixel-20);
+        }
+      }
+  
+      @keyframes darkGlow {
+        0% {
+          @include box-style-animated($secondary-font-color, $dark-grey, $pixel-0, $pixel-0);
+        }
+  
+        50% {
+          @include box-style-animated($secondary-font-color, $dark-grey, $pixel-0, $pixel-20);
+        }
+      }
+  
+      @keyframes logoGlow {
+        0% {
+          @include box-style-animated($lighter-secondary-color, $lighter-secondary-color, $pixel-0, $pixel-0);
+        }
+
+        30% {
+            @include box-style-animated($lighter-secondary-color, $lighter-secondary-color, $pixel-0, $pixel-60);
+        }
+  
+        60% {
+            @include box-style-animated($lighter-secondary-color, $lighter-secondary-color, $pixel-0, $pixel-60);
+        }
+      }
+
+      @keyframes zoomCard {
+        0% {
+            width: 100%;
+            max-width: 550px;
+            height: 100%;
+            max-height: 190px;
+            z-index: 2;
+        }
+    
+        50% {
+            width: 100%;
+            max-width: 650px;
+            height: 100%;
+            max-height: 250px;
+            z-index: 2;
+        }
+    }
+    
+    
+    /* IDs*/
+    
+      #dropDown {
+        display: none;
+      }
+
+      #hero_single{
+        top: 20%;
+        margin-top: 28.5px;
+      }
+
+
+    }
+    
+
+
+    @media screen and (min-width: 95em) {
+      .hero_text {
+        top: 10%;
+        margin-top: 28.5px;
+      }
+
+      .hero_countdown {
+        top: 55%;
+      }
+
+      #hero_single {
+        top: 30%;
+        margin-top: 50px;
+      }
+    }

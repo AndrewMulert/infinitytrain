@@ -1,0 +1,68 @@
+{
+    "title": "Infinity Train",
+    "header": "Climb aboard the",
+    "hero-image": {
+        "alt": "The Infinity Train spanning against the horizon, rendered by Andrew Mulert",
+        "src": {
+            "min": "images/index_hero_train_landscape-min.webp",
+            "medium": "images/index_hero_train_landscape-medium.webp",
+            "small": "images/index_hero_train_landscape-small.webp"
+        }
+    },
+    "hero-cards": {
+        "petition": {
+            "image": {
+                "alt": "Simon and Grace raising their arms above the balcony in protest",
+                "src": {
+                    "min": "images/index_apex-min.webp",
+                    "medium": "images/index_apex-medium.webp",
+                    "small": "images/index_apex-small.webp"
+                }
+            },
+            "text": {
+                "paragraph": "Want more Infinity Train? Show your support today!",
+                "link": {
+                    "target": "_blank",
+                    "href": "https://www.change.org/p/cartoon-network-renew-infinity-train-for-books-5-8",
+                    "caption": "Sign the Petition"
+                }
+            }
+        },
+        "about": {
+            "image": {
+                "alt": "Tulip eating a onion while reading a book",
+                "src": {
+                    "min": "images/index_book-min.webp",
+                    "medium": "images/index_book-medium.webp",
+                    "small": "images/index_book-small.webp"
+                }
+            },
+            "text": {
+                "paragraph": "Learn more about the series and its lore",
+                "link": {
+                    "target": "_self",
+                    "href": "/about",
+                    "caption": "About the Show"
+                }
+            }
+        },
+        "merch": {
+            "image": {
+                "alt": "Atticus holding a donut holer",
+                "src": {
+                    "min": "images/index_donut_holer-min.webp",
+                    "medium": "images/index_donut_holer-medium.webp",
+                    "small": "images/index_donut_holer-small.webp"
+                }
+            },
+            "text": {
+                "paragraph": "Looking for some cool Infinity Train gear? Shop our collection!",
+                "link": {
+                    "target": "_self",
+                    "href": "/merch",
+                    "caption": "Explore Merch"
+                }
+            }
+        }
+    }
+}
