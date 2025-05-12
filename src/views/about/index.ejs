@@ -20,10 +20,9 @@
     Please excuse us at this time as we assemble this site.</p>
 <div class="nav_mini">
     <div class="main_links">
-        <a href="/about">Overview</a>
-        <a href="/about/characters">Characters</a>
-        <a href="/about/locations">Locations</a>
-        <a href="/about/watch">Where to Watch</a>
+        <% Object.values(aboutData["nav-mini"].main_links).forEach(link => { %>
+            <a href="<%= link.href %>"><%= link.caption %></a>
+        <% }) %>
     </div>
     <div class="page_links">
         <a href="#book1">Book 1</a>
@@ -34,22 +33,27 @@
     </div>
 </div>
 <div class="home-cards">
-    <div class="overview-card">
-        <div class="card-text">
-            <h3>What is Infinity Train?</h3>
-            <p>Infinity Train is an animated TV Show created by Owen Dennis and aired on Cartoon Network. 
-                The show ran from August 2019 to April 2021 when it was unexpectedly canceled after its fourth season (otherwise known as books).</p>
-            <p>Passengers board a train, only to discover that it is seemingly endless and getting home isn’t as easy as they would hope. 
-                Among the mysteries, a strange glowing number has appeared on their hand. 
-                Each book introduces new people who travel through train cars that could contain wild and unpredictable possibilities. 
-                How will the train change them and will they ever be able to leave?</p>
+    <% Object.values(aboutData["hero-cards"]).forEach(card => { %>
+    <div class="overview-card" id="<%= card.text.header.toLowerCase().replace(/ /g, '-') %>">
+        <div class="card-text" id="home-cards.">
+            <h3><%= card.text.header %></h3>
+            <% if (card.text.paragraphs) { %>
+                <% if (typeof card.text.paragraphs === 'string') { %>
+                    <p><%= card.text.paragraphs %></p>
+                <% } else { %>
+                    <% for (const paragraphKey in card.text.paragraphs) { %>
+                        <p><%= card.text.paragraphs[paragraphKey] %></p>
+                    <% } %>
+                <% } %>
+            <% } %>
         </div>
         <picture>
-            <source srcset="images/index_hero_train_landscape-small.webp" media="(max-width: 500px)">
-            <source srcset="images/index_hero_train_landscape-medium.webp" media="(max-width: 1000px)">
-            <img class="hero_image" src="images/index_hero_train_landscape-min.webp" alt="The Infinity Train spanning against the horizon, rendered by Andrew Mulert">
+            <source srcset="<%= card.image.src.small %>" media="(max-width: 500px)">
+            <source srcset="<%= card.image.src.medium %>" media="(max-width: 1000px)">
+            <img class="hero_image" src="<%= card.image.src.min %>" alt="<%= card.image.alt %>">
         </picture>
     </div>
+    <% }); %>
     <div class="panel-card" id="about">
         <picture>
             <source srcset="images/index_hero_train_landscape-small.webp" media="(max-width: 500px)">

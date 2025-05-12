@@ -144,7 +144,7 @@
             "text": {
                 "header": "Book 4: Duet",
                 "paragraphs": {
-                    "paragraph": "    Ryan and Min-Gi were childhood friends with the dream of starting a band together and touring the world. But when Ryan decides that they should leave immediately on tour after graduation,  Min-Gi panics and abandons him. After spending a couple of years apart, Ryan visits Min-Gi trying to convince him to finally go on tour with him. But when Min-Gi refuses, Ryan steals his work keys and soon enough they both find themselves on the Infinity Train. Will they learn to cooperate and reconcile their friendship so they can escape the train?"
+                    "paragraph": "Ryan and Min-Gi were childhood friends with the dream of starting a band together and touring the world. But when Ryan decides that they should leave immediately on tour after graduation,  Min-Gi panics and abandons him. After spending a couple of years apart, Ryan visits Min-Gi trying to convince him to finally go on tour with him. But when Min-Gi refuses, Ryan steals his work keys and soon enough they both find themselves on the Infinity Train. Will they learn to cooperate and reconcile their friendship so they can escape the train?"
                 },
                 "link": {
                     "target": "_blank",
@@ -153,7 +153,7 @@
                 }
             }
         },
-        "book4": {
+        "book5": {
             "image": {
                 "alt": "Placeholder Image",
                 "src": {
@@ -163,14 +163,9 @@
                 }
             },
             "text": {
-                "header": "Book 4: Duet",
+                "header": "Book 5 and Beyond",
                 "paragraphs": {
-                    "paragraph": "    Ryan and Min-Gi were childhood friends with the dream of starting a band together and touring the world. But when Ryan decides that they should leave immediately on tour after graduation,  Min-Gi panics and abandons him. After spending a couple of years apart, Ryan visits Min-Gi trying to convince him to finally go on tour with him. But when Min-Gi refuses, Ryan steals his work keys and soon enough they both find themselves on the Infinity Train. Will they learn to cooperate and reconcile their friendship so they can escape the train?"
-                },
-                "link": {
-                    "target": "_blank",
-                    "href": "https://www.youtube.com/watch?v=1yJXBpsEBQ8",
-                    "caption": "Watch the Trailer"
+                    "paragraph": "While Infinity Train was canceled after Book 4, the crew planned 8 total seasons, potentially including a movie. Book 5 would focus on the character Amelia, her time on the train, and her long term consequences. One of the reasons the show was potentially canceled was that Amelia, an adult character, wouldn’t be relatable to children. Emotional maturity and how characters deal with their struggles is the main focus of Infinity Train which is important for young viewers to learn. Many fans hope that Infinity Train will be renewed through efforts to raise awareness of the show and its incredible storytelling."
                 }
             }
         }
