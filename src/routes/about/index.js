@@ -3,7 +3,6 @@ import { Router } from 'express';
 const router = Router();
 
 router.get('/', (req, res) => {
-    console.log(aboutData);
     res.render('about/index', {title: 'About - Infinity Train'});
 });
 
