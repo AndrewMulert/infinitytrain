@@ -20,9 +20,10 @@
     Please excuse us at this time as we assemble this site.</p>
 <div class="nav_mini">
     <div class="main_links">
-        <% Object.values(aboutData["nav-mini"].main_links).forEach(link => { %>
-            <a href="<%= link.href %>"><%= link.caption %></a>
-        <% }) %>
+            <a href="/about">Overview</a>
+            <a href="/about/characters">Characters</a>
+            <a href="/about/locations">Locations</a>
+            <a href="/about/watch">Where to Watch</a>
     </div>
     <div class="page_links">
         <a href="#book1">Book 1</a>
@@ -33,24 +34,28 @@
     </div>
 </div>
 <div class="home-cards">
-    <% Object.values(aboutData["hero-cards"]).forEach(card => { %>
-    <div class="overview-card" id="<%= card.text.header.toLowerCase().replace(/ /g, '-') %>">
-        <div class="card-text" id="home-cards.">
-            <h3><%= card.text.header %></h3>
-            <% if (card.text.paragraphs) { %>
-                <% if (typeof card.text.paragraphs === 'string') { %>
-                    <p><%= card.text.paragraphs %></p>
-                <% } else { %>
-                    <% for (const paragraphKey in card.text.paragraphs) { %>
-                        <p><%= card.text.paragraphs[paragraphKey] %></p>
-                    <% } %>
-                <% } %>
-            <% } %>
+    <div class="home-card" id="overview">
+        <div class="card-text">
+            <h3>What is Infinity Train?</h3>
+            <p>Infinity Train is an animated TV Show created by Owen Dennis and aired on Cartoon Network. The show ran from August 2019 to April 2021 when it was unexpectedly canceled after its fourth season (otherwise known as books). </p>
+            <p>Passengers board a train, only to discover that it is seemingly endless and getting home isn’t as easy as they would hope. Among the mysteries, a strange glowing number has appeared on their hand. Each book introduces new people who travel through train cars that could contain wild and unpredictable possibilities. How will the train change them and will they ever be able to leave?</p>
         </div>
         <picture>
-            <source srcset="<%= card.image.src.small %>" media="(max-width: 500px)">
-            <source srcset="<%= card.image.src.medium %>" media="(max-width: 1000px)">
-            <img class="hero_image" src="<%= card.image.src.min %>" alt="<%= card.image.alt %>">
+            <source srcset="images/about_series_poster-small.webp" media="(max-width: 500px)">
+            <source srcset="images/about_series_poster-medium.webp" media="(max-width: 1000px)">
+            <img class="hero_image" src="images/about_series_poster-min.webp" alt="The entire main cast of the show Infinity Train, designed by Andrew Mulert">
         </picture>
     </div>
-    <% }); %>
+    <div class="home-card" id="Book1">
+        <div class="card-text">
+            <h3>Book 1: The Perennial Child</h3>
+            <p>Infinity Train is an animated TV Show created by Owen Dennis and aired on Cartoon Network. The show ran from August 2019 to April 2021 when it was unexpectedly canceled after its fourth season (otherwise known as books). </p>
+            <p>Passengers board a train, only to discover that it is seemingly endless and getting home isn’t as easy as they would hope. Among the mysteries, a strange glowing number has appeared on their hand. Each book introduces new people who travel through train cars that could contain wild and unpredictable possibilities. How will the train change them and will they ever be able to leave?</p>
+        </div>
+        <picture>
+            <source srcset="images/about_hero_tape-small.webp" media="(max-width: 500px)">
+            <source srcset="images/about_hero_tape-medium.webp" media="(max-width: 1000px)">
+            <img class="hero_image" src="images/about_hero_tape-min.webp" alt="Placeholder Image">
+        </picture>
+    </div>
+</div>
