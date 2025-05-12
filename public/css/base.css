@@ -138,6 +138,7 @@ nav svg {
 }
 .hero_text {
   display: block;
+  top: 9%;
   padding: 20px;
   margin-top: -10px;
   background-color: rgba(22, 74, 26, 0.7450980392);

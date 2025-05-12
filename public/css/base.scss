@@ -222,6 +222,7 @@ nav {
         
     &_text {
         display: block;
+        top: 9%;
         padding: 20px;
         margin-top: -10px;
         @include colors($transparent-secondary-color, $primary-font-color);

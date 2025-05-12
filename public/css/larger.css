@@ -138,6 +138,7 @@ nav svg {
 }
 .hero_text {
   display: block;
+  top: 9%;
   padding: 20px;
   margin-top: -10px;
   background-color: rgba(22, 74, 26, 0.7450980392);
@@ -445,25 +446,14 @@ nav svg {
   }
   .hero_text {
     position: absolute;
-    top: 15%;
-    margin-left: auto;
     margin-right: auto;
     left: 0;
-    right: 0;
     min-width: 325px;
     width: 60%;
     max-width: 550px;
-    border-radius: 25px;
+    height: 90%;
     margin-bottom: 20px;
-    box-shadow: 10px 10px 50px #000000;
-  }
-  .hero_text:hover {
-    width: 100%;
-    max-width: 630px;
-    height: 100%;
-    max-height: 230px;
-    z-index: 2;
-    background-color: rgba(30, 103, 36, 0.7450980392);
+    padding: 225px 0;
   }
   .hero_text svg {
     width: 400px;
@@ -475,8 +465,9 @@ nav svg {
     max-height: 725px;
   }
   .hero_countdown {
+    grid-column: 1/4;
+    grid-row: 1/2;
     min-width: 325px;
-    width: 100%;
     margin-bottom: 20px;
   }
   .nav_link_container {
@@ -594,8 +585,7 @@ nav svg {
 }
 @media screen and (min-width: 95em) {
   .hero_text {
-    top: 10%;
-    margin-top: 28.5px;
+    top: 9%;
   }
   .hero_countdown {
     top: 55%;
