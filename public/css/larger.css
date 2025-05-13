@@ -350,10 +350,10 @@ nav ul {
     animation: glowAnimation 1s ease-in-out;
   }
   .countdown_message {
-    grid-column: 3/1;
+    grid-column: 3/2;
   }
   .countdown_timer {
-    grid-column: 2/1;
+    grid-column: 1/2;
   }
   @keyframes glowAnimation {
     0% {
