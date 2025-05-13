@@ -150,6 +150,23 @@
         margin-top: auto;
         margin-bottom: auto;
       }
+
+      .home-panel{
+        margin-top: 5%;
+
+        &-card {
+          display: grid;
+          grid-template-columns: 33% 66%;
+          grid-template-rows: 80% 20%;
+        }
+      }
+
+      .card{
+
+        &_image{
+          max-width: 50px;
+        }
+      }
     
       @keyframes glowAnimation {
       
