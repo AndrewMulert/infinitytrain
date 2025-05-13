@@ -84,7 +84,7 @@ nav svg {
 }
 
 .countdown_message {
-  background-color: #BF5137;
+  background-color: rgba(191, 81, 55, 0.7490196078);
 }
 
 .footer_social {
@@ -108,7 +108,7 @@ nav svg {
   top: 9%;
   padding: 20px;
   margin-top: -10px;
-  background-color: rgba(68, 149, 75, 0.4588235294);
+  background-color: rgba(68, 149, 75, 0.7490196078);
   color: #FFFFFF;
   text-align: center;
 }
