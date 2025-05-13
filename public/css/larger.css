@@ -160,7 +160,7 @@ nav svg {
   display: block;
   grid-template-columns: repeat(13, 20px 1fr);
   padding: 20px;
-  margin-top: 0px;
+  margin-top: -30px;
   background-color: rgba(60, 74, 22, 0.7450980392);
   color: #ffffff;
   text-align: center;
@@ -228,91 +228,12 @@ nav svg {
   background-color: #171B18;
 }
 
-.row_1 {
-  margin-top: 20px;
-  margin-bottom: 30px;
-  padding: 20px;
-  color: #000000;
-  border-radius: 25px;
-  background-color: #76f2d3;
-  box-shadow: 10px 10px 50px 0px #000000;
-  margin-top: 40px;
-  height: 80%;
-  grid-column: 2/span 1;
-  grid-row: 2/span 1;
+.card-text {
+  grid-column: 2/3;
 }
-.row_2 {
-  margin-top: 20px;
-  margin-bottom: 30px;
-  padding: 20px;
-  color: #000000;
-  border-radius: 25px;
-  background-color: #76f2d3;
-  box-shadow: 10px 10px 50px 0px #000000;
-  margin-top: 40px;
-  height: 70%;
-  grid-column: 2/span 1;
-  grid-row: 2/span 1;
-}
-.row.dark-mode {
-  background-color: #37BF9F;
-  color: #ffffff;
-}
-.row > p {
-  max-width: 600px;
-}
-.row_image_horizontal {
-  display: flex;
-  min-width: 150px;
-  border-radius: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 250px;
-}
-.row_image_vertical {
-  display: flex;
-  min-width: 150px;
-  border-radius: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 250px;
-}
-.row_button {
-  display: inline-block;
-  padding: 9px;
-  background-color: #37BF43;
-  color: #ffffff;
-  border-style: solid;
-  border-color: #164A1A;
-  border-width: 2px;
-  border-radius: 15px;
-  text-decoration: none;
-  font-size: 0.8em;
-}
-.row_button:hover {
-  background-color: #1e6724;
-  font-weight: bold;
-}
-.row_button.dark-mode {
-  background-color: #164A1A;
-  border-color: #37BF43;
-}
-.row_button.dark-mode:hover {
-  background-color: #1e6724;
-}
-.row_header {
-  font-size: 1.5em;
-  background-color: #76f2d3;
-  color: #164A3E;
-}
-.row_header.dark-mode {
-  background-color: #37BF9F;
-  color: #ffffff;
-}
-.row > h3 {
-  font-size: 1em;
-  background-color: #76f2d3;
-  color: #164A1A;
+
+.home-panel {
+  grid-column: 2/3;
 }
 
 .show {
@@ -451,9 +372,8 @@ nav svg {
     min-width: 325px;
     width: 60%;
     max-width: 550px;
-    height: 90%;
+    padding: 250px 0;
     margin-bottom: 20px;
-    padding: 225px 0;
   }
   .hero_text svg {
     width: 400px;
@@ -465,10 +385,12 @@ nav svg {
     max-height: 725px;
   }
   .hero_countdown {
+    min-height: 150px;
     grid-column: 1/4;
     grid-row: 1/2;
     min-width: 325px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: -40px;
   }
   .nav_link_container {
     float: left;
@@ -478,37 +400,24 @@ nav svg {
   .page_link {
     display: block;
   }
-  .row_1 {
-    margin-top: 40px;
-    grid-column: 2/span 1;
-    /*grid-row: 2 / span 1;*/
-    max-width: 400px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .row_2 {
-    margin-top: 40px;
-    grid-column: 4/span 1;
-    grid-row: 2/span 1;
-  }
-  .row_image_horizontal {
+  .card-text_image_horizontal {
     width: 100%;
     max-width: 500px;
     transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
     transform: scale(1);
     width: 100%;
   }
-  .row_image_horizontal:hover {
+  .card-text_image_horizontal:hover {
     transform: scale(1.75);
     box-shadow: 10px 10px 50px #000000;
     animation: glowAnimation 1s ease-in-out;
   }
-  .row_image_vertical {
+  .card-text_image_vertical {
     width: 100%;
     max-height: 500px;
     transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
   }
-  .row_image_vertical:hover {
+  .card-text_image_vertical:hover {
     transform: scale(1.75);
     box-shadow: 10px 10px 50px #000000;
     animation: glowAnimation 1s ease-in-out;

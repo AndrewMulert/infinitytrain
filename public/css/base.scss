@@ -1,38 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 
-$lighter-primary-color: #76f2d3;
-$primary-color: #37BF9F;
-$medium-primary-color: #27856F;
-$monotone-primary-color: #515e5b;
-$darker-primary-color: #164A3E;
-$darkest-primary-color: #0D2D25;
-$lighter-secondary-color: #AAF0B0;
-$secondary-color: #37BF43;
-$transparent-lighter-secondary-color: #1e6724be;
-$medium-secondary-color: #1e6724;
-$darker-secondary-color: #164A1A;
-$darkest-secondary-color: #171B18;
-$transparent-secondary-color: #164A1Abe;
-$transparent-lighter-tertiary-color: #6B8426be;
-$tertiary-color: #9BBF37;
-$medium-tertiary-color: #6B8426;
-$darker-tertiary-color: #3C4A16;
-$transparent-tertiary-color: #3C4A16be;
-$lighter-quaternary-color: #6cbcf0;
-$quaternary-color: #409FDE;
-$medium-quaternary-color: #2F75A4;
-$darker-quaternary-color: #1E4B69;
-$primary-font-color:#ffffff;
-$secondary-font-color: #000000;
-$dark-grey:#666666;
-$light-grey: #bbbbbb;
+
 
 @mixin colors($background: $secondary-font-color, $text: $secondary-font-color) {
     background-color: $background;
     color: $text;
 }
 
-
+$lighter-primary-color: #AAF0B0;
+$medium-primary-color: #89EC92;
+$neon-primary-color: #25EE37;
+$primary-color: #37BF6C;
+$darker-primary-color: #426A46;
+$darkest-primary-color: #171B18;
+$transparent-primary-color: #44954B75;
+$darker-secondary-color: #953E2B;
+$transparent-secondary-color: #BF5137;
+$darker-tertiary-color: #37BF8E;
+$darkest-tertiary-color: #17513C;
+$darker-quaternary-color: #957E44;
+$darkest-quaternary-color: #6A5F42;
+$transparent-quaternary-color: #BF9837;
+$primary-font-color: #FFFFFF;
+$secondary-font-color: #000000;
 
 $pixel-0: 0px;
 $pixel-8: 8px;
@@ -96,42 +86,34 @@ p, pre, label {
 article {
     grid-column-start: 2;
     @include margin-auto;
-    height: $percent-100;
+    height: 100%;
 }
 
 body {
-    margin: $pixel-0;
-    @include colors($medium-primary-color, $secondary-font-color);
-
-    &.dark-mode {
-        @include colors($darker-primary-color, $primary-font-color);
-    }
+    margin: 0px;
+    @include colors($darker-primary-color, $secondary-font-color);
 }
 
 footer {
     margin: $pixel-0;
-    @include colors($darker-secondary-color, $primary-font-color);
-
-    &.dark-mode{
-        background-color: $darkest-secondary-color !important;
-    }
+    @include colors($darkest-primary-color, $primary-font-color);
 
     > p{
-        @include margin($value1: $pixel-8, $value2: $pixel-0);
-        padding: $pixel-15;
-        width: $percent-80;
+        @include margin($value1: 8px, $value2: 0px);
+        padding: 15px;
+        width: 80%;
     }   
 }
 
 main {
-    display: $display-grid;
-    grid-template-columns: $percent-10 $percent-80 $percent-10;
-    grid-template-rows: $percent-10 $percent-80 $percent-10;
-    margin-top: $pixel-30;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 10% 80% 10%;
+    margin-top: 30px;
 }
 
 nav {
-    width: $percent-100;
+    width: 100%;
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -139,7 +121,7 @@ nav {
 
     a {
         display: block;
-        flex: 1 1 $percent-100;
+        flex: 1 1 100%;
         text-decoration: none;
     }
 
@@ -148,7 +130,7 @@ nav {
     }
 
     svg {
-        padding-left: $pixel-10;
+        padding-left: 10px;
     }
 }
 
@@ -177,29 +159,8 @@ nav {
     }
 }
 
-.circle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: $pixel-50;
-    height: $pixel-50;
-    transition: width 0.5s, height 0.5s, border-radius 0.5s;
-    font-size: 2.25em;
-    @include border-values(solid, $dark-grey, 3px, $pixel-25);
-    @include box-style($primary-font-color, $secondary-font-color, $pixel-0);
-    
-    &.dark-mode {
-        border-color: $light-grey;
-        color: $primary-font-color;
-        @include box-style($secondary-font-color, $dark-grey, $pixel-0);
-    }
-}
-
-.dark_mode {
-    color: $primary-font-color;
-    padding: 20px;
-    border-radius: 25px;
-    @include box-style($primary-color, $secondary-font-color, $pixel-10);
+.countdown_message {
+    background-color: $transparent-secondary-color;
 }
 
 .footer_social {
@@ -225,7 +186,7 @@ nav {
         top: 9%;
         padding: 20px;
         margin-top: -10px;
-        @include colors($transparent-secondary-color, $primary-font-color);
+        @include colors($transparent-primary-color, $primary-font-color);
         text-align: center;
 
         h2 {
@@ -247,15 +208,15 @@ nav {
         display: block;
         grid-template-columns: repeat(13, 20px 1fr) ;
         padding: 20px;
-        margin-top: 0px;
-        @include colors($transparent-tertiary-color, $primary-font-color);
+        margin-top: -30px;
+        @include colors($darker-secondary-color, $primary-font-color);
         text-align: center;
 
         label {
             font-size: 3em;
-            outline: $secondary-color;
+            outline: $medium-primary-color;
             outline-width: 2px;
-            text-shadow: 0 5px 10px $lighter-secondary-color;
+            text-shadow: 0 5px 10px $lighter-primary-color;
         }
 
         p {
@@ -270,22 +231,18 @@ nav {
     &_bar {
         display:flex;
         border-bottom: 10px;
-        border-color: $secondary-color;
+        border-color: $medium-primary-color;
     }
       
     &_items {
         list-style-type: none;
         border-bottom: 5px;
-        border-color: $secondary-color;
+        border-color: $medium-primary-color;
         margin: 0;
         padding-left: 0px;
         overflow: hidden;
         width: 100%;
-        @include colors($darkest-secondary-color, $primary-font-color);
-
-        &.dark-mode{
-            background-color: $darkest-secondary-color;
-        }
+        @include colors($darkest-primary-color, $primary-font-color);
     }
 
     &_link_container {
@@ -306,108 +263,23 @@ nav {
     min-width: 200px;
     font-weight: 400;
     font-size: 1em;
-    @include colors($darkest-secondary-color, $primary-font-color);
+    @include colors($darkest-primary-color, $primary-font-color);
 
     &:hover {
-        @include colors($tertiary-color, $secondary-font-color); 
+        @include colors($primary-color, $secondary-font-color); 
         font-weight: 700;
-        &.dark-mode {
-            @include colors($medium-tertiary-color, $darker-quaternary-color);
-        }
-    }
-
-    &.dark-mode {
-        background-color: $darkest-secondary-color;
     }
 }
 
-.row {
-    &_1 {
-        @include margin;
-        padding: 20px;
-        color: $secondary-font-color;
-        border-radius: 25px;
-        @include box-style ($lighter-primary-color, $secondary-font-color, $pixel-10);
-        margin-top: 40px;
-        height: 80%;
-        grid-column: 2 / span 1;
-        grid-row: 2 / span 1;
-    }
+.card-text {
+    grid-column: 2 /3;
+}
 
-    &_2{
-        @include margin;
-        padding: 20px;
-        color: $secondary-font-color;
-        border-radius: 25px;
-        @include box-style ($lighter-primary-color, $secondary-font-color, $pixel-10);
-        margin-top: 40px;
-        height: 70%;
-        grid-column: 2 / span 1;
-        grid-row: 2 / span 1;
-    }
-
-    &.dark-mode{
-        @include colors($primary-color, $primary-font-color);
-    }
-
-    > p {
-        max-width: 600px;
-    }
-
-    &_image {
-        &_horizontal {
-            display: flex;
-            min-width: 150px;
-            border-radius: 15px;
-            @include margin-auto;
-            max-width: 250px;
-        }
-
-        &_vertical {
-            display: flex;
-            min-width: 150px;
-            border-radius: 15px;
-            @include margin-auto;
-            max-width: 250px;
-        }
-    }
-
-    &_button {
-        display: inline-block;
-        padding: 9px;
-        @include colors($secondary-color, $primary-font-color);
-        @include border-values (solid, $darker-secondary-color, 2px, 15px);
-        text-decoration: none;
-        font-size: 0.8em;
-
-        &:hover {
-            background-color: $medium-secondary-color;
-            font-weight:bold;
-        }
-
-        &.dark-mode {
-            background-color: $darker-secondary-color;
-            border-color: $secondary-color;
-
-            &:hover {
-                background-color: $medium-secondary-color;
-            }
-        }
-    }
-
-    &_header {
-        font-size: 1.5em;
-        @include colors($lighter-primary-color, $darker-primary-color);
-
-        &.dark-mode{
-            @include colors($primary-color, $primary-font-color);
-        }
-    }
-
-    > h3 {
-        font-size: 1em;
-        @include colors($lighter-primary-color, $darker-secondary-color);
-    }
+.home-panel {
+    grid-column: 2 /3;
+    background-color: $medium-primary-color;
+    padding: 15px;
+    border-radius: 20px;
 }
 
 .show {
@@ -421,10 +293,6 @@ nav {
 }
 
 /* IDs */
-
-#alt_hero_image {
-    background-color: $transparent-tertiary-color;
-  }
   
 #dropDown {
     position: absolute;
@@ -439,8 +307,8 @@ nav {
     transition: background-color 1s;
 
     &:focus {
-        @include colors($lighter-secondary-color, $secondary-font-color);
-        @include border-values (solid, $medium-secondary-color, 2px, 5px);
+        @include colors($lighter-primary-color, $secondary-font-color);
+        @include border-values (solid, $medium-primary-color, 2px, 5px);
         transition: background-color 1s;
         border-radius: 25px;
       }
@@ -455,22 +323,14 @@ nav {
     position: relative;
     font-weight: 600;
     min-width: 200px;
-    @include colors($lighter-secondary-color, $primary-font-color);
+    @include colors($lighter-primary-color, $primary-font-color);
     flex-grow: 4;
     align-self: auto;
 
     &:hover {
-        @include colors($lighter-secondary-color, $lighter-secondary-color);
-        box-shadow: 0px 0px 50px 60px $lighter-secondary-color;
+        @include colors($lighter-primary-color, $lighter-primary-color);
+        box-shadow: 0px 0px 50px 60px $lighter-primary-color;
         font-weight: bolder;
         animation: logoGlow 0.25s ease-in;
-    
-        &.dark-mode {
-            @include colors($secondary-color, $primary-font-color);
-        }
-    }
-
-    &.dark-mode {
-        background-color: $medium-secondary-color;
     }
 }
