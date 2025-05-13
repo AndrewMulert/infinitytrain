@@ -14,6 +14,7 @@ $primary-color: #37BF6C;
 $darker-primary-color: #426A46;
 $darkest-primary-color: #171B18;
 $transparent-primary-color: #44954BBF;
+$secondary-color: #CF573C;
 $darker-secondary-color: #953E2B;
 $transparent-secondary-color: #BF5137BF;
 $darker-tertiary-color: #37BF8E;
@@ -188,7 +189,8 @@ nav {
 
     &_countdown {
         display: block;
-        grid-template-columns: repeat(13, 20px 1fr) ;
+        grid-column: 1 /4;
+        grid-row: 1 /2;
         padding: 20px;
         margin-top: -30px;
         @include colors($darker-secondary-color, $primary-font-color);
@@ -290,7 +292,7 @@ nav {
 
     &:focus {
         @include colors($lighter-primary-color, $secondary-font-color);
-        @include border-values (solid, $medium-primary-color, 2px, 5px);
+        @include border-values (solid, $secondary-color, 2px, 5px);
         transition: background-color 1s;
         border-radius: 25px;
       }
