@@ -291,8 +291,8 @@ nav {
     transition: background-color 1s;
 
     &:focus {
-        @include colors($lighter-primary-color, $secondary-font-color);
-        @include border-values (solid, $secondary-color, 2px, 5px);
+        @include colors($secondary-color, $secondary-font-color);
+        @include border-values (solid, $darker-secondary-color, 2px, 5px);
         transition: background-color 1s;
         border-radius: 25px;
       }
