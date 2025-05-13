@@ -1,6 +1,6 @@
 @import "base.scss";
 
-@mixin box-style-animated($background: $lighter-primary-color, $shadow: $secondary-font-color, $value: $pixel-0, $value2: $pixel-20) {
+@mixin box-style-animated($background: $lighter-primary-color, $shadow: $secondary-font-color, $value: 0px, $value2: 20px) {
     background-color: $background;
     box-shadow: $value $value 50px $value2 $shadow;
   }
@@ -42,29 +42,6 @@
         margin-top: -35px;
         max-width: 97%;
         height: 16px;
-      }
-
-      .circle{
-        bottom: 70px;
-        right: 30px;
-        font-size: 2em;
-  
-        &:hover {
-          width: 60px;
-          height: 60px;
-          border-radius: 30px;
-          transition: width 0.5s, height 0.5s, border-radius 0.5s;
-          @include colors($light-grey, $secondary-font-color);
-          animation: lightGlow 2s ease-in-out;
-          box-shadow: 0px 0px 50px 20px $secondary-font-color;
-  
-          &.dark-mode{
-            @include colors($dark-grey, $primary-font-color);
-              border-color: $light-grey;
-              animation: darkGlow 2s ease-in-out;
-              box-shadow: 0px 0px 50px 20px $light-grey;
-            }
-        }
       }
     
       .footer_social{
@@ -172,37 +149,17 @@
       
       }
   
-      @keyframes lightGlow {
-        0% {
-          @include box-style-animated($primary-font-color, $secondary-font-color, $pixel-0, $pixel-0);
-        }
-  
-        50% {
-          @include box-style-animated($primary-font-color, $secondary-font-color, $pixel-0, $pixel-20);
-        }
-      }
-  
-      @keyframes darkGlow {
-        0% {
-          @include box-style-animated($secondary-font-color, $dark-grey, $pixel-0, $pixel-0);
-        }
-  
-        50% {
-          @include box-style-animated($secondary-font-color, $dark-grey, $pixel-0, $pixel-20);
-        }
-      }
-  
       @keyframes logoGlow {
         0% {
-          @include box-style-animated($lighter-secondary-color, $lighter-secondary-color, $pixel-0, $pixel-0);
+          @include box-style-animated($lighter-primary-color, $lighter-primary-color, 0px, 0px);
         }
 
         30% {
-            @include box-style-animated($lighter-secondary-color, $lighter-secondary-color, $pixel-0, $pixel-60);
+            @include box-style-animated($lighter-primary-color, $lighter-primary-color, 0px, 60px);
         }
   
         60% {
-            @include box-style-animated($lighter-secondary-color, $lighter-secondary-color, $pixel-0, $pixel-60);
+            @include box-style-animated($lighter-primary-color, $lighter-primary-color, 0px, 60px);
         }
       }
 

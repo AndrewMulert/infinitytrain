@@ -24,20 +24,6 @@ $transparent-quaternary-color: #BF9837;
 $primary-font-color: #FFFFFF;
 $secondary-font-color: #000000;
 
-$pixel-0: 0px;
-$pixel-8: 8px;
-$pixel-10: 10px;
-$pixel-15: 15px;
-$pixel-20: 20px;
-$pixel-25: 25px;
-$pixel-30: 30px;
-$pixel-50: 50px;
-$pixel-60: 60px;
-$percent-0: 0%;
-$percent-10: 10%;
-$percent-80: 80%;
-$percent-100: 100%;
-
 /* display */
 
 $display-block: block;
@@ -46,12 +32,12 @@ $display-flex: flex;
 
 /* mixins */
 
-@mixin margin($value1: $pixel-20, $value2: $pixel-30) {
+@mixin margin($value1: 20px, $value2: 30px) {
     margin-top: 20px;
     margin-bottom: 30px;
 }
 
-@mixin box-style($background: $lighter-primary-color, $shadow: $secondary-font-color, $value: $pixel-0) {
+@mixin box-style($background: $lighter-primary-color, $shadow: $secondary-font-color, $value: 0px) {
     background-color: $background;
     box-shadow: $value $value 50px 0px $shadow;
 }
@@ -95,7 +81,7 @@ body {
 }
 
 footer {
-    margin: $pixel-0;
+    margin: 0px;
     @include colors($darkest-primary-color, $primary-font-color);
 
     > p{
