@@ -79,7 +79,8 @@
         }
 
         &_countdown {
-            min-height: 150px;
+            min-height: 125px;
+            max-height: 150px;
             grid-column: 1 /4;
             grid-row: 1 /2;
             min-width: 325px;
@@ -100,7 +101,6 @@
     
       .card-text {
 
-  
           &_image {
   
               &_horizontal {
@@ -129,6 +129,15 @@
                   }
               }
           }
+
+      }
+
+      .countdown_message {
+        grid-column: 3 /1;
+      }
+
+      .countdown_timer {
+        grid-column: 2 /1;
       }
     
       @keyframes glowAnimation {

@@ -57,9 +57,6 @@ nav a {
 nav ul {
   text-align: center;
 }
-nav svg {
-  padding-left: 10px;
-}
 
 /* classes */
 .banner {
@@ -125,7 +122,9 @@ nav svg {
 }
 .hero_countdown {
   display: block;
-  grid-template-columns: repeat(13, 20px 1fr);
+  grid-column: 1/4;
+  grid-row: 1/2;
+  grid-template-columns: 10px auto auto 10px;
   padding: 20px;
   margin-top: -30px;
   background-color: #953E2B;
@@ -224,7 +223,7 @@ nav svg {
   background-color: #AAF0B0;
   color: #000000;
   border-style: solid;
-  border-color: #89EC92;
+  border-color: #CF573C;
   border-width: 2px;
   border-radius: 5px;
   transition: background-color 1s;
@@ -312,7 +311,8 @@ nav svg {
     max-height: 725px;
   }
   .hero_countdown {
-    min-height: 150px;
+    min-height: 125px;
+    max-height: 150px;
     grid-column: 1/4;
     grid-row: 1/2;
     min-width: 325px;
@@ -348,6 +348,12 @@ nav svg {
     transform: scale(1.75);
     box-shadow: 10px 10px 50px #000000;
     animation: glowAnimation 1s ease-in-out;
+  }
+  .countdown_message {
+    grid-column: 3/1;
+  }
+  .countdown_timer {
+    grid-column: 2/1;
   }
   @keyframes glowAnimation {
     0% {
