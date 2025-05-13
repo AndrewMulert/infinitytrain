@@ -188,10 +188,9 @@ nav {
     }
 
     &_countdown {
-        display: block;
+        display: flex;
         grid-column: 1 /4;
         grid-row: 1 /2;
-        grid-template-columns: 10px auto auto 10px;
         padding: 20px;
         margin-top: -30px;
         @include colors($darker-secondary-color, $primary-font-color);
