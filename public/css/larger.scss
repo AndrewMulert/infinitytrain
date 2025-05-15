@@ -4,7 +4,7 @@
     background-color: $background;
     box-shadow: $value $value 50px $value2 $shadow;
   }
-  
+
 @media screen and (min-width: 40em) {
   
   
@@ -15,7 +15,7 @@
     
       footer{
           display: flex;
-          max-height: 70px;
+          max-height: 90px;
   
           > p {
               width: 60%;
@@ -62,7 +62,7 @@
           min-width: 325px;
           width: 60%;
           max-width: 550px;
-          padding: 230px 0;
+          padding: 250px 0;
           margin-bottom: 20px;
 
           svg {
@@ -121,6 +121,8 @@
 
       .home-panel{
         max-width: 1175px;
+        min-height: 625px;
+        margin-bottom: 30px;
 
         &-card{
           display: flex;
@@ -132,7 +134,7 @@
 
           &_image{
             display: block;
-            width: 100%;
+            width: 90%;
             height: auto;
             max-width: 725px;
             min-width: 310px;
@@ -227,6 +229,31 @@
     }
     
 
+@media screen and (min-width: 45em) {
+  .home-panel{
+    min-height: 675px;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .home-panel{
+    min-height: 825px;
+  }
+}
+
+@media screen and (min-width: 70em) {
+  .home-panel{
+    min-height: 930px;
+    margin-bottom: 70px;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .home-panel{
+    min-height: 1050px;
+    margin-bottom: 90px;
+  }
+}
 
     @media screen and (min-width: 95em) {
       .hero_text {
@@ -241,4 +268,8 @@
         top: 30%;
         margin-top: 50px;
       }
+
+      .home-panel{
+    min-height: 1125px;
+  }
     }
