@@ -197,7 +197,11 @@ nav ul {
   grid-column: 2/3;
   background-color: #89EC92;
   padding: 20px;
+  min-width: 650px;
   border-radius: 25px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .show {
@@ -315,7 +319,7 @@ nav ul {
     min-width: 325px;
     width: 60%;
     max-width: 550px;
-    padding: 250px 0;
+    padding: 230px 0;
     margin-bottom: 20px;
   }
   .hero_text svg {
@@ -362,17 +366,20 @@ nav ul {
     margin-bottom: auto;
   }
   .home-panel {
-    margin-top: 5%;
+    max-width: 1175px;
   }
   .home-panel-card {
     display: flex;
     margin-bottom: 15px;
     border-radius: 15px;
+    height: auto;
+    max-width: 1190px;
+    overflow: hidden;
   }
   .home-panel-card_image {
-    display: flex;
+    display: block;
     width: 100%;
-    max-height: 400px;
+    height: auto;
     max-width: 725px;
     min-width: 310px;
     justify-content: right;
@@ -382,12 +389,15 @@ nav ul {
     display: flex;
     margin-bottom: 15px;
     border-radius: 15px;
+    height: auto;
+    max-width: 1190px;
+    overflow: hidden;
   }
   .home-panel-card-alt_image {
-    display: flex;
+    display: block;
     width: 100%;
-    max-height: 400px;
     max-width: 725px;
+    height: auto;
     min-width: 310px;
     justify-content: left;
     border-radius: 15px 0px 0px 15px;

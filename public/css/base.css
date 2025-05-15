@@ -197,7 +197,11 @@ nav ul {
   grid-column: 2/3;
   background-color: #89EC92;
   padding: 20px;
+  min-width: 650px;
   border-radius: 25px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .show {

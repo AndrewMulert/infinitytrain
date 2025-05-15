@@ -62,7 +62,7 @@
           min-width: 325px;
           width: 60%;
           max-width: 550px;
-          padding: 250px 0;
+          padding: 230px 0;
           margin-bottom: 20px;
 
           svg {
@@ -120,17 +120,20 @@
       }
 
       .home-panel{
-        margin-top: 5%;
+        max-width: 1175px;
 
         &-card{
           display: flex;
           margin-bottom: 15px;
           border-radius: 15px;
+          height: auto;
+          max-width: 1190px;
+          overflow: hidden;
 
           &_image{
-            display: flex;
+            display: block;
             width: 100%;
-            max-height: 400px;
+            height: auto;
             max-width: 725px;
             min-width: 310px;
             justify-content: right;
@@ -141,12 +144,15 @@
             display: flex;
             margin-bottom: 15px;
             border-radius: 15px;
+            height: auto;
+            max-width: 1190px;
+            overflow: hidden;
 
             &_image{
-              display: flex;
+              display: block;
               width: 100%;
-              max-height: 400px;
               max-width: 725px;
+              height: auto;
               min-width: 310px;
               justify-content: left;
               border-radius: 15px 0px 0px 15px;
