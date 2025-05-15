@@ -212,7 +212,7 @@ nav ul {
 
 /* IDs */
 #about {
-  background: #37BF6C;
+  background: #426A46;
 }
 
 #dropDown {
@@ -371,7 +371,10 @@ nav ul {
   }
   .home-panel-card_image {
     display: flex;
+    width: 100%;
     max-height: 400px;
+    max-width: 725px;
+    min-width: 310px;
     justify-content: right;
     border-radius: 0px 15px 15px 0px;
   }
@@ -382,7 +385,10 @@ nav ul {
   }
   .home-panel-card-alt_image {
     display: flex;
+    width: 100%;
     max-height: 400px;
+    max-width: 725px;
+    min-width: 310px;
     justify-content: left;
     border-radius: 15px 0px 0px 15px;
   }
