@@ -103,38 +103,6 @@
         display: block;
       }
     
-      .card-text {
-
-          &_image {
-  
-              &_horizontal {
-                  width: 100%;
-                  max-width: 500px;
-                  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-                  transform: scale(1);
-                  width: 100%;
-  
-                  &:hover {
-                      transform: scale(1.75);
-                      box-shadow: 10px 10px 50px $secondary-font-color;
-                      animation: glowAnimation 1s ease-in-out;
-                  }
-              }
-  
-              &_vertical {
-                  width: 100%;
-                  max-height: 500px;
-                  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-  
-                  &:hover {
-                      transform: scale(1.75);
-                      box-shadow: 10px 10px 50px $secondary-font-color;
-                      animation: glowAnimation 1s ease-in-out;
-                  }
-              }
-          }
-
-      }
 
       .countdown_message {
         grid-column: 3 /5;
@@ -154,19 +122,33 @@
       .home-panel{
         margin-top: 5%;
 
-        &-card {
-          display: grid;
-          grid-template-columns: 33% 66%;
-          grid-template-rows: 80% 20%;
+        &-card{
+          display: flex;
+          margin-bottom: 15px;
+          border-radius: 15px;
+
+          &_image{
+            display: flex;
+            max-height: 400px;
+            justify-content: right;
+            border-radius: 0px 15px 15px 0px;
+          }
+
+          &-alt{
+            display: flex;
+            margin-bottom: 15px;
+            border-radius: 15px;
+
+            &_image{
+              display: flex;
+              max-height: 400px;
+              justify-content: left;
+              border-radius: 15px 0px 0px 15px;
+            }
+          }
         }
       }
 
-      .card{
-
-        &_image{
-          max-width: 50px;
-        }
-      }
     
       @keyframes glowAnimation {
       
@@ -229,7 +211,6 @@
         top: 20%;
         margin-top: 28.5px;
       }
-
 
     }
     

@@ -17,7 +17,7 @@ $transparent-primary-color: #44954BBF;
 $secondary-color: #CF573C;
 $darker-secondary-color: #953E2B;
 $transparent-secondary-color: #BF5137BF;
-$darker-tertiary-color: #37BF8E;
+$tertiary-color: #37BF8E;
 $darkest-tertiary-color: #17513C;
 $darker-quaternary-color: #957E44;
 $darkest-quaternary-color: #6A5F42;
@@ -104,7 +104,7 @@ nav {
     overflow: hidden;
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 3;
 
     a {
         display: block;
@@ -216,6 +216,7 @@ nav {
         display:flex;
         border-bottom: 10px;
         border-color: $medium-primary-color;
+        z-index: 3;
     }
       
     &_items {
@@ -256,14 +257,19 @@ nav {
 }
 
 .card-text {
-    grid-column: 2 /3;
+    padding: 20px;
+}
+
+.card-text-alt {
+    padding: 20px;
+    justify-content: right;
 }
 
 .home-panel {
     grid-column: 2 /3;
     background-color: $medium-primary-color;
-    padding: 15px;
-    border-radius: 20px;
+    padding: 20px;
+    border-radius: 25px;
 }
 
 .show {
@@ -277,6 +283,10 @@ nav {
 }
 
 /* IDs */
+
+#about{
+    background: $darker-primary-color;
+}
   
 #dropDown {
     position: absolute;
@@ -317,4 +327,12 @@ nav {
         font-weight: bolder;
         animation: logoGlow 0.25s ease-in;
     }
+}
+
+#merch {
+    background-color: $darkest-quaternary-color;
+}
+
+#petition {
+    background-color: $darkest-tertiary-color;
 }

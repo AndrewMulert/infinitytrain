@@ -47,7 +47,7 @@ nav {
   overflow: hidden;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 3;
 }
 nav a {
   display: block;
@@ -146,6 +146,7 @@ nav ul {
   display: flex;
   border-bottom: 10px;
   border-color: #89EC92;
+  z-index: 3;
 }
 .nav_items {
   list-style-type: none;
@@ -184,14 +185,19 @@ nav ul {
 }
 
 .card-text {
-  grid-column: 2/3;
+  padding: 20px;
+}
+
+.card-text-alt {
+  padding: 20px;
+  justify-content: right;
 }
 
 .home-panel {
   grid-column: 2/3;
   background-color: #89EC92;
-  padding: 15px;
-  border-radius: 20px;
+  padding: 20px;
+  border-radius: 25px;
 }
 
 .show {
@@ -205,6 +211,10 @@ nav ul {
 }
 
 /* IDs */
+#about {
+  background: #426A46;
+}
+
 #dropDown {
   position: absolute;
   top: 10px;
@@ -250,4 +260,12 @@ nav ul {
   box-shadow: 0px 0px 50px 60px #AAF0B0;
   font-weight: bolder;
   animation: logoGlow 0.25s ease-in;
+}
+
+#merch {
+  background-color: #6A5F42;
+}
+
+#petition {
+  background-color: #17513C;
 }/*# sourceMappingURL=base.css.map */
