@@ -7,6 +7,10 @@
     color: $text;
 }
 
+@mixin outer-glow($background: $neon-primary-color, $value: 0px, $value2: 15px) {
+    box-shadow: $value $value 50px $value2 $background;
+  }
+
 $lighter-primary-color: #AAF0B0;
 $medium-primary-color: #89EC92;
 $neon-primary-color: #25EE37;
@@ -18,10 +22,12 @@ $secondary-color: #CF573C;
 $darker-secondary-color: #953E2B;
 $transparent-secondary-color: #BF5137BF;
 $tertiary-color: #37BF8E;
-$darkest-tertiary-color: #17513C;
+$darker-tertiary-color: #17513C;
+$darkest-tertiary-color: #0B261D;
+$transparent-tertiary-color: #37BF8EBF;
 $darker-quaternary-color: #957E44;
 $darkest-quaternary-color: #6A5F42;
-$transparent-quaternary-color: #BF98BF;
+$transparent-quaternary-color: #BF9837BF;
 $primary-font-color: #FFFFFF;
 $secondary-font-color: #000000;
 
@@ -259,11 +265,47 @@ nav {
 
 .card-text {
     padding: 20px;
-}
 
-.card-text-alt {
+    h3 {
+        font-size: 20px;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+
+        &:visited{
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    &-alt {
     padding: 20px;
     justify-content: right;
+
+    h3 {
+        font-size: 20px;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+
+        &:visited{
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+    h3 {
+          font-size: 20px;
+    }
+
+    a{
+        text-decoration: none;
+    }
 }
 
 .home-panel {
@@ -275,6 +317,7 @@ nav {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    @include outer-glow;
 }
 
 .show {
@@ -291,6 +334,14 @@ nav {
 
 #about{
     background: $darker-primary-color;
+
+    .card-text-alt{
+        background-color: $transparent-primary-color;
+    }
+
+    h3{
+        color: $darkest-primary-color;
+    }
 }
   
 #dropDown {
@@ -336,8 +387,24 @@ nav {
 
 #merch {
     background-color: $darkest-quaternary-color;
+
+    .card-text{
+        background-color: $transparent-quaternary-color;
+    }
+
+    h3{
+        color: $primary-font-color;
+    }
 }
 
 #petition {
-    background-color: $darkest-tertiary-color;
+    background-color: $darker-tertiary-color;
+
+    .card-text{
+        background-color: $transparent-tertiary-color;
+    }
+
+    h3{
+        color: $darkest-tertiary-color;
+    }
 }

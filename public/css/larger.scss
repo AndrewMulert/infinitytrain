@@ -121,7 +121,7 @@
 
       .home-panel{
         max-width: 1175px;
-        min-height: 625px;
+        min-height: 610px;
         margin-bottom: 30px;
 
         &-card{
@@ -152,14 +152,26 @@
 
             &_image{
               display: block;
-              width: 100%;
-              max-width: 725px;
+              width: 90%;
               height: auto;
+              max-width: 725px;
               min-width: 310px;
               justify-content: left;
               border-radius: 15px 0px 0px 15px;
             }
           }
+        }
+      }
+
+      .card-text{
+        &-alt{
+          h3 {
+            font-size: 30px;
+          }
+        }
+        
+        h3 {
+          font-size: 30px;
         }
       }
 
@@ -228,29 +240,35 @@
 
     }
     
-
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 40em) {
   .home-panel{
-    min-height: 675px;
+    min-height: 635px;
   }
 }
 
+
 @media screen and (min-width: 60em) {
   .home-panel{
-    min-height: 825px;
+    min-height: 770px;
+  }
+}
+
+@media screen and (min-width: 65em) {
+  .home-panel{
+    min-height: 850px;
   }
 }
 
 @media screen and (min-width: 70em) {
   .home-panel{
-    min-height: 930px;
+    min-height: 1020px;
     margin-bottom: 70px;
   }
 }
 
 @media screen and (min-width: 80em) {
   .home-panel{
-    min-height: 1050px;
+    min-height: 1015px;
     margin-bottom: 90px;
   }
 }
