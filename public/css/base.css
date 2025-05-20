@@ -252,6 +252,9 @@ nav ul {
 #about h3 {
   color: #171B18;
 }
+#about a {
+  background-color: #334134;
+}
 
 #dropDown {
   position: absolute;
@@ -309,6 +312,9 @@ nav ul {
 #merch h3 {
   color: #FFFFFF;
 }
+#merch a {
+  background-color: #6A5F42;
+}
 
 #petition {
   background-color: #17513C;
@@ -318,4 +324,7 @@ nav ul {
 }
 #petition h3 {
   color: #0B261D;
+}
+#petition a {
+  background-color: #17513C;
 }/*# sourceMappingURL=base.css.map */

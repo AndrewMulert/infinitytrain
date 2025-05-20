@@ -15,7 +15,8 @@ $lighter-primary-color: #AAF0B0;
 $medium-primary-color: #89EC92;
 $neon-primary-color: #25EE37;
 $primary-color: #37BF6C;
-$darker-primary-color: #426A46;
+$dark-primary-color: #426A46;
+$darker-primary-color: #334134;
 $darkest-primary-color: #171B18;
 $transparent-primary-color: #44954BBF;
 $secondary-color: #CF573C;
@@ -84,7 +85,7 @@ article {
 
 body {
     margin: 0px;
-    @include colors($darker-primary-color, $secondary-font-color);
+    @include colors($dark-primary-color, $secondary-font-color);
 }
 
 footer {
@@ -333,7 +334,7 @@ nav {
 /* IDs */
 
 #about{
-    background: $darker-primary-color;
+    background: $dark-primary-color;
 
     .card-text-alt{
         background-color: $transparent-primary-color;
@@ -341,6 +342,10 @@ nav {
 
     h3{
         color: $darkest-primary-color;
+    }
+
+    a{
+        background-color: $darker-primary-color;
     }
 }
   
@@ -395,6 +400,10 @@ nav {
     h3{
         color: $primary-font-color;
     }
+
+    a{
+        background-color: $darkest-quaternary-color;
+    }
 }
 
 #petition {
@@ -406,5 +415,9 @@ nav {
 
     h3{
         color: $darkest-tertiary-color;
+    }
+
+    a{
+        background-color: $darker-tertiary-color;
     }
 }

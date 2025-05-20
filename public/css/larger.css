@@ -190,10 +190,34 @@ nav ul {
 .card-text h3 {
   font-size: 20px;
 }
-
+.card-text a {
+  text-decoration: none;
+  color: white;
+}
+.card-text a:visited {
+  text-decoration: none;
+  color: white;
+}
 .card-text-alt {
   padding: 20px;
   justify-content: right;
+}
+.card-text-alt h3 {
+  font-size: 20px;
+}
+.card-text-alt a {
+  text-decoration: none;
+  color: white;
+}
+.card-text-alt a:visited {
+  text-decoration: none;
+  color: white;
+}
+.card-text h3 {
+  font-size: 20px;
+}
+.card-text a {
+  text-decoration: none;
 }
 
 .home-panel {
@@ -205,6 +229,7 @@ nav ul {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0px 0px 50px 15px #25EE37;
 }
 
 .show {
@@ -220,6 +245,12 @@ nav ul {
 /* IDs */
 #about {
   background: #426A46;
+}
+#about .card-text-alt {
+  background-color: rgba(68, 149, 75, 0.7490196078);
+}
+#about h3 {
+  color: #171B18;
 }
 
 #dropDown {
@@ -278,6 +309,9 @@ nav ul {
 #merch h3 {
   color: #FFFFFF;
 }
+#merch a {
+  background-color: #6A5F42;
+}
 
 #petition {
   background-color: #17513C;
@@ -287,6 +321,9 @@ nav ul {
 }
 #petition h3 {
   color: #0B261D;
+}
+#petition a {
+  background-color: #17513C;
 }
 
 @media screen and (min-width: 40em) {
@@ -422,8 +459,16 @@ nav ul {
   .card-text-alt h3 {
     font-size: 30px;
   }
+  .card-text-alt a {
+    width: 100%;
+    padding: 20px;
+  }
   .card-text h3 {
     font-size: 30px;
+  }
+  .card-text a {
+    width: 100%;
+    padding: 20px;
   }
   @keyframes glowAnimation {
     0% {
