@@ -38,7 +38,7 @@ footer > p {
 main {
   display: grid;
   grid-template-columns: 10% 80% 10%;
-  grid-template-rows: 15% 80% 10%;
+  grid-template-rows: 18% 80% 10%;
 }
 
 nav {
@@ -80,13 +80,15 @@ nav ul {
 }
 
 .card-text {
-  padding: 15px;
-  min-width: 150px;
+  padding: 5px;
+  min-width: 215px;
   max-width: 345px;
   border-radius: 15px 15px 0px 0px;
 }
 .card-text h3 {
-  font-size: 20px;
+  font-size: 1.25em;
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
 .card-text a {
   text-decoration: none;
@@ -94,19 +96,22 @@ nav ul {
   border-radius: 15px;
   padding: 10px;
   width: 100%;
+  margin-bottom: 15px;
 }
 .card-text a:visited {
   text-decoration: none;
   color: white;
 }
 .card-text-alt {
-  padding: 15px;
+  padding: 5px;
   min-width: 215px;
   justify-content: right;
   border-radius: 0px 0px 15px 15px;
 }
 .card-text-alt h3 {
   font-size: 1.25em;
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
 .card-text-alt a {
   text-decoration: none;
@@ -114,16 +119,11 @@ nav ul {
   border-radius: 15px;
   padding: 10px;
   width: 100%;
+  margin-bottom: 15px;
 }
 .card-text-alt a:visited {
   text-decoration: none;
   color: white;
-}
-.card-text h3 {
-  font-size: 20px;
-}
-.card-text a {
-  text-decoration: none;
 }
 
 .countdown {
@@ -134,7 +134,8 @@ nav ul {
   grid-row: 2/2;
   background-color: rgba(191, 81, 55, 0.7490196078);
   min-height: 80px;
-  margin-top: -25px;
+  margin-top: -30px;
+  padding: 5px;
 }
 .countdown_message h2 {
   margin-top: 5px;
@@ -198,7 +199,7 @@ nav ul {
   background-color: #953E2B;
   color: #FFFFFF;
   text-align: center;
-  height: 175px;
+  height: 200px;
 }
 .hero_countdown label {
   font-size: 2.5em;
@@ -530,7 +531,7 @@ nav ul {
     grid-row: 1/4;
     margin-top: auto;
     margin-bottom: auto;
-    height: 100%;
+    height: 94%;
   }
   .countdown_message h2 {
     margin-top: 40px;
@@ -576,23 +577,27 @@ nav ul {
     justify-content: left;
     border-radius: 15px 0px 0px 15px;
   }
+  .card-text {
+    padding: 15px;
+  }
+  .card-text-alt {
+    padding: 15px;
+  }
   .card-text-alt h3 {
     font-size: 1.5em;
-    padding-bottom: 20px;
     margin: 15px;
   }
   .card-text-alt a {
     width: 100%;
-    padding: 20px;
+    padding: 15px;
   }
   .card-text h3 {
     font-size: 1.5em;
-    padding-bottom: 20px;
     margin: 15px;
   }
   .card-text a {
     width: 100%;
-    padding: 20px;
+    padding: 15px;
   }
   @keyframes glowAnimation {
     0% {
