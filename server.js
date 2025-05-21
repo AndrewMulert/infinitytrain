@@ -8,6 +8,7 @@ import supportRoute from './src/routes/support/index.js';
 import layouts from './src/middleware/layouts.js';
 import path from 'path';
 import { configureStaticPaths } from './src/utils/index.js'
+import { notFoundHandler, globalErrorHandler } from './src/middleware/error-handler.js';
 import { fileURLToPath } from 'url';
 
 
@@ -42,6 +43,9 @@ app.use('/about', aboutRoute);
 app.use('/contact', contactRoute);
 app.use('/merch', merchRoute);
 app.use('/support', supportRoute);
+
+app.use(notFoundHandler);
+app.use(globalErrorHandler);
 
 
 if (mode.includes('dev')) {

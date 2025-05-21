@@ -150,7 +150,7 @@ nav ul {
 }
 .nav_items {
   list-style-type: none;
-  border-bottom: 5px;
+  border-bottom: 20px;
   border-color: #89EC92;
   margin: 0;
   padding-left: 0px;
@@ -269,6 +269,11 @@ nav ul {
 #about a {
   background-color: #334134;
 }
+#about a:hover {
+  background-color: #AAF0B0;
+  color: #171B18;
+  font-weight: 700;
+}
 
 #dropDown {
   position: absolute;
@@ -292,6 +297,31 @@ nav ul {
   border-radius: 5px;
   transition: background-color 1s;
   border-radius: 25px;
+}
+
+#error_Number {
+  color: #FFFFFF;
+  text-shadow: 0px 0px 50px #25EE37;
+  grid-column: 2/2;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 300px;
+  margin-top: 0px;
+}
+#error_Reference {
+  color: #FFFFFF;
+  grid-column: 2/2;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 23px;
+  margin-top: 250px;
+}
+#error_Message {
+  color: #FFFFFF;
+  grid-column: 2/2;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -400px;
 }
 
 #hidden_link {
@@ -346,6 +376,11 @@ nav ul {
 }
 #petition a {
   background-color: #17513C;
+}
+#petition a:hover {
+  background-color: #85facf;
+  color: #0B261D;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 45em) {

@@ -11,6 +11,10 @@
     box-shadow: $value $value 50px $value2 $background;
   }
 
+@mixin text-glow($background: $neon-primary-color, $value: 0px, $value2: 15px) {
+    text-shadow: $value $value 50px $background;
+}
+
 $lighter-primary-color: #AAF0B0;
 $medium-primary-color: #89EC92;
 $neon-primary-color: #25EE37;
@@ -391,10 +395,41 @@ nav {
         @include border-values (solid, $darker-secondary-color, 2px, 5px);
         transition: background-color 1s;
         border-radius: 25px;
-      }
+    }
+}
+
+#error{
+
+    &_Number{
+        color: $primary-font-color;
+        @include text-glow;
+        grid-column: 2/ 2;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 300px;
+        font-weight: 300;
+        margin-top: 0px;
+    }
+
+    &_Reference{
+        color: $primary-font-color;
+        grid-column: 2/ 2;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 23px;
+        margin-top: 250px;
+    }
+
+    &_Message{
+         color: $primary-font-color;
+        grid-column: 2/ 2;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -400px;
+    }
 }
   
-  #hidden_link {
+#hidden_link {
     text-decoration: none;
     @include colors($darker-secondary-color, $primary-font-color);
 }
