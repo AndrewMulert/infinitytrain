@@ -39,7 +39,6 @@ main {
   display: grid;
   grid-template-columns: 10% 80% 10%;
   grid-template-rows: 10% 80% 10%;
-  margin-top: 30px;
 }
 
 nav {
@@ -102,7 +101,7 @@ nav ul {
   padding: 15px;
   min-width: 215px;
   justify-content: right;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 0px 0px 15px 15px;
 }
 .card-text-alt h3 {
   font-size: 1.25em;
@@ -123,14 +122,19 @@ nav ul {
   text-decoration: none;
 }
 
+.countdown {
+  background-color: #953E2B;
+}
 .countdown_message {
-  grid-column: 2/2;
-  grid-row: 3/2;
+  grid-column: 2/3;
+  grid-row: 3/3;
   background-color: rgba(191, 81, 55, 0.7490196078);
 }
 .countdown_timer {
   grid-column: 2/2;
   grid-row: 1/2;
+  max-height: 200px;
+  padding: 10px;
 }
 
 .footer_social {
@@ -175,13 +179,13 @@ nav ul {
   grid-column: 1/4;
   grid-row: 1/2;
   grid-template-columns: 10px auto 10px;
-  grid-template-rows: 50% 10% 40%;
+  grid-template-rows: 50% 50%;
   background-color: #953E2B;
   color: #FFFFFF;
   text-align: center;
 }
 .hero_countdown label {
-  font-size: 3em;
+  font-size: 2.5em;
   outline: #89EC92;
   outline-width: 2px;
   text-shadow: 0 5px 10px #AAF0B0;
