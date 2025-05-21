@@ -22,10 +22,13 @@ $transparent-primary-color: #44954BBF;
 $secondary-color: #CF573C;
 $darker-secondary-color: #953E2B;
 $transparent-secondary-color: #BF5137BF;
+$lighter-tertiary-color: #85facf;
 $tertiary-color: #37BF8E;
 $darker-tertiary-color: #17513C;
 $darkest-tertiary-color: #0B261D;
 $transparent-tertiary-color: #37BF8EBF;
+$lighter-quaternary-color: #FFF3D6 ;
+$quaternary-color: #F1CC6F;
 $darker-quaternary-color: #957E44;
 $darkest-quaternary-color: #6A5F42;
 $transparent-quaternary-color: #BF9837BF;
@@ -229,7 +232,7 @@ nav {
       
     &_items {
         list-style-type: none;
-        border-bottom: 5px;
+        border-bottom: 20px;
         border-color: $medium-primary-color;
         margin: 0;
         padding-left: 0px;
@@ -331,7 +334,7 @@ nav {
             border-style: solid;
             border-color: $medium-primary-color;
             border-color: $medium-primary-color;
-        border-width: 10px;
+            border-width: 10px;
             @include outer-glow;
         }
     }
@@ -362,6 +365,12 @@ nav {
 
     a{
         background-color: $darker-primary-color;
+
+        &:hover{
+            background-color: $lighter-primary-color;
+            color: $darkest-primary-color;
+            font-weight: 700
+        }
     }
 }
   
@@ -419,6 +428,12 @@ nav {
 
     a{
         background-color: $darkest-quaternary-color;
+
+        &:hover{
+            background-color: $lighter-quaternary-color;
+            color: $darkest-quaternary-color;
+            font-weight: 700
+        }
     }
 }
 
@@ -435,5 +450,11 @@ nav {
 
     a{
         background-color: $darker-tertiary-color;
+
+        &:hover{
+            background-color: $lighter-tertiary-color;
+            color: $darkest-tertiary-color;
+            font-weight: 700
+        }
     }
 }

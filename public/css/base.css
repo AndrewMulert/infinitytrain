@@ -150,7 +150,7 @@ nav ul {
 }
 .nav_items {
   list-style-type: none;
-  border-bottom: 5px;
+  border-bottom: 20px;
   border-color: #89EC92;
   margin: 0;
   padding-left: 0px;
@@ -269,6 +269,11 @@ nav ul {
 #about a {
   background-color: #334134;
 }
+#about a:hover {
+  background-color: #AAF0B0;
+  color: #171B18;
+  font-weight: 700;
+}
 
 #dropDown {
   position: absolute;
@@ -329,6 +334,11 @@ nav ul {
 #merch a {
   background-color: #6A5F42;
 }
+#merch a:hover {
+  background-color: #FFF3D6;
+  color: #6A5F42;
+  font-weight: 700;
+}
 
 #petition {
   background-color: #17513C;
@@ -341,4 +351,9 @@ nav ul {
 }
 #petition a {
   background-color: #17513C;
+}
+#petition a:hover {
+  background-color: #85facf;
+  color: #0B261D;
+  font-weight: 700;
 }/*# sourceMappingURL=base.css.map */

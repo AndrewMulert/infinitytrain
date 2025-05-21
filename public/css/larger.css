@@ -329,6 +329,11 @@ nav ul {
 #merch a {
   background-color: #6A5F42;
 }
+#merch a:hover {
+  background-color: #FFF3D6;
+  color: #6A5F42;
+  font-weight: 700;
+}
 
 #petition {
   background-color: #17513C;
