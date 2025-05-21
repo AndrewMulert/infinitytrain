@@ -551,6 +551,7 @@ nav ul {
     height: auto;
     max-width: 1190px;
     overflow: hidden;
+    /*padding: 10px*/
   }
   .home-panel-card_image {
     display: block;
@@ -567,6 +568,7 @@ nav ul {
     height: auto;
     max-width: 1190px;
     overflow: hidden;
+    /*padding: 10px*/
   }
   .home-panel-card-alt_image {
     display: block;
