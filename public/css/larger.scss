@@ -26,6 +26,7 @@
       }
     
       main {
+        grid-template-rows: 10% 80% 10%;
         height: 100%;
         margin-top: 30px;
       }
@@ -43,6 +44,10 @@
         margin-top: -35px;
         max-width: 97%;
         height: 16px;
+      }
+
+      .card-text{
+        border-radius: 15px 0px 0px 15px;
       }
     
       .footer_social{
@@ -95,6 +100,10 @@
             label{
               font-size: 3em;
             }
+
+            p{
+              font-size: 1em;
+            }
         }
       }
     
@@ -115,6 +124,10 @@
         margin-top: auto;
         margin-bottom: auto;
         height: 100%;
+
+        h2{
+          margin-top: 40px;
+        }
       }
 
       .countdown_timer {
@@ -129,7 +142,7 @@
 
         &-card{
           display: flex;
-          margin-bottom: 15px;
+          margin-bottom: 30px;
           height: auto;
           max-width: 1190px;
           overflow: hidden;
@@ -146,7 +159,7 @@
 
           &-alt{
             display: flex;
-            margin-bottom: 15px;
+            margin-bottom: 30px;
             height: auto;
             max-width: 1190px;
             overflow: hidden;
@@ -169,7 +182,7 @@
         &-alt{
           
           h3 {
-            font-size: 30px;
+            font-size: 1.5em;
             padding-bottom: 20px;
             margin: 15px;
           }
@@ -181,7 +194,7 @@
         }
         
         h3 {
-          font-size: 30px;
+          font-size: 1.5em;
           padding-bottom: 20px;
           margin: 15px;
         }
@@ -280,6 +293,25 @@
     max-width: 550px;
     padding: 250px 0;
     margin-bottom: 20px;
+  }
+
+  .hero_countdown{
+    p{
+      font-size: 1.5em;
+    }
+  }
+
+  .card-text{
+
+    h3{
+      font-size: 2em;
+    }
+
+    &-alt{
+      h3{
+        font-size: 2em;
+      }
+    }
   }
 }
 

@@ -38,7 +38,7 @@ footer > p {
 main {
   display: grid;
   grid-template-columns: 10% 80% 10%;
-  grid-template-rows: 10% 80% 10%;
+  grid-template-rows: 15% 80% 10%;
 }
 
 nav {
@@ -92,6 +92,8 @@ nav ul {
   text-decoration: none;
   color: white;
   border-radius: 15px;
+  padding: 10px;
+  width: 100%;
 }
 .card-text a:visited {
   text-decoration: none;
@@ -110,6 +112,8 @@ nav ul {
   text-decoration: none;
   color: white;
   border-radius: 15px;
+  padding: 10px;
+  width: 100%;
 }
 .card-text-alt a:visited {
   text-decoration: none;
@@ -126,15 +130,26 @@ nav ul {
   background-color: #953E2B;
 }
 .countdown_message {
-  grid-column: 2/3;
-  grid-row: 3/3;
+  grid-column: 1/4;
+  grid-row: 2/2;
   background-color: rgba(191, 81, 55, 0.7490196078);
+  min-height: 80px;
+  margin-top: -25px;
+}
+.countdown_message h2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1.25em;
 }
 .countdown_timer {
   grid-column: 2/2;
   grid-row: 1/2;
   max-height: 200px;
   padding: 10px;
+}
+.countdown_timer pre {
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .footer_social {
@@ -179,10 +194,11 @@ nav ul {
   grid-column: 1/4;
   grid-row: 1/2;
   grid-template-columns: 10px auto 10px;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 70% 30%;
   background-color: #953E2B;
   color: #FFFFFF;
   text-align: center;
+  height: 175px;
 }
 .hero_countdown label {
   font-size: 2.5em;
@@ -191,7 +207,7 @@ nav ul {
   text-shadow: 0 5px 10px #AAF0B0;
 }
 .hero_countdown p {
-  font-size: 1.5em;
+  font-size: 1em;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -204,7 +220,8 @@ nav ul {
   margin-right: auto;
 }
 .home-panel-card {
-  max-width: 375px;
+  margin-bottom: 15px;
+  max-width: 415px;
   border-radius: 30px;
   border-style: solid;
   border-color: #89EC92;
@@ -213,7 +230,8 @@ nav ul {
   overflow: hidden;
 }
 .home-panel-card-alt {
-  max-width: 375px;
+  margin-bottom: 15px;
+  max-width: 415px;
   border-radius: 30px;
   border-style: solid;
   border-color: #89EC92;
@@ -295,7 +313,7 @@ nav ul {
   background: #426A46;
 }
 #about .card-text-alt {
-  background-color: rgba(68, 149, 75, 0.7490196078);
+  background-color: #438a49;
 }
 #about h3 {
   color: #171B18;
@@ -383,10 +401,10 @@ nav ul {
 }
 
 #merch {
-  background-color: #6A5F42;
+  background-color: #957E44;
 }
 #merch .card-text {
-  background-color: rgba(191, 152, 55, 0.7490196078);
+  background-color: #a98a39;
 }
 #merch h3 {
   color: #FFFFFF;
@@ -401,10 +419,10 @@ nav ul {
 }
 
 #petition {
-  background-color: #17513C;
+  background-color: #37BF8E;
 }
 #petition .card-text {
-  background-color: rgba(55, 191, 142, 0.7490196078);
+  background-color: #2ea379;
 }
 #petition h3 {
   color: #0B261D;
