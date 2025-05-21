@@ -476,6 +476,7 @@ nav ul {
   .card-text-alt h3 {
     font-size: 30px;
     padding-bottom: 20px;
+    margin: 15px;
   }
   .card-text-alt a {
     width: 100%;
@@ -484,6 +485,7 @@ nav ul {
   .card-text h3 {
     font-size: 30px;
     padding-bottom: 20px;
+    margin: 15px;
   }
   .card-text a {
     width: 100%;
