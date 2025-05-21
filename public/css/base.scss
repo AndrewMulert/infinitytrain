@@ -265,7 +265,8 @@ nav {
 }
 
 .card-text {
-    padding: 20px;
+    padding: 15px;
+    min-width: 215px;
 
     h3 {
         font-size: 20px;
@@ -274,6 +275,7 @@ nav {
     a{
         text-decoration: none;
         color: white;
+        border-radius: 15px;
 
         &:visited{
             text-decoration: none;
@@ -286,12 +288,13 @@ nav {
     justify-content: right;
 
     h3 {
-        font-size: 20px;
+        font-size: 1.25em;
     }
 
     a{
         text-decoration: none;
         color: white;
+        border-radius: 15px;
 
         &:visited{
             text-decoration: none;
@@ -311,14 +314,27 @@ nav {
 
 .home-panel {
     grid-column: 2 /3;
-    background-color: $medium-primary-color;
     padding: 20px;
-    min-width: 650px;
     border-radius: 25px;
-    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    @include outer-glow;
+    
+    &-card{
+        border-radius: 30px;
+        border-style: solid;
+        border-color: $medium-primary-color;
+        border-width: 10px;
+        @include outer-glow;
+
+        &-alt{
+            border-radius: 30px;
+            border-style: solid;
+            border-color: $medium-primary-color;
+            border-color: $medium-primary-color;
+        border-width: 10px;
+            @include outer-glow;
+        }
+    }
 }
 
 .show {

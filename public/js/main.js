@@ -1,6 +1,6 @@
 year = document.querySelector("#year").textContent = new Date().getFullYear();
 
-let isSmallScreen = window.innerWidth < 768;
+let isSmallScreen = window.innerWidth < 640;
 
 document.getElementById("dropDown").addEventListener('click', menuToggle);
 const links = document.querySelectorAll('.page_link');

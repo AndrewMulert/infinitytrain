@@ -185,7 +185,8 @@ nav ul {
 }
 
 .card-text {
-  padding: 20px;
+  padding: 15px;
+  min-width: 215px;
 }
 .card-text h3 {
   font-size: 20px;
@@ -193,6 +194,7 @@ nav ul {
 .card-text a {
   text-decoration: none;
   color: white;
+  border-radius: 15px;
 }
 .card-text a:visited {
   text-decoration: none;
@@ -203,11 +205,12 @@ nav ul {
   justify-content: right;
 }
 .card-text-alt h3 {
-  font-size: 20px;
+  font-size: 1.25em;
 }
 .card-text-alt a {
   text-decoration: none;
   color: white;
+  border-radius: 15px;
 }
 .card-text-alt a:visited {
   text-decoration: none;
@@ -222,13 +225,24 @@ nav ul {
 
 .home-panel {
   grid-column: 2/3;
-  background-color: #89EC92;
   padding: 20px;
-  min-width: 650px;
   border-radius: 25px;
-  width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+.home-panel-card {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #89EC92;
+  border-width: 10px;
+  box-shadow: 0px 0px 50px 15px #25EE37;
+}
+.home-panel-card-alt {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #89EC92;
+  border-color: #89EC92;
+  border-width: 10px;
   box-shadow: 0px 0px 50px 15px #25EE37;
 }
 
