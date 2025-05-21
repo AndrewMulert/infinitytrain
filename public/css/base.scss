@@ -157,8 +157,69 @@ nav {
     }
 }
 
-.countdown_message {
-    background-color: $transparent-secondary-color;
+.card-text {
+    padding: 15px;
+    min-width: 150px;
+    max-width: 345px;
+    border-radius: 15px 15px 0px 0px;
+
+    h3 {
+        font-size: 20px;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+        border-radius: 15px;
+
+        &:visited{
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    &-alt {
+    padding: 15px;
+    min-width: 215px;
+    justify-content: right;
+    border-radius: 15px 15px 0px 0px;
+
+    h3 {
+        font-size: 1.25em;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+        border-radius: 15px;
+
+        &:visited{
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+    h3 {
+          font-size: 20px;
+    }
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.countdown{
+    &_message {
+        grid-column: 2/2;
+        grid-row: 3/2;
+        background-color: $transparent-secondary-color;
+    }
+
+    &_timer{
+        grid-column: 2/2;
+        grid-row: 1/2;
+    }
 }
 
 .footer_social {
@@ -203,11 +264,12 @@ nav {
     }
 
     &_countdown {
-        display: flex;
+        display: grid;
+        z-index: 2;
         grid-column: 1 /4;
         grid-row: 1 /2;
-        padding: 20px;
-        margin-top: -30px;
+        grid-template-columns: 10px auto 10px;
+        grid-template-rows: 50% 10% 40%;
         @include colors($darker-secondary-color, $primary-font-color);
         text-align: center;
 
@@ -222,6 +284,52 @@ nav {
             font-size: 1.5em;
             margin-top: 5px;
             margin-bottom: 5px;
+        }
+    }
+}
+
+.home-panel {
+    grid-column: 2 /3;
+    padding: 20px;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    &-card{
+        max-width: 375px;
+        border-radius: 30px;
+        border-style: solid;
+        border-color: $medium-primary-color;
+        border-width: 10px;
+        @include outer-glow;
+        overflow: hidden;
+
+        &-alt{
+            max-width: 375px;
+            border-radius: 30px;
+            border-style: solid;
+            border-color: $medium-primary-color;
+            border-width: 10px;
+            @include outer-glow;
+            overflow: hidden;
+
+            &_image{
+                display: block;
+                width: 100%;
+                height: auto;
+                max-width: 375px;
+                min-width: 150px;
+                border-radius: 15px 15px 0px 0px;
+            }
+        }
+
+        &_image{
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 375px;
+            min-width: 150px;
+            border-radius: 0px 0px 15px 15px;
         }
     }
 }
@@ -268,79 +376,6 @@ nav {
     &:hover {
         @include colors($primary-color, $secondary-font-color); 
         font-weight: 700;
-    }
-}
-
-.card-text {
-    padding: 15px;
-    min-width: 215px;
-
-    h3 {
-        font-size: 20px;
-    }
-
-    a{
-        text-decoration: none;
-        color: white;
-        border-radius: 15px;
-
-        &:visited{
-            text-decoration: none;
-            color: white;
-        }
-    }
-
-    &-alt {
-    padding: 20px;
-    justify-content: right;
-
-    h3 {
-        font-size: 1.25em;
-    }
-
-    a{
-        text-decoration: none;
-        color: white;
-        border-radius: 15px;
-
-        &:visited{
-            text-decoration: none;
-            color: white;
-        }
-    }
-}
-
-    h3 {
-          font-size: 20px;
-    }
-
-    a{
-        text-decoration: none;
-    }
-}
-
-.home-panel {
-    grid-column: 2 /3;
-    padding: 20px;
-    border-radius: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    
-    &-card{
-        border-radius: 30px;
-        border-style: solid;
-        border-color: $medium-primary-color;
-        border-width: 10px;
-        @include outer-glow;
-
-        &-alt{
-            border-radius: 30px;
-            border-style: solid;
-            border-color: $medium-primary-color;
-            border-color: $medium-primary-color;
-            border-width: 10px;
-            @include outer-glow;
-        }
     }
 }
 

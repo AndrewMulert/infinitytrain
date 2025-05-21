@@ -62,7 +62,7 @@
           min-width: 325px;
           width: 60%;
           max-width: 550px;
-          padding: 250px 0;
+          padding: 125px 0;
           margin-bottom: 20px;
 
           svg {
@@ -120,6 +120,7 @@
       }
 
       .home-panel{
+        min-height: 635px;
 
         &-card{
           display: flex;
@@ -142,7 +143,6 @@
             display: flex;
             margin-bottom: 15px;
             height: auto;
-            width: 100%;
             max-width: 1190px;
             overflow: hidden;
 
@@ -160,10 +160,8 @@
       }
 
       .card-text{
-        width: 100%;
 
         &-alt{
-          width: 100%;
           
           h3 {
             font-size: 30px;
@@ -253,30 +251,30 @@
       }
 
     }
-    
-@media screen and (min-width: 40em) {
-  .home-panel{
-    min-height: 635px;
-  }
-}
 
-
-@media screen and (min-width: 60em) {
-  .home-panel{
-    min-height: 770px;
-  }
-}
-
-@media screen and (min-width: 65em) {
-  .home-panel{
-    min-height: 850px;
+@media screen and (min-width: 55em) {
+  .hero_text{
+    position: absolute;
+    margin-right: auto;
+    left: 0;
+    min-width: 325px;
+    width: 60%;
+    max-width: 550px;
+    padding: 200px 0;
+    margin-bottom: 20px;
   }
 }
 
 @media screen and (min-width: 70em) {
-  .home-panel{
-    min-height: 1020px;
-    margin-bottom: 70px;
+  .hero_text{
+    position: absolute;
+    margin-right: auto;
+    left: 0;
+    min-width: 325px;
+    width: 60%;
+    max-width: 550px;
+    padding: 250px 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -287,21 +285,21 @@
   }
 }
 
-    @media screen and (min-width: 95em) {
-      .hero_text {
-        top: 9%;
-      }
+@media screen and (min-width: 95em) {
+  .hero_text {
+    top: 9%;
+  }
 
-      .hero_countdown {
-        top: 55%;
-      }
+  .hero_countdown {
+    top: 55%;
+  }
 
-      #hero_single {
-        top: 30%;
-        margin-top: 50px;
-      }
+  #hero_single {
+    top: 30%;
+    margin-top: 50px;
+  }
 
-      .home-panel{
+  .home-panel{
     min-height: 1125px;
   }
-    }
+}

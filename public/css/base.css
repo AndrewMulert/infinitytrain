@@ -80,8 +80,57 @@ nav ul {
   text-decoration: none;
 }
 
+.card-text {
+  padding: 15px;
+  min-width: 150px;
+  max-width: 345px;
+  border-radius: 15px 15px 0px 0px;
+}
+.card-text h3 {
+  font-size: 20px;
+}
+.card-text a {
+  text-decoration: none;
+  color: white;
+  border-radius: 15px;
+}
+.card-text a:visited {
+  text-decoration: none;
+  color: white;
+}
+.card-text-alt {
+  padding: 15px;
+  min-width: 215px;
+  justify-content: right;
+  border-radius: 15px 15px 0px 0px;
+}
+.card-text-alt h3 {
+  font-size: 1.25em;
+}
+.card-text-alt a {
+  text-decoration: none;
+  color: white;
+  border-radius: 15px;
+}
+.card-text-alt a:visited {
+  text-decoration: none;
+  color: white;
+}
+.card-text h3 {
+  font-size: 20px;
+}
+.card-text a {
+  text-decoration: none;
+}
+
 .countdown_message {
+  grid-column: 2/2;
+  grid-row: 3/2;
   background-color: rgba(191, 81, 55, 0.7490196078);
+}
+.countdown_timer {
+  grid-column: 2/2;
+  grid-row: 1/2;
 }
 
 .footer_social {
@@ -121,11 +170,12 @@ nav ul {
   width: 300px;
 }
 .hero_countdown {
-  display: flex;
+  display: grid;
+  z-index: 2;
   grid-column: 1/4;
   grid-row: 1/2;
-  padding: 20px;
-  margin-top: -30px;
+  grid-template-columns: 10px auto 10px;
+  grid-template-rows: 50% 10% 40%;
   background-color: #953E2B;
   color: #FFFFFF;
   text-align: center;
@@ -140,6 +190,48 @@ nav ul {
   font-size: 1.5em;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.home-panel {
+  grid-column: 2/3;
+  padding: 20px;
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home-panel-card {
+  max-width: 375px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #89EC92;
+  border-width: 10px;
+  box-shadow: 0px 0px 50px 15px #25EE37;
+  overflow: hidden;
+}
+.home-panel-card-alt {
+  max-width: 375px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #89EC92;
+  border-width: 10px;
+  box-shadow: 0px 0px 50px 15px #25EE37;
+  overflow: hidden;
+}
+.home-panel-card-alt_image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 375px;
+  min-width: 150px;
+  border-radius: 15px 15px 0px 0px;
+}
+.home-panel-card_image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 375px;
+  min-width: 150px;
+  border-radius: 0px 0px 15px 15px;
 }
 
 .nav_bar {
@@ -182,68 +274,6 @@ nav ul {
   background-color: #37BF6C;
   color: #000000;
   font-weight: 700;
-}
-
-.card-text {
-  padding: 15px;
-  min-width: 215px;
-}
-.card-text h3 {
-  font-size: 20px;
-}
-.card-text a {
-  text-decoration: none;
-  color: white;
-  border-radius: 15px;
-}
-.card-text a:visited {
-  text-decoration: none;
-  color: white;
-}
-.card-text-alt {
-  padding: 20px;
-  justify-content: right;
-}
-.card-text-alt h3 {
-  font-size: 1.25em;
-}
-.card-text-alt a {
-  text-decoration: none;
-  color: white;
-  border-radius: 15px;
-}
-.card-text-alt a:visited {
-  text-decoration: none;
-  color: white;
-}
-.card-text h3 {
-  font-size: 20px;
-}
-.card-text a {
-  text-decoration: none;
-}
-
-.home-panel {
-  grid-column: 2/3;
-  padding: 20px;
-  border-radius: 25px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.home-panel-card {
-  border-radius: 30px;
-  border-style: solid;
-  border-color: #89EC92;
-  border-width: 10px;
-  box-shadow: 0px 0px 50px 15px #25EE37;
-}
-.home-panel-card-alt {
-  border-radius: 30px;
-  border-style: solid;
-  border-color: #89EC92;
-  border-color: #89EC92;
-  border-width: 10px;
-  box-shadow: 0px 0px 50px 15px #25EE37;
 }
 
 .show {
