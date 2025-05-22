@@ -38,7 +38,7 @@ footer > p {
 main {
   display: grid;
   grid-template-columns: 10% 80% 10%;
-  grid-template-rows: 18% 80% 10%;
+  grid-template-rows: 1fr;
 }
 
 nav {
@@ -275,6 +275,10 @@ nav ul {
 .nav_links {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+.nav_mini {
+  grid-column: 2/3;
+  grid-row: 2/1;
 }
 
 .page_link {

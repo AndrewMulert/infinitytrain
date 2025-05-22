@@ -112,7 +112,7 @@ footer {
 main {
     display: grid;
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 18% 80% 10%;
+    grid-template-rows: 1fr;
 }
 
 
@@ -381,6 +381,11 @@ nav {
     &_links{
         padding-top: 5px;
         padding-bottom: 5px;
+    }
+
+    &_mini{
+        grid-column: 2 /3;
+        grid-row: 2 /1;
     }
 }
 
