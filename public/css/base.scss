@@ -160,9 +160,8 @@ nav {
 }
 
 .card-text {
-    padding: 5px;
+    padding: 15px;
     min-width: 215px;
-    max-width: 345px;
     border-radius: 15px 15px 0px 0px;
 
     h3 {
@@ -186,7 +185,7 @@ nav {
     }
 
     &-alt {
-        padding: 5px;
+        padding: 15px;
         min-width: 215px;
         justify-content: right;
         border-radius: 0px 0px 15px 15px;
@@ -236,6 +235,7 @@ nav {
         grid-row: 1/2;
         max-height: 200px;
         padding: 10px;
+
 
         pre {
             margin-top: 6px;
@@ -297,7 +297,7 @@ nav {
         height: 200px;
 
         label {
-            font-size: 2.5em;
+            font-size: 2.25em;
             outline: $medium-primary-color;
             outline-width: 2px;
             text-shadow: 0 5px 10px $lighter-primary-color;
@@ -342,7 +342,6 @@ nav {
                 display: block;
                 width: 100%;
                 height: auto;
-                max-width: 375px;
                 min-width: 150px;
                 border-radius: 15px 15px 0px 0px;
             }
@@ -352,7 +351,6 @@ nav {
             display: block;
             width: 100%;
             height: auto;
-            max-width: 375px;
             min-width: 150px;
             border-radius: 0px 0px 15px 15px;
         }
