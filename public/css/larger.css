@@ -38,7 +38,7 @@ footer > p {
 main {
   display: grid;
   grid-template-columns: 10% 80% 10%;
-  grid-template-rows: 18% 80% 10%;
+  grid-template-rows: 16% 80% 10%;
 }
 
 nav {
@@ -201,7 +201,7 @@ nav ul {
   height: 200px;
 }
 .hero_countdown label {
-  font-size: 2em;
+  font-size: 2.25em;
   outline: #89EC92;
   outline-width: 2px;
   text-shadow: 0 5px 10px #AAF0B0;
@@ -221,7 +221,6 @@ nav ul {
 }
 .home-panel-card {
   margin-bottom: 15px;
-  max-width: 415px;
   border-radius: 30px;
   border-style: solid;
   border-color: #89EC92;
@@ -231,7 +230,6 @@ nav ul {
 }
 .home-panel-card-alt {
   margin-bottom: 15px;
-  max-width: 415px;
   border-radius: 30px;
   border-style: solid;
   border-color: #89EC92;

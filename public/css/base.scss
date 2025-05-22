@@ -219,7 +219,7 @@ nav {
         grid-column: 1/4;
         grid-row: 2/2;
         background-color: $transparent-secondary-color;
-        min-height: 80px;
+        min-height: 85px;
         margin-top: -30px;
         padding: 5px;
 
@@ -294,7 +294,7 @@ nav {
         grid-template-rows: 70% 30%;
         @include colors($darker-secondary-color, $primary-font-color);
         text-align: center;
-        height: 200px;
+        height: 210px;
 
         label {
             font-size: 2.25em;
@@ -320,7 +320,6 @@ nav {
     
     &-card{
         margin-bottom: 15px;
-        max-width: 415px;
         border-radius: 30px;
         border-style: solid;
         border-color: $medium-primary-color;
@@ -330,7 +329,6 @@ nav {
 
         &-alt{
             margin-bottom: 15px;
-            max-width: 415px;
             border-radius: 30px;
             border-style: solid;
             border-color: $medium-primary-color;

@@ -132,7 +132,7 @@ nav ul {
   grid-column: 1/4;
   grid-row: 2/2;
   background-color: rgba(191, 81, 55, 0.7490196078);
-  min-height: 80px;
+  min-height: 85px;
   margin-top: -30px;
   padding: 5px;
 }
@@ -198,7 +198,7 @@ nav ul {
   background-color: #953E2B;
   color: #FFFFFF;
   text-align: center;
-  height: 200px;
+  height: 210px;
 }
 .hero_countdown label {
   font-size: 2.25em;
@@ -221,7 +221,6 @@ nav ul {
 }
 .home-panel-card {
   margin-bottom: 15px;
-  max-width: 415px;
   border-radius: 30px;
   border-style: solid;
   border-color: #89EC92;
@@ -231,7 +230,6 @@ nav ul {
 }
 .home-panel-card-alt {
   margin-bottom: 15px;
-  max-width: 415px;
   border-radius: 30px;
   border-style: solid;
   border-color: #89EC92;
