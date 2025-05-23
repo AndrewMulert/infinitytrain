@@ -38,7 +38,7 @@ footer > p {
 main {
   display: grid;
   grid-template-columns: 10% 80% 10%;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr auto;
 }
 
 nav {
@@ -58,6 +58,91 @@ nav ul {
 }
 
 /* classes */
+.about-panel {
+  grid-column: 2/3;
+  grid-row: 2/2;
+}
+.about-panel-card {
+  background-color: #438a49;
+  margin-bottom: 15px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #89EC92;
+  border-width: 10px;
+  box-shadow: 0px 0px 50px 15px #25EE37;
+  overflow: hidden;
+}
+.about-panel-card-text {
+  padding: 15px;
+  min-width: 215px;
+  border-radius: 15px 15px 0px 0px;
+}
+.about-panel-card-text h3 {
+  font-size: 1.25em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.about-panel-card-text a {
+  text-decoration: none;
+  color: white;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.about-panel-card-text a:visited {
+  text-decoration: none;
+  color: white;
+}
+.about-panel-card-text-alt {
+  padding: 15px;
+  min-width: 215px;
+  justify-content: right;
+  border-radius: 0px 0px 15px 15px;
+}
+.about-panel-card-text-alt h3 {
+  font-size: 1.25em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.about-panel-card-text-alt a {
+  text-decoration: none;
+  color: white;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.about-panel-card-text-alt a:visited {
+  text-decoration: none;
+  color: white;
+}
+.about-panel-card-alt {
+  margin-bottom: 15px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #89EC92;
+  border-width: 10px;
+  box-shadow: 0px 0px 50px 15px #25EE37;
+  overflow: hidden;
+}
+.about-panel-card-alt-image {
+  display: block;
+  height: 100%;
+  width: auto;
+  min-height: 150px;
+  max-height: 675px;
+  border-radius: 15px 15px 0px 0px;
+}
+.about-panel-card-image {
+  display: block;
+  height: 100%;
+  width: auto;
+  min-height: 150px;
+  max-height: 675px;
+  border-radius: 0px 0px 15px 15px;
+}
+
 .banner {
   grid-column: 2/span 3;
   grid-row: 1/span 1;
@@ -77,52 +162,6 @@ nav ul {
 }
 .card_link:visited {
   text-decoration: none;
-}
-
-.card-text {
-  padding: 15px;
-  min-width: 215px;
-  border-radius: 15px 15px 0px 0px;
-}
-.card-text h3 {
-  font-size: 1.25em;
-  margin-top: 0px;
-  margin-bottom: 20px;
-}
-.card-text a {
-  text-decoration: none;
-  color: white;
-  border-radius: 15px;
-  padding: 10px;
-  width: 100%;
-  margin-bottom: 15px;
-}
-.card-text a:visited {
-  text-decoration: none;
-  color: white;
-}
-.card-text-alt {
-  padding: 15px;
-  min-width: 215px;
-  justify-content: right;
-  border-radius: 0px 0px 15px 15px;
-}
-.card-text-alt h3 {
-  font-size: 1.25em;
-  margin-top: 0px;
-  margin-bottom: 20px;
-}
-.card-text-alt a {
-  text-decoration: none;
-  color: white;
-  border-radius: 15px;
-  padding: 10px;
-  width: 100%;
-  margin-bottom: 15px;
-}
-.card-text-alt a:visited {
-  text-decoration: none;
-  color: white;
 }
 
 .countdown {
@@ -228,6 +267,51 @@ nav ul {
   box-shadow: 0px 0px 50px 15px #25EE37;
   overflow: hidden;
 }
+.home-panel-card-text {
+  padding: 15px;
+  min-width: 215px;
+  border-radius: 15px 15px 0px 0px;
+}
+.home-panel-card-text h3 {
+  font-size: 1.25em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.home-panel-card-text a {
+  text-decoration: none;
+  color: white;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.home-panel-card-text a:visited {
+  text-decoration: none;
+  color: white;
+}
+.home-panel-card-text-alt {
+  padding: 15px;
+  min-width: 215px;
+  justify-content: right;
+  border-radius: 0px 0px 15px 15px;
+}
+.home-panel-card-text-alt h3 {
+  font-size: 1.25em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.home-panel-card-text-alt a {
+  text-decoration: none;
+  color: white;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.home-panel-card-text-alt a:visited {
+  text-decoration: none;
+  color: white;
+}
 .home-panel-card-alt {
   margin-bottom: 15px;
   border-radius: 30px;
@@ -237,14 +321,14 @@ nav ul {
   box-shadow: 0px 0px 50px 15px #25EE37;
   overflow: hidden;
 }
-.home-panel-card-alt_image {
+.home-panel-card-alt-image {
   display: block;
   width: 100%;
   height: auto;
   min-width: 150px;
   border-radius: 15px 15px 0px 0px;
 }
-.home-panel-card_image {
+.home-panel-card-image {
   display: block;
   width: 100%;
   height: auto;
@@ -278,7 +362,42 @@ nav ul {
 }
 .nav_mini {
   grid-column: 2/3;
-  grid-row: 2/1;
+  grid-row: 2/2;
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+.nav_mini_main {
+  display: flex;
+  background-color: #AAF0B0;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+.nav_mini_main a {
+  padding: 10px;
+  font-size: 1em;
+  margin-right: 5.2px;
+  margin-left: 5.2px;
+}
+.nav_mini_page {
+  display: flex;
+  background-color: #953E2B;
+  border-radius: 0px 0px 15px 15px;
+  padding: 10px;
+  width: 100%;
+  max-width: 425px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+.nav_mini_page a {
+  padding: 5px;
+  margin-right: 3.5px;
+  margin-left: 3.5px;
 }
 
 .page_link {
@@ -438,8 +557,8 @@ nav ul {
 
 @media screen and (min-width: 45em) {
   /*article{
-      grid-column: 2 / span 3;
-      grid-row: 1 / span 2;
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 2;
   }*/
   footer {
     display: flex;
@@ -464,8 +583,21 @@ nav ul {
     max-width: 97%;
     height: 16px;
   }
-  .card-text {
-    border-radius: 15px 0px 0px 15px;
+  .countdown_message {
+    grid-column: 3/5;
+    grid-row: 1/4;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 94%;
+  }
+  .countdown_message h2 {
+    margin-top: 40px;
+  }
+  .countdown_timer {
+    grid-column: 1/3;
+    grid-row: 1/4;
+    margin-top: auto;
+    margin-bottom: auto;
   }
   .footer_social {
     text-align: right;
@@ -515,30 +647,6 @@ nav ul {
   .hero_countdown p {
     font-size: 1em;
   }
-  .nav_link_container {
-    float: left;
-    margin-left: 0%;
-    width: 20%;
-  }
-  .page_link {
-    display: block;
-  }
-  .countdown_message {
-    grid-column: 3/5;
-    grid-row: 1/4;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 94%;
-  }
-  .countdown_message h2 {
-    margin-top: 40px;
-  }
-  .countdown_timer {
-    grid-column: 1/3;
-    grid-row: 1/4;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
   .home-panel {
     min-height: 635px;
   }
@@ -550,7 +658,34 @@ nav ul {
     overflow: hidden;
     /*padding: 10px*/
   }
-  .home-panel-card_image {
+  .home-panel-card-text {
+    border-radius: 15px 0px 0px 15px;
+    padding: 15px;
+    padding-bottom: 25px;
+  }
+  .home-panel-card-text-alt {
+    padding: 15px;
+    padding-bottom: 25px;
+  }
+  .home-panel-card-text-alt h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  .home-panel-card-text-alt a {
+    width: 100%;
+    padding: 15px;
+  }
+  .home-panel-card-text h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  .home-panel-card-text a {
+    width: 100%;
+    padding: 15px;
+  }
+  .home-panel-card-image {
     display: block;
     width: 100%;
     height: auto;
@@ -567,7 +702,7 @@ nav ul {
     overflow: hidden;
     /*padding: 10px*/
   }
-  .home-panel-card-alt_image {
+  .home-panel-card-alt-image {
     display: block;
     width: 100%;
     height: auto;
@@ -576,31 +711,18 @@ nav ul {
     justify-content: left;
     border-radius: 15px 0px 0px 15px;
   }
-  .card-text {
-    padding: 15px;
-    padding-bottom: 25px;
+  .nav_link_container {
+    float: left;
+    margin-left: 0%;
+    width: 20%;
   }
-  .card-text-alt {
-    padding: 15px;
-    padding-bottom: 25px;
+  .nav_mini_main a {
+    font-size: 1.125em;
+    margin-right: 0.25px;
+    margin-left: 0.25px;
   }
-  .card-text-alt h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-  }
-  .card-text-alt a {
-    width: 100%;
-    padding: 15px;
-  }
-  .card-text h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-  }
-  .card-text a {
-    width: 100%;
-    padding: 15px;
+  .page_link {
+    display: block;
   }
   @keyframes glowAnimation {
     0% {
@@ -698,11 +820,11 @@ nav ul {
   .hero_countdown {
     top: 55%;
   }
+  .home-panel {
+    min-height: 1125px;
+  }
   #hero_single {
     top: 30%;
     margin-top: 50px;
-  }
-  .home-panel {
-    min-height: 1125px;
   }
 }/*# sourceMappingURL=larger.css.map */
