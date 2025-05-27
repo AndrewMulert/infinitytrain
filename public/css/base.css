@@ -37,7 +37,7 @@ footer > p {
 main {
   display: grid;
   grid-template-columns: 10% 80% 10%;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr auto 60px;
 }
 
 nav {
@@ -63,7 +63,7 @@ nav ul {
 }
 .about-panel-card {
   background-color: #438a49;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   border-radius: 30px;
   border-style: solid;
   border-color: #89EC92;
@@ -117,7 +117,7 @@ nav ul {
   color: white;
 }
 .about-panel-card-alt {
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   border-radius: 30px;
   border-style: solid;
   border-color: #89EC92;
@@ -371,16 +371,20 @@ nav ul {
   border-radius: 15px;
   padding: 10px;
   width: 100%;
-  max-width: 450px;
+  max-width: 310px;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
 }
 .nav_mini_main a {
-  padding: 10px;
-  font-size: 1em;
-  margin-right: 5.2px;
-  margin-left: 5.2px;
+  padding: 5px;
+  font-size: 0.95em;
+  color: #171B18;
+  text-decoration: none;
+  text-align: center;
+}
+.nav_mini_main a:hover {
+  text-decoration: underline;
 }
 .nav_mini_page {
   display: flex;
@@ -388,7 +392,7 @@ nav ul {
   border-radius: 0px 0px 15px 15px;
   padding: 10px;
   width: 100%;
-  max-width: 425px;
+  max-width: 265px;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
@@ -397,6 +401,13 @@ nav ul {
   padding: 5px;
   margin-right: 3.5px;
   margin-left: 3.5px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.75em;
+  text-align: center;
+}
+.nav_mini_page a:hover {
+  text-decoration: underline;
 }
 
 .page_link {
@@ -430,7 +441,7 @@ nav ul {
 #about {
   background: #426A46;
 }
-#about .card-text-alt {
+#about .home-panel-card-text-alt {
   background-color: #438a49;
 }
 #about h3 {
@@ -521,7 +532,7 @@ nav ul {
 #merch {
   background-color: #957E44;
 }
-#merch .card-text {
+#merch .home-panel-card-text {
   background-color: #a98a39;
 }
 #merch h3 {
@@ -539,7 +550,7 @@ nav ul {
 #petition {
   background-color: #37BF8E;
 }
-#petition .card-text {
+#petition .home-panel-card-text {
   background-color: #2ea379;
 }
 #petition h3 {
@@ -552,4 +563,25 @@ nav ul {
   background-color: #85facf;
   color: #0B261D;
   font-weight: 700;
+}
+
+#return-menu {
+  grid-column: 2/2;
+  grid-row: 3/3;
+}
+#return-menu a {
+  background-color: #AAF0B0;
+  color: #171B18;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-left: 43%;
+  margin-right: 43%;
+  text-decoration: none;
+  font-weight: bold;
+}
+#return-menu a:hover {
+  color: #FFFFFF;
+  background-color: #334134;
+  box-shadow: 0px 0px 50px 5px #25EE37;
 }/*# sourceMappingURL=base.css.map */

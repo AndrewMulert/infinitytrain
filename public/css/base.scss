@@ -94,7 +94,7 @@ footer {
 main {
     display: grid;
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 1fr auto 60px;
 }
 
 
@@ -125,7 +125,7 @@ nav {
 
     &-card{
         background-color: $mixed-primary-color;
-        margin-bottom: 15px;
+        margin-bottom: 50px;
         border-radius: 30px;
         border-style: solid;
         border-color: $medium-primary-color;
@@ -187,7 +187,7 @@ nav {
         }
 
         &-alt{
-            margin-bottom: 15px;
+            margin-bottom: 50px;
             border-radius: 30px;
             border-style: solid;
             border-color: $medium-primary-color;
@@ -474,16 +474,21 @@ nav {
             border-radius: 15px;
             padding: 10px;
             width: 100%;
-            max-width: 450px;
+            max-width: 310px;
             margin-left: auto;
             margin-right: auto;
             overflow: hidden;
 
             a{
-                padding: 10px;
-                font-size: 1em;
-                margin-right: 5.2px;
-                margin-left: 5.2px;
+                padding: 5px;
+                font-size: 0.95em;
+                color: $darkest-primary-color;
+                text-decoration: none;
+                text-align: center;
+
+                &:hover{
+                    text-decoration: underline;
+                }
             }
         }
 
@@ -493,7 +498,7 @@ nav {
             border-radius: 0px 0px 15px 15px;
             padding: 10px;
             width: 100%;
-            max-width: 425px;
+            max-width: 265px;
             margin-left: auto;
             margin-right: auto;
             overflow: hidden;
@@ -502,6 +507,14 @@ nav {
                 padding: 5px;
                 margin-right: 3.5px;
                 margin-left: 3.5px;
+                color: $primary-font-color;
+                text-decoration: none;
+                font-size: 0.75em;
+                text-align: center;
+
+                &:hover{
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -538,7 +551,7 @@ nav {
 #about{
     background: $dark-primary-color;
 
-    .card-text-alt{
+    .home-panel-card-text-alt{
         background-color: $mixed-primary-color;
     }
 
@@ -632,7 +645,7 @@ nav {
 #merch {
     background-color: $darker-quaternary-color;
 
-    .card-text{
+    .home-panel-card-text{
         background-color: $mixed-quaternary-color;
     }
 
@@ -654,7 +667,7 @@ nav {
 #petition {
     background-color: $tertiary-color;
 
-    .card-text{
+    .home-panel-card-text{
         background-color: $mixed-tertiary-color;
     }
 
@@ -669,6 +682,29 @@ nav {
             background-color: $lighter-tertiary-color;
             color: $darkest-tertiary-color;
             font-weight: 700
+        }
+    }
+}
+
+#return-menu{
+    grid-column: 2/2;
+    grid-row: 3/3;
+
+    a{
+        background-color: $lighter-primary-color;
+        color: $darkest-primary-color;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        margin-left: 43%;
+        margin-right: 43%;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover{
+            color: $primary-font-color;
+            background-color: $darker-primary-color;
+            @include outer-glow($neon-primary-color, 0px, 5px);
         }
     }
 }

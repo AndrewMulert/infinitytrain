@@ -197,17 +197,36 @@
     }
   }
     
-  .nav_link_container {
-    float: left;
-    margin-left: 0%;
-    width: 20%;
-  }
+  .nav{
+    &_link{
 
-  .nav_mini_main{
-    a{
-      font-size: 1.125em;
-      margin-right: 0.25px;
-      margin-left: 0.25px;
+      &_container {
+        float: left;
+        margin-left: 0%;
+        width: 20%;
+      }
+    }
+
+    &_mini{
+
+      &_main{
+        max-width: 450px;
+        
+        a{
+          font-size: 1.125em;
+          margin-right: 0.25px;
+          margin-left: 0.25px;
+          padding: 10px;
+        }
+      }
+
+      &_page{
+        max-width: 425px;
+
+        a{
+          font-size: 1em;
+        }
+      }
     }
   }
     
