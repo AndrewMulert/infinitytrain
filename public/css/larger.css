@@ -578,7 +578,12 @@ nav ul {
   margin-left: 43%;
   margin-right: 43%;
   text-decoration: none;
-  font-weight: 500px;
+  font-weight: bold;
+}
+#return-menu a:hover {
+  color: #FFFFFF;
+  background-color: #334134;
+  box-shadow: 0px 0px 50px 5px #25EE37;
 }
 
 @media screen and (min-width: 45em) {
