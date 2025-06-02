@@ -132,21 +132,30 @@ nav {
         border-width: 10px;
         @include outer-glow;
         overflow: hidden;
+        display: grid;
+        grid-template-rows: 1fr auto;
 
         &-text{
             padding: 15px;
             min-width: 215px;
             border-radius: 15px 15px 0px 0px;
+            color: $primary-font-color;
 
             h3 {
                 font-size: 1.25em;
                 margin-top: 0px;
                 margin-bottom: 20px;
+                text-align: center;
             }
 
-            a{
+            p {
+                text-indent: 20px;
+            }
+
+            a {
                 text-decoration: none;
                 color: white;
+                background-color: $darker-primary-color;
                 border-radius: 15px;
                 padding: 10px;
                 width: 100%;
@@ -157,22 +166,43 @@ nav {
                     color: white;
                 }
             }
+        }
 
-            &-alt {
+        &-alt{
+            background-color: $mixed-primary-color;
+            margin-bottom: 50px;
+            border-radius: 30px;
+            border-style: solid;
+            border-color: $medium-primary-color;
+            border-width: 10px;
+            @include outer-glow;
+            overflow: hidden;
+            align-items: start;
+            display: grid;
+            grid-template-rows: auto 1fr;
+
+            &-text{
                 padding: 15px;
                 min-width: 215px;
                 justify-content: right;
                 border-radius: 0px 0px 15px 15px;
+                color: $primary-font-color;
 
                 h3 {
                     font-size: 1.25em;
                     margin-top: 0px;
                     margin-bottom: 20px;
+                    text-align: center;
                 }
 
-                a{
+                p {
+                text-indent: 20px;
+                }
+
+                a {
                     text-decoration: none;
                     color: white;
+                    background-color: $darker-primary-color;
                     border-radius: 15px;
                     padding: 10px;
                     width: 100%;
@@ -184,33 +214,18 @@ nav {
                     }
                 }
             }
-        }
-
-        &-alt{
-            margin-bottom: 50px;
-            border-radius: 30px;
-            border-style: solid;
-            border-color: $medium-primary-color;
-            border-width: 10px;
-            @include outer-glow;
-            overflow: hidden;
 
             &-image{
                 display: block;
-                height: 100%;
-                width: auto;
-                min-height: 150px;
-                max-height: 675px;
+                width: 100%;
                 border-radius: 15px 15px 0px 0px;
             }
         }
+        
 
         &-image{
             display: block;
-            height: 100%;
-            width: auto;
-            min-height: 150px;
-            max-height: 675px;
+            width: 100%;
             border-radius: 0px 0px 15px 15px;
         }
     }
@@ -696,8 +711,7 @@ nav {
         padding: 20px;
         border-radius: 15px;
         text-align: center;
-        margin-left: 43%;
-        margin-right: 43%;
+        margin-left: 35%;
         text-decoration: none;
         font-weight: bold;
 

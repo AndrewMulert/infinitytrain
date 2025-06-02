@@ -70,20 +70,28 @@ nav ul {
   border-width: 10px;
   box-shadow: 0px 0px 50px 15px #25EE37;
   overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 .about-panel-card-text {
   padding: 15px;
   min-width: 215px;
   border-radius: 15px 15px 0px 0px;
+  color: #FFFFFF;
 }
 .about-panel-card-text h3 {
   font-size: 1.25em;
   margin-top: 0px;
   margin-bottom: 20px;
+  text-align: center;
+}
+.about-panel-card-text p {
+  text-indent: 20px;
 }
 .about-panel-card-text a {
   text-decoration: none;
   color: white;
+  background-color: #334134;
   border-radius: 15px;
   padding: 10px;
   width: 100%;
@@ -93,30 +101,8 @@ nav ul {
   text-decoration: none;
   color: white;
 }
-.about-panel-card-text-alt {
-  padding: 15px;
-  min-width: 215px;
-  justify-content: right;
-  border-radius: 0px 0px 15px 15px;
-}
-.about-panel-card-text-alt h3 {
-  font-size: 1.25em;
-  margin-top: 0px;
-  margin-bottom: 20px;
-}
-.about-panel-card-text-alt a {
-  text-decoration: none;
-  color: white;
-  border-radius: 15px;
-  padding: 10px;
-  width: 100%;
-  margin-bottom: 15px;
-}
-.about-panel-card-text-alt a:visited {
-  text-decoration: none;
-  color: white;
-}
 .about-panel-card-alt {
+  background-color: #438a49;
   margin-bottom: 50px;
   border-radius: 30px;
   border-style: solid;
@@ -124,21 +110,47 @@ nav ul {
   border-width: 10px;
   box-shadow: 0px 0px 50px 15px #25EE37;
   overflow: hidden;
+  align-items: start;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.about-panel-card-alt-text {
+  padding: 15px;
+  min-width: 215px;
+  justify-content: right;
+  border-radius: 0px 0px 15px 15px;
+  color: #FFFFFF;
+}
+.about-panel-card-alt-text h3 {
+  font-size: 1.25em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.about-panel-card-alt-text p {
+  text-indent: 20px;
+}
+.about-panel-card-alt-text a {
+  text-decoration: none;
+  color: white;
+  background-color: #334134;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.about-panel-card-alt-text a:visited {
+  text-decoration: none;
+  color: white;
 }
 .about-panel-card-alt-image {
   display: block;
-  height: 100%;
-  width: auto;
-  min-height: 150px;
-  max-height: 675px;
+  width: 100%;
   border-radius: 15px 15px 0px 0px;
 }
 .about-panel-card-image {
   display: block;
-  height: 100%;
-  width: auto;
-  min-height: 150px;
-  max-height: 675px;
+  width: 100%;
   border-radius: 0px 0px 15px 15px;
 }
 
@@ -575,8 +587,7 @@ nav ul {
   padding: 20px;
   border-radius: 15px;
   text-align: center;
-  margin-left: 43%;
-  margin-right: 43%;
+  margin-left: 35%;
   text-decoration: none;
   font-weight: bold;
 }
@@ -603,11 +614,42 @@ nav ul {
   }
   main {
     height: 100%;
+    grid-template-columns: 20% 60% 20%;
   }
   nav {
     transition: top 0.3s;
   }
   /*Classes*/
+  .about-panel-card {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: none;
+  }
+  .about-panel-card-text h3 {
+    font-size: 1.65em;
+  }
+  .about-panel-card-alt {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: none;
+  }
+  .about-panel-card-alt-text {
+    grid-column: 2/3;
+    align-items: end;
+  }
+  .about-panel-card-alt-text h3 {
+    font-size: 1.65em;
+  }
+  .about-panel-card-alt-image {
+    width: auto;
+    min-height: 150px;
+    max-height: 675px;
+    border-radius: 15px 0px 0px 15px;
+  }
+  .about-panel-card-image {
+    width: auto;
+    min-height: 150px;
+    max-height: 675px;
+    border-radius: 0px 15px 15px 0px;
+  }
   .banner {
     padding: 10px;
     margin-top: -35px;
@@ -686,26 +728,14 @@ nav ul {
     margin-bottom: 30px;
     height: auto;
     max-width: 1190px;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr auto;
     /*padding: 10px*/
   }
   .home-panel-card-text {
     border-radius: 15px 0px 0px 15px;
     padding: 15px;
     padding-bottom: 25px;
-  }
-  .home-panel-card-text-alt {
-    padding: 15px;
-    padding-bottom: 25px;
-  }
-  .home-panel-card-text-alt h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-  }
-  .home-panel-card-text-alt a {
-    width: 100%;
-    padding: 15px;
   }
   .home-panel-card-text h3 {
     font-size: 1.5em;
@@ -730,8 +760,10 @@ nav ul {
     margin-bottom: 30px;
     height: auto;
     max-width: 1190px;
-    overflow: hidden;
     /*padding: 10px*/
+    align-items: start;
+    display: grid;
+    grid-template-columns: auto 1fr;
   }
   .home-panel-card-alt-image {
     display: block;
@@ -741,6 +773,21 @@ nav ul {
     min-width: 310px;
     justify-content: left;
     border-radius: 15px 0px 0px 15px;
+  }
+  .home-panel-card-alt-text {
+    padding: 15px;
+    padding-bottom: 25px;
+    grid-column: 2/3;
+    align-items: end;
+  }
+  .home-panel-card-alt-text h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  .home-panel-card-alt-text a {
+    width: 100%;
+    padding: 15px;
   }
   .nav_link_container {
     float: left;
@@ -814,6 +861,9 @@ nav ul {
     top: 20%;
     margin-top: 28.5px;
   }
+  #return-menu a {
+    margin-left: 40%;
+  }
 }
 @media screen and (min-width: 55em) {
   .hero_text {
@@ -867,5 +917,8 @@ nav ul {
   #hero_single {
     top: 30%;
     margin-top: 50px;
+  }
+  #return-menu a {
+    margin-left: 50%;
   }
 }/*# sourceMappingURL=larger.css.map */

@@ -27,6 +27,7 @@
     
   main {
     height: 100%;
+    grid-template-columns: 20% 60% 20%;
   }
     
   nav{
@@ -36,6 +37,46 @@
     
         
   /*Classes*/
+
+  .about-panel{
+    &-card{
+      grid-template-columns: 1fr auto;
+      grid-template-rows: none;
+
+      &-text{
+        h3{
+          font-size: 1.65em;
+        }
+      }
+
+      &-alt{
+        grid-template-columns: auto 1fr;
+        grid-template-rows: none;
+
+        &-text{
+          grid-column: 2 /3;
+          align-items: end;
+          h3{
+            font-size: 1.65em;
+          }
+        }
+
+        &-image{
+          width: auto;
+          min-height: 150px;
+          max-height: 675px;
+          border-radius: 15px 0px 0px 15px;
+        }
+      }
+
+      &-image{
+        width: auto;
+        min-height: 150px;
+        max-height: 675px;
+        border-radius: 0px 15px 15px 0px;
+      }
+    }
+  }
     
   .banner {
     padding: 10px;
@@ -130,7 +171,8 @@
       margin-bottom: 30px;
       height: auto;
       max-width: 1190px;
-      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr auto;
       /*padding: 10px*/
 
       &-text{
@@ -138,22 +180,6 @@
         padding: 15px;
         padding-bottom: 25px;
 
-        &-alt{
-          padding: 15px;
-          padding-bottom: 25px;
-
-          h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-          }
-
-          a{
-            width: 100%;
-            padding: 15px;
-          }
-        }
-        
         h3 {
           font-size: 1.5em;
           margin-bottom: 15px;
@@ -181,8 +207,10 @@
         margin-bottom: 30px;
         height: auto;
         max-width: 1190px;
-        overflow: hidden;
         /*padding: 10px*/
+        align-items: start;
+        display: grid;
+        grid-template-columns: auto 1fr;
 
         &-image{
           display: block;
@@ -192,6 +220,24 @@
           min-width: 310px;
           justify-content: left;
           border-radius: 15px 0px 0px 15px;
+        }
+
+        &-text{
+          padding: 15px;
+          padding-bottom: 25px;
+          grid-column: 2 /3;
+          align-items: end;
+
+          h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+          }
+
+          a{
+            width: 100%;
+            padding: 15px;
+          }
         }
       }
     }
@@ -293,6 +339,12 @@
     top: 20%;
     margin-top: 28.5px;
   }
+
+  #return-menu{
+    a{
+      margin-left: 40%;
+    }
+  }
 }
 
 @media screen and (min-width: 55em) {
@@ -362,5 +414,11 @@
   #hero_single {
     top: 30%;
     margin-top: 50px;
+  }
+
+  #return-menu{
+    a{
+      margin-left: 50%;
+    }
   }
 }
