@@ -33,6 +33,42 @@
   /*Classes*/
 
   .about-panel{
+    .nav_link{
+      &_container {
+        float: left;
+        margin-left: 0%;
+        width: 20%;
+      }
+    }
+    .nav_mini{
+      &_main{
+        max-width: 449px;
+        
+        a{
+          font-size: 1.125em;
+          margin-right: 0.25px;
+          margin-left: 0.25px;
+          padding: 10px;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &_page{
+        max-width: 421px;
+
+        a{
+          font-size: 1em;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
     &-card{
       &-text{
         a{
@@ -247,6 +283,43 @@
   }
 
   .merch-panel{
+    .nav_link{
+      &_container {
+        float: left;
+        margin-left: 0%;
+        width: 20%;
+      }
+    }
+
+    .nav_mini{
+      &_main{
+        max-width: 798px;
+        
+        a{
+          font-size: 1.125em;
+          margin-right: 0.25px;
+          margin-left: 0.25px;
+          padding: 10px;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &_page{
+        max-width: 502px;
+
+        a{
+          font-size: 1em;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
     &-card{
       &-text{
         a{

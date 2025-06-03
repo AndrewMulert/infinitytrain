@@ -709,6 +709,32 @@ nav ul {
     transition: top 0.3s;
   }
   /*Classes*/
+  .about-panel .nav_link_container {
+    float: left;
+    margin-left: 0%;
+    width: 20%;
+  }
+  .about-panel .nav_mini_main {
+    max-width: 449px;
+  }
+  .about-panel .nav_mini_main a {
+    font-size: 1.125em;
+    margin-right: 0.25px;
+    margin-left: 0.25px;
+    padding: 10px;
+  }
+  .about-panel .nav_mini_main a:hover {
+    text-decoration: underline;
+  }
+  .about-panel .nav_mini_page {
+    max-width: 421px;
+  }
+  .about-panel .nav_mini_page a {
+    font-size: 1em;
+  }
+  .about-panel .nav_mini_page a:hover {
+    text-decoration: underline;
+  }
   .about-panel-card-text a:hover {
     background-color: #AAF0B0;
     color: #171B18;
@@ -874,6 +900,32 @@ nav ul {
   }
   .home-panel-card-alt-text p {
     margin-bottom: 30px;
+  }
+  .merch-panel .nav_link_container {
+    float: left;
+    margin-left: 0%;
+    width: 20%;
+  }
+  .merch-panel .nav_mini_main {
+    max-width: 798px;
+  }
+  .merch-panel .nav_mini_main a {
+    font-size: 1.125em;
+    margin-right: 0.25px;
+    margin-left: 0.25px;
+    padding: 10px;
+  }
+  .merch-panel .nav_mini_main a:hover {
+    text-decoration: underline;
+  }
+  .merch-panel .nav_mini_page {
+    max-width: 502px;
+  }
+  .merch-panel .nav_mini_page a {
+    font-size: 1em;
+  }
+  .merch-panel .nav_mini_page a:hover {
+    text-decoration: underline;
   }
   .merch-panel-card-text a:hover {
     background-color: #AAF0B0;
