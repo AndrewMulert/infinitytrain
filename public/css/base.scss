@@ -452,6 +452,119 @@ nav {
     }
 }
 
+.merch-panel{
+    grid-column: 2 /3;
+    grid-row: 2 /2;
+
+    &-card{
+        background-color: $mixed-primary-color;
+        margin-bottom: 50px;
+        border-radius: 30px;
+        border-style: solid;
+        border-color: $medium-primary-color;
+        border-width: 10px;
+        @include outer-glow;
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: 1fr auto;
+
+        &-text{
+            padding: 15px;
+            min-width: 215px;
+            border-radius: 15px 15px 0px 0px;
+            color: $primary-font-color;
+
+            h3 {
+                font-size: 1.25em;
+                margin-top: 0px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            p {
+                text-indent: 20px;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+                background-color: $darker-primary-color;
+                border-radius: 15px;
+                padding: 10px;
+                width: 100%;
+                margin-bottom: 15px;
+
+                &:visited{
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+
+        &-alt{
+            background-color: $mixed-primary-color;
+            margin-bottom: 50px;
+            border-radius: 30px;
+            border-style: solid;
+            border-color: $medium-primary-color;
+            border-width: 10px;
+            @include outer-glow;
+            overflow: hidden;
+            align-items: start;
+            display: grid;
+            grid-template-rows: auto 1fr;
+
+            &-text{
+                padding: 15px;
+                min-width: 215px;
+                justify-content: right;
+                border-radius: 0px 0px 15px 15px;
+                color: $primary-font-color;
+
+                h3 {
+                    font-size: 1.25em;
+                    margin-top: 0px;
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+
+                p {
+                    text-indent: 20px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    background-color: $darker-primary-color;
+                    border-radius: 15px;
+                    padding: 10px;
+                    width: 100%;
+                    margin-bottom: 15px;
+
+                    &:visited{
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+            }
+
+            &-image{
+                display: block;
+                width: 100%;
+                border-radius: 15px 15px 0px 0px;
+            }
+        }
+        
+
+        &-image{
+            display: block;
+            width: 100%;
+            border-radius: 0px 0px 15px 15px;
+            margin-top: 7px;
+        }
+    }
+}
+
 .nav {
     &_bar {
         display:flex;
@@ -491,17 +604,22 @@ nav {
             background-color: $lighter-primary-color;
             border-radius: 15px;
             padding: 10px;
-            width: 100%;
             max-width: 310px;
             margin-left: auto;
             margin-right: auto;
-            overflow: hidden;
 
             a{
                 padding: 5px;
                 font-size: 0.95em;
                 color: $darkest-primary-color;
                 text-decoration: none;
+                text-align: center;
+            }
+
+            p{
+                margin-top: 0px;
+                margin-bottom: 0px;
+                padding: 5px;
                 text-align: center;
             }
         }
@@ -535,7 +653,7 @@ nav {
     padding-top: 20px;
     padding-bottom: 19px;
     display: block;
-    min-width: 200px;
+    max-height: 60px;
     font-weight: 400;
     font-size: 1em;
     @include colors($darkest-primary-color, $primary-font-color);

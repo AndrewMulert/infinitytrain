@@ -206,7 +206,7 @@
         margin-bottom: 30px;
         height: auto;
         max-width: 1190px;
-        align-items: start;
+        align-items: flex-start;
         display: grid;
         grid-template-columns: auto 1fr;
 
@@ -245,6 +245,48 @@
       }
     }
   }
+
+  .merch-panel{
+    &-card{
+      &-text{
+        a{
+          &:hover{
+            background-color: $lighter-primary-color;
+            color: $darkest-primary-color;
+            @include outer-glow ($neon-primary-color, 0px, 2px);
+          }
+        }
+
+        h3{
+          font-size: 1.65em;
+        }
+
+        p{
+          margin-bottom: 25px;
+        }
+      }
+
+      &-alt{
+        &-text{
+          a{
+            &:hover{
+              background-color: $lighter-primary-color;
+              color: $darkest-primary-color;
+              @include outer-glow ($neon-primary-color, 0px, 2px);
+            }
+          }
+
+          h3{
+            font-size: 1.65em;
+          }
+
+          p{
+            margin-bottom: 25px;
+          }
+        }
+      }
+    }
+  }
     
   .nav{
     &_link{
@@ -259,7 +301,7 @@
     &_mini{
 
       &_main{
-        max-width: 450px;
+        max-width: 798px;
         
         a{
           font-size: 1.125em;
@@ -274,7 +316,7 @@
       }
 
       &_page{
-        max-width: 425px;
+        max-width: 502px;
 
         a{
           font-size: 1em;
@@ -447,6 +489,38 @@
       } 
     }
   }
+
+  .merch-panel{
+    &-card{
+      grid-template-columns: 1fr auto;
+      grid-template-rows: none;
+    
+      &-alt{
+        grid-template-columns: auto 1fr;
+        grid-template-rows: none;
+
+        &-text{
+          grid-column: 2 /3;
+          align-items: end;
+        }
+
+        &-image{
+          width: auto;
+          min-height: 150px;
+          max-height: 675px;
+          border-radius: 15px 0px 0px 15px;
+        }
+      } 
+
+      &-image{
+        width: auto;
+        min-height: 150px;
+        max-height: 675px;
+        border-radius: 0px 15px 15px 0px;
+        margin-top: 0px;
+      } 
+    }
+  }
 }
 
 @media screen and (min-width: 95em) {
@@ -477,6 +551,23 @@
 
 @media screen and (min-width: 102em) {
   .about-panel{
+    &-card{
+      &-alt{
+        &-text{
+          p{
+            font-size: 1.125em;
+          }
+        }
+      }
+      &-text{
+        p{
+          font-size: 1.125em;
+        }
+      }
+    }
+  }
+
+  .merch-panel{
     &-card{
       &-alt{
         &-text{
