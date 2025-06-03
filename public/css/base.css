@@ -152,6 +152,7 @@ nav ul {
   display: block;
   width: 100%;
   border-radius: 0px 0px 15px 15px;
+  margin-top: 7px;
 }
 
 .banner {
@@ -300,29 +301,6 @@ nav ul {
   text-decoration: none;
   color: white;
 }
-.home-panel-card-text-alt {
-  padding: 15px;
-  min-width: 215px;
-  justify-content: right;
-  border-radius: 0px 0px 15px 15px;
-}
-.home-panel-card-text-alt h3 {
-  font-size: 1.25em;
-  margin-top: 0px;
-  margin-bottom: 20px;
-}
-.home-panel-card-text-alt a {
-  text-decoration: none;
-  color: white;
-  border-radius: 15px;
-  padding: 10px;
-  width: 100%;
-  margin-bottom: 15px;
-}
-.home-panel-card-text-alt a:visited {
-  text-decoration: none;
-  color: white;
-}
 .home-panel-card-alt {
   margin-bottom: 15px;
   border-radius: 30px;
@@ -338,6 +316,31 @@ nav ul {
   height: auto;
   min-width: 150px;
   border-radius: 15px 15px 0px 0px;
+}
+.home-panel-card-alt-text {
+  /*margin-bottom: 15px;*/
+  padding: 15px;
+  min-width: 215px;
+  justify-content: right;
+  border-radius: 0px 0px 15px 15px;
+  height: 100%;
+}
+.home-panel-card-alt-text h3 {
+  font-size: 1.25em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.home-panel-card-alt-text a {
+  text-decoration: none;
+  color: white;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.home-panel-card-alt-text a:visited {
+  text-decoration: none;
+  color: white;
 }
 .home-panel-card-image {
   display: block;
@@ -395,9 +398,6 @@ nav ul {
   text-decoration: none;
   text-align: center;
 }
-.nav_mini_main a:hover {
-  text-decoration: underline;
-}
 .nav_mini_page {
   display: flex;
   background-color: #953E2B;
@@ -417,9 +417,6 @@ nav ul {
   text-decoration: none;
   font-size: 0.75em;
   text-align: center;
-}
-.nav_mini_page a:hover {
-  text-decoration: underline;
 }
 
 .page_link {
@@ -453,16 +450,16 @@ nav ul {
 #about {
   background: #426A46;
 }
-#about .home-panel-card-text-alt {
+#about .home-panel-card-alt-text {
   background-color: #438a49;
 }
-#about h3 {
+#about .home-panel-card-alt-text h3 {
   color: #171B18;
 }
-#about a {
+#about .home-panel-card-alt-text a {
   background-color: #334134;
 }
-#about a:hover {
+#about .home-panel-card-alt-text a:hover {
   background-color: #AAF0B0;
   color: #171B18;
   font-weight: 700;
@@ -528,7 +525,7 @@ nav ul {
   position: relative;
   font-weight: 600;
   min-width: 200px;
-  background-color: #AAF0B0;
+  background-color: #89EC92;
   color: #FFFFFF;
   flex-grow: 4;
   align-self: auto;
@@ -590,9 +587,4 @@ nav ul {
   margin-left: 35%;
   text-decoration: none;
   font-weight: bold;
-}
-#return-menu a:hover {
-  color: #FFFFFF;
-  background-color: #334134;
-  box-shadow: 0px 0px 50px 5px #25EE37;
 }/*# sourceMappingURL=base.css.map */

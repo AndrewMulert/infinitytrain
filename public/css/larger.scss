@@ -6,12 +6,7 @@
   }
 
 @media screen and (min-width: 45em) {
-  
-  
-  /*article{
-    grid-column: 2 / span 3;
-    grid-row: 1 / span 2;
-  }*/
+
     
   footer{
     display: flex;
@@ -21,7 +16,6 @@
       width: 60%;
       padding: 10px;
       padding-top: 0px;
-      padding-bottom: 20px;
       }
   }
     
@@ -40,40 +34,42 @@
 
   .about-panel{
     &-card{
-      grid-template-columns: 1fr auto;
-      grid-template-rows: none;
-
       &-text{
+        a{
+          &:hover{
+            background-color: $lighter-primary-color;
+            color: $darkest-primary-color;
+            @include outer-glow ($neon-primary-color, 0px, 2px);
+          }
+        }
+
         h3{
           font-size: 1.65em;
+        }
+
+        p{
+          margin-bottom: 25px;
         }
       }
 
       &-alt{
-        grid-template-columns: auto 1fr;
-        grid-template-rows: none;
-
         &-text{
-          grid-column: 2 /3;
-          align-items: end;
+          a{
+            &:hover{
+              background-color: $lighter-primary-color;
+              color: $darkest-primary-color;
+              @include outer-glow ($neon-primary-color, 0px, 2px);
+            }
+          }
+
           h3{
             font-size: 1.65em;
           }
-        }
 
-        &-image{
-          width: auto;
-          min-height: 150px;
-          max-height: 675px;
-          border-radius: 15px 0px 0px 15px;
+          p{
+            margin-bottom: 25px;
+          }
         }
-      }
-
-      &-image{
-        width: auto;
-        min-height: 150px;
-        max-height: 675px;
-        border-radius: 0px 15px 15px 0px;
       }
     }
   }
@@ -173,7 +169,6 @@
       max-width: 1190px;
       display: grid;
       grid-template-columns: 1fr auto;
-      /*padding: 10px*/
 
       &-text{
         border-radius: 15px 0px 0px 15px;
@@ -189,6 +184,10 @@
         a{
           width: 100%;
           padding: 15px;
+        }
+
+        p{
+          margin-bottom: 30px;
         }
       }
 
@@ -207,7 +206,6 @@
         margin-bottom: 30px;
         height: auto;
         max-width: 1190px;
-        /*padding: 10px*/
         align-items: start;
         display: grid;
         grid-template-columns: auto 1fr;
@@ -227,6 +225,7 @@
           padding-bottom: 25px;
           grid-column: 2 /3;
           align-items: end;
+          border-radius: 0px 15px 15px 0px;
 
           h3 {
             font-size: 1.5em;
@@ -237,6 +236,10 @@
           a{
             width: 100%;
             padding: 15px;
+          }
+
+          p{
+            margin-bottom: 30px;
           }
         }
       }
@@ -263,6 +266,10 @@
           margin-right: 0.25px;
           margin-left: 0.25px;
           padding: 10px;
+
+          &:hover{
+            text-decoration: underline;
+          }
         }
       }
 
@@ -271,6 +278,10 @@
 
         a{
           font-size: 1em;
+
+          &:hover{
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -343,6 +354,12 @@
   #return-menu{
     a{
       margin-left: 40%;
+
+      &:hover{
+        color: $primary-font-color;
+        background-color: $darker-primary-color;
+        @include outer-glow($neon-primary-color, 0px, 5px);
+      }
     }
   }
 }
@@ -398,7 +415,42 @@
   }
 }
 
+@media screen and (min-width: 85em) {
+  .about-panel{
+    &-card{
+      grid-template-columns: 1fr auto;
+      grid-template-rows: none;
+    
+      &-alt{
+        grid-template-columns: auto 1fr;
+        grid-template-rows: none;
+
+        &-text{
+          grid-column: 2 /3;
+          align-items: end;
+        }
+
+        &-image{
+          width: auto;
+          min-height: 150px;
+          max-height: 675px;
+          border-radius: 15px 0px 0px 15px;
+        }
+      } 
+
+      &-image{
+        width: auto;
+        min-height: 150px;
+        max-height: 675px;
+        border-radius: 0px 15px 15px 0px;
+        margin-top: 0px;
+      } 
+    }
+  }
+}
+
 @media screen and (min-width: 95em) {
+  
   .hero_text {
     top: 9%;
   }
@@ -419,6 +471,25 @@
   #return-menu{
     a{
       margin-left: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 102em) {
+  .about-panel{
+    &-card{
+      &-alt{
+        &-text{
+          p{
+            font-size: 1.125em;
+          }
+        }
+      }
+      &-text{
+        p{
+          font-size: 1.125em;
+        }
+      }
     }
   }
 }

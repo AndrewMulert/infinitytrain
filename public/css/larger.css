@@ -152,6 +152,7 @@ nav ul {
   display: block;
   width: 100%;
   border-radius: 0px 0px 15px 15px;
+  margin-top: 7px;
 }
 
 .banner {
@@ -300,29 +301,6 @@ nav ul {
   text-decoration: none;
   color: white;
 }
-.home-panel-card-text-alt {
-  padding: 15px;
-  min-width: 215px;
-  justify-content: right;
-  border-radius: 0px 0px 15px 15px;
-}
-.home-panel-card-text-alt h3 {
-  font-size: 1.25em;
-  margin-top: 0px;
-  margin-bottom: 20px;
-}
-.home-panel-card-text-alt a {
-  text-decoration: none;
-  color: white;
-  border-radius: 15px;
-  padding: 10px;
-  width: 100%;
-  margin-bottom: 15px;
-}
-.home-panel-card-text-alt a:visited {
-  text-decoration: none;
-  color: white;
-}
 .home-panel-card-alt {
   margin-bottom: 15px;
   border-radius: 30px;
@@ -338,6 +316,31 @@ nav ul {
   height: auto;
   min-width: 150px;
   border-radius: 15px 15px 0px 0px;
+}
+.home-panel-card-alt-text {
+  /*margin-bottom: 15px;*/
+  padding: 15px;
+  min-width: 215px;
+  justify-content: right;
+  border-radius: 0px 0px 15px 15px;
+  height: 100%;
+}
+.home-panel-card-alt-text h3 {
+  font-size: 1.25em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.home-panel-card-alt-text a {
+  text-decoration: none;
+  color: white;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.home-panel-card-alt-text a:visited {
+  text-decoration: none;
+  color: white;
 }
 .home-panel-card-image {
   display: block;
@@ -395,9 +398,6 @@ nav ul {
   text-decoration: none;
   text-align: center;
 }
-.nav_mini_main a:hover {
-  text-decoration: underline;
-}
 .nav_mini_page {
   display: flex;
   background-color: #953E2B;
@@ -417,9 +417,6 @@ nav ul {
   text-decoration: none;
   font-size: 0.75em;
   text-align: center;
-}
-.nav_mini_page a:hover {
-  text-decoration: underline;
 }
 
 .page_link {
@@ -453,16 +450,16 @@ nav ul {
 #about {
   background: #426A46;
 }
-#about .home-panel-card-text-alt {
+#about .home-panel-card-alt-text {
   background-color: #438a49;
 }
-#about h3 {
+#about .home-panel-card-alt-text h3 {
   color: #171B18;
 }
-#about a {
+#about .home-panel-card-alt-text a {
   background-color: #334134;
 }
-#about a:hover {
+#about .home-panel-card-alt-text a:hover {
   background-color: #AAF0B0;
   color: #171B18;
   font-weight: 700;
@@ -528,7 +525,7 @@ nav ul {
   position: relative;
   font-weight: 600;
   min-width: 200px;
-  background-color: #AAF0B0;
+  background-color: #89EC92;
   color: #FFFFFF;
   flex-grow: 4;
   align-self: auto;
@@ -591,17 +588,8 @@ nav ul {
   text-decoration: none;
   font-weight: bold;
 }
-#return-menu a:hover {
-  color: #FFFFFF;
-  background-color: #334134;
-  box-shadow: 0px 0px 50px 5px #25EE37;
-}
 
 @media screen and (min-width: 45em) {
-  /*article{
-    grid-column: 2 / span 3;
-    grid-row: 1 / span 2;
-  }*/
   footer {
     display: flex;
     max-height: 90px;
@@ -610,7 +598,6 @@ nav ul {
     width: 60%;
     padding: 10px;
     padding-top: 0px;
-    padding-bottom: 20px;
   }
   main {
     height: 100%;
@@ -620,35 +607,27 @@ nav ul {
     transition: top 0.3s;
   }
   /*Classes*/
-  .about-panel-card {
-    grid-template-columns: 1fr auto;
-    grid-template-rows: none;
+  .about-panel-card-text a:hover {
+    background-color: #AAF0B0;
+    color: #171B18;
+    box-shadow: 0px 0px 50px 2px #25EE37;
   }
   .about-panel-card-text h3 {
     font-size: 1.65em;
   }
-  .about-panel-card-alt {
-    grid-template-columns: auto 1fr;
-    grid-template-rows: none;
+  .about-panel-card-text p {
+    margin-bottom: 25px;
   }
-  .about-panel-card-alt-text {
-    grid-column: 2/3;
-    align-items: end;
+  .about-panel-card-alt-text a:hover {
+    background-color: #AAF0B0;
+    color: #171B18;
+    box-shadow: 0px 0px 50px 2px #25EE37;
   }
   .about-panel-card-alt-text h3 {
     font-size: 1.65em;
   }
-  .about-panel-card-alt-image {
-    width: auto;
-    min-height: 150px;
-    max-height: 675px;
-    border-radius: 15px 0px 0px 15px;
-  }
-  .about-panel-card-image {
-    width: auto;
-    min-height: 150px;
-    max-height: 675px;
-    border-radius: 0px 15px 15px 0px;
+  .about-panel-card-alt-text p {
+    margin-bottom: 25px;
   }
   .banner {
     padding: 10px;
@@ -730,7 +709,6 @@ nav ul {
     max-width: 1190px;
     display: grid;
     grid-template-columns: 1fr auto;
-    /*padding: 10px*/
   }
   .home-panel-card-text {
     border-radius: 15px 0px 0px 15px;
@@ -746,6 +724,9 @@ nav ul {
     width: 100%;
     padding: 15px;
   }
+  .home-panel-card-text p {
+    margin-bottom: 30px;
+  }
   .home-panel-card-image {
     display: block;
     width: 100%;
@@ -760,7 +741,6 @@ nav ul {
     margin-bottom: 30px;
     height: auto;
     max-width: 1190px;
-    /*padding: 10px*/
     align-items: start;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -779,6 +759,7 @@ nav ul {
     padding-bottom: 25px;
     grid-column: 2/3;
     align-items: end;
+    border-radius: 0px 15px 15px 0px;
   }
   .home-panel-card-alt-text h3 {
     font-size: 1.5em;
@@ -788,6 +769,9 @@ nav ul {
   .home-panel-card-alt-text a {
     width: 100%;
     padding: 15px;
+  }
+  .home-panel-card-alt-text p {
+    margin-bottom: 30px;
   }
   .nav_link_container {
     float: left;
@@ -803,11 +787,17 @@ nav ul {
     margin-left: 0.25px;
     padding: 10px;
   }
+  .nav_mini_main a:hover {
+    text-decoration: underline;
+  }
   .nav_mini_page {
     max-width: 425px;
   }
   .nav_mini_page a {
     font-size: 1em;
+  }
+  .nav_mini_page a:hover {
+    text-decoration: underline;
   }
   .page_link {
     display: block;
@@ -864,6 +854,11 @@ nav ul {
   #return-menu a {
     margin-left: 40%;
   }
+  #return-menu a:hover {
+    color: #FFFFFF;
+    background-color: #334134;
+    box-shadow: 0px 0px 50px 5px #25EE37;
+  }
 }
 @media screen and (min-width: 55em) {
   .hero_text {
@@ -904,6 +899,33 @@ nav ul {
     margin-bottom: 90px;
   }
 }
+@media screen and (min-width: 85em) {
+  .about-panel-card {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: none;
+  }
+  .about-panel-card-alt {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: none;
+  }
+  .about-panel-card-alt-text {
+    grid-column: 2/3;
+    align-items: end;
+  }
+  .about-panel-card-alt-image {
+    width: auto;
+    min-height: 150px;
+    max-height: 675px;
+    border-radius: 15px 0px 0px 15px;
+  }
+  .about-panel-card-image {
+    width: auto;
+    min-height: 150px;
+    max-height: 675px;
+    border-radius: 0px 15px 15px 0px;
+    margin-top: 0px;
+  }
+}
 @media screen and (min-width: 95em) {
   .hero_text {
     top: 9%;
@@ -920,5 +942,13 @@ nav ul {
   }
   #return-menu a {
     margin-left: 50%;
+  }
+}
+@media screen and (min-width: 102em) {
+  .about-panel-card-alt-text p {
+    font-size: 1.125em;
+  }
+  .about-panel-card-text p {
+    font-size: 1.125em;
   }
 }/*# sourceMappingURL=larger.css.map */
