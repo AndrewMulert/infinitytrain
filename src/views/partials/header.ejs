@@ -1,12 +1,12 @@
 <%- navHTML %>
     <div class="hero">
         <picture>
-            <source srcset="/images/<%= heroImage %>-small.webp" media="(max-width: 500px)">
-            <source srcset="/images/<%= heroImage %>-medium.webp" media="(max-width: 1000px)">
-            <img class="hero_image" src="/images/<%= heroImage %>-min.webp" alt="<%= heroAlt %>">
+            <source srcset="/images/<%= heroImage || 'index_hero_train_landscape' %>-small.webp" media="(max-width: 500px)">
+            <source srcset="/images/<%= heroImage || 'index_hero_train_landscape' %>-medium.webp" media="(max-width: 1000px)">
+            <img class="hero_image" src="/images/<%= heroImage || 'index_hero_train_landscape' %>-min.webp" alt="<%= heroAlt || 'The Infinity Train spanning across the horizon, rendered by Andrew Mulert' %>">
         </picture>
         <div class="hero_text">
-            <h2><%= heroText %></h2>
+            <h2><%= heroText || 'Welcome to the' %></h2>
             <svg height="150px"><image width="400px" height="150px" href="/images/infinity_train_logo_white_bold.svg"></image></svg>
         </div>
     </div>

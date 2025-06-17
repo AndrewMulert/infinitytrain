@@ -86,11 +86,28 @@ export const globalErrorHandler = (err, req, res, next) => {
     const status = err.status || 500;
     res.status(status);
 
+    let defaultHeroImage;
+    let defaultHeroAlt;
+    let defaultHeroText;
+
+    if (status === 400) {
+        defaultHeroImage = 'error_hero_simon';
+        defaultHeroAlt = 'Simon running across Train Cars, rendered by Andrew Mulert';
+        defaultHeroText = "It was going 'tch tch', but it should be going 'woop woop.' Shouldn't take too long.";
+    } else {
+        defaultHeroImage = 'error_hero_simon';
+        defaultHeroAlt = 'The Train spanning across the distance, rendered by Andrew Mulert';
+        defaultHeroText = 'No, this is not Wisconsin';
+    }
+
     // Prepare error context for rendering
     const context = {
         title: err.title || 'Error',
         error: err.message,
-        status
+        status,
+        heroImage: defaultHeroImage,
+        heroAlt: defaultHeroAlt,
+        heroText: defaultHeroText
     };
 
     // Determine the correct error view file
