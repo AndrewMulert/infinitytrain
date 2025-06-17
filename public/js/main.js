@@ -89,8 +89,7 @@ const minutes = Math.floor(totalSeconds / 60);
 const minCalc = (Math.round(((minutes / 60) - hours) * 60));
 
 // Calculate seconds
-const seconds = totalSeconds;
-const secCalc = (Math.round(((seconds/31540000) - years) * 31540000));
+const secCalc = (Math.round(((totalSeconds/31540000) - years) * 31540000)-20);
 const lastDigit = (Math.round(secCalc % 60));
 
 

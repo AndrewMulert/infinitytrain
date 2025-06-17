@@ -3,9 +3,9 @@ import path from 'path';
 
 /** @type {Array<{route: string, dir: string}|string>} Static path configurations */
 const staticPaths = [
-    { route: '/css', dir: 'public/css' },
-    { route: '/js', dir: 'public/js' },
-    { route: '/images', dir: 'public/images' }
+    { route: '/css', dir: '/public/css' },
+    { route: '/js', dir: '/public/js' },
+    { route: '/images', dir: '/public/images' }
  ];
  
  /** Brother Keer's Unique Function
@@ -45,7 +45,7 @@ const getNav = () => {
     return `
     <nav class="nav_bar">
         <ul class="nav_items">
-            <li class="nav_link_container"><a href="/" class="nav_links" id="home_link"><svg id="home_svg" width="200px" height="45px"><image width="200px" height="45px" href="images/infinity_train_logo_black_bold.svg"></image></svg></a><button id="dropDown">▼</button></li>
+            <li class="nav_link_container"><a href="/" class="nav_links" id="home_link"><svg id="home_svg" width="200px" height="45px"><image width="200px" height="45px" href="/images/infinity_train_logo_black_bold.svg"></image></svg></a><button id="dropDown">▼</button></li>
             <li class="nav_link_container"><a href="/about" class="page_link">About</a></li>
             <li class="nav_link_container"><a href="/merch" class="page_link">Merchandise and Art</a></li>
             <li class="nav_link_container"><a href="/support" class="page_link">Support the Show</a></li>
