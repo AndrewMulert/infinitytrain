@@ -179,14 +179,14 @@
       grid-column: 1 /4;
       grid-row: 1 /2;
       display: grid;
-      grid-template-columns: 10px auto auto 10px;
+      grid-template-columns: 10px 1fr 1fr 10px;
       grid-template-rows: 50% 10% 40%;
       min-width: 325px;
       margin-top: -40px;
       padding: 0px;
 
       label{
-        font-size: 3em;
+        font-size: 2.5em;
       }
 
       p{
@@ -461,6 +461,12 @@
     display: none;
   }
 
+  #error{
+    &_Number {
+      font-size: 300px;
+    }
+  }
+
   #hero_single{
     top: 20%;
     margin-top: 28.5px;
@@ -507,6 +513,10 @@
   .hero_countdown{
     p{
       font-size: 1.5em;
+    }
+
+    label {
+      font-size: 3em;
     }
   }
 
@@ -604,6 +614,11 @@
 
   .hero_countdown {
     top: 55%;
+    &_message {
+      h2{
+        font-size: 25px;
+      }
+    }
   }
 
   .home-panel{

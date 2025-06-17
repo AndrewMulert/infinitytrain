@@ -195,7 +195,7 @@ nav ul {
 .countdown_timer {
   grid-column: 2/2;
   grid-row: 1/2;
-  max-height: 200px;
+  max-height: 100px;
   padding: 10px;
 }
 .countdown_timer pre {
@@ -597,9 +597,10 @@ nav ul {
   grid-column: 2/2;
   margin-left: auto;
   margin-right: auto;
-  font-size: 300px;
+  font-size: 175px;
   font-weight: 300;
   margin-top: 0px;
+  margin-bottom: 0px;
 }
 #error_Reference {
   color: #FFFFFF;
@@ -607,7 +608,7 @@ nav ul {
   margin-left: auto;
   margin-right: auto;
   font-size: 23px;
-  margin-top: 250px;
+  margin-top: 20px;
 }
 #error_Message {
   color: #FFFFFF;
@@ -815,14 +816,14 @@ nav ul {
     grid-column: 1/4;
     grid-row: 1/2;
     display: grid;
-    grid-template-columns: 10px auto auto 10px;
+    grid-template-columns: 10px 1fr 1fr 10px;
     grid-template-rows: 50% 10% 40%;
     min-width: 325px;
     margin-top: -40px;
     padding: 0px;
   }
   .hero_countdown label {
-    font-size: 3em;
+    font-size: 2.5em;
   }
   .hero_countdown p {
     font-size: 1em;
@@ -1023,6 +1024,9 @@ nav ul {
   #dropDown {
     display: none;
   }
+  #error_Number {
+    font-size: 300px;
+  }
   #hero_single {
     top: 20%;
     margin-top: 28.5px;
@@ -1061,6 +1065,9 @@ nav ul {
   }
   .hero_countdown p {
     font-size: 1.5em;
+  }
+  .hero_countdown label {
+    font-size: 3em;
   }
   .card-text h3 {
     font-size: 2em;
@@ -1133,6 +1140,9 @@ nav ul {
   }
   .hero_countdown {
     top: 55%;
+  }
+  .hero_countdown_message h2 {
+    font-size: 25px;
   }
   .home-panel {
     min-height: 1125px;

@@ -18,3 +18,27 @@
         <p>We will not stand for this</p>
     </div>
 </div>
+<div class="contact-panel">
+    <div class="message_form">
+        <h2>Leave us a message!</h2>
+        <form action="mailto:andrewmulert@gmail.com" method="post">
+            Name*: <br>
+            <input type="text" required> <br>
+
+            Email*: <br>
+            <input type="email" name="email" required> <br>
+
+            Type*: <br>
+            <input type="radio" id="bug" name="message_type" value="Report a Bug" required>
+            <label for="bug">Report a Bug</label><br>
+            <input type="radio" id="feature" name="message_type" value="Request a Feature">
+            <label for="feature">Request a Feature</label><br>
+            <input type="radio" id="feedback" name="message_type" value="Request a Feature">
+            <label for="feedback">Feedback</label><br>
+            
+            Message*: <br>
+            <input type="text" required><br>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</div>

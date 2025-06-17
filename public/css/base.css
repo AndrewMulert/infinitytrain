@@ -5,7 +5,7 @@ h1, h2, h3, a {
   font-family: Reddit Sans, Calibri, sans-serif;
 }
 
-p, pre, label {
+p, pre, label, form {
   font-family: Reddit Sans, Arial, serif;
 }
 
@@ -176,6 +176,18 @@ nav ul {
   text-decoration: none;
 }
 
+.contact-panel {
+  grid-column: 2/3;
+  grid-row: 2/2;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #89EC92;
+  border-radius: 30px;
+}
+.contact-panel .message_form h2 {
+  margin-top: 0px;
+}
+
 .countdown {
   background-color: #953E2B;
 }
@@ -195,7 +207,7 @@ nav ul {
 .countdown_timer {
   grid-column: 2/2;
   grid-row: 1/2;
-  max-height: 200px;
+  max-height: 100px;
   padding: 10px;
 }
 .countdown_timer pre {
@@ -597,9 +609,10 @@ nav ul {
   grid-column: 2/2;
   margin-left: auto;
   margin-right: auto;
-  font-size: 300px;
+  font-size: 175px;
   font-weight: 300;
   margin-top: 0px;
+  margin-bottom: 0px;
 }
 #error_Reference {
   color: #FFFFFF;
@@ -607,7 +620,7 @@ nav ul {
   margin-left: auto;
   margin-right: auto;
   font-size: 23px;
-  margin-top: 250px;
+  margin-top: 20px;
 }
 #error_Message {
   color: #FFFFFF;
