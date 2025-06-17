@@ -70,15 +70,15 @@ const timePast = currentTime - startTime;
 const totalSeconds = Math.floor(timePast / 1000); 
 
 // Calculate years
-const years = Math.floor(totalSeconds / (365.25 * 24 * 60 * 60)); // Approximate year (365.25 days/year)
+const years = Math.floor(totalSeconds / 31557600); // Approximate year (365.25 days/year)
 
 
 // Calculate months
-const months = Math.floor(totalSeconds / (30.44 * 24 * 60 * 60)); // Approximate month (30.44 days/month)
+const months = Math.floor(totalSeconds / 2630016); // Approximate month (30.44 days/month)
 const monthCalc = (Math.round(((months / 12) - years) * 12));
 
 //Calculate days
-const days = Math.floor(totalSeconds / (24 * 60 * 60));
+const days = Math.floor(totalSeconds / (86400));
 const dayCalc = (Math.round(((days / 30.44) - months) * 30.44));
 
 // Calculate hours
