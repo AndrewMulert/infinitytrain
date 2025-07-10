@@ -37,12 +37,12 @@
       &_container {
         float: left;
         margin-left: 0%;
-        width: 20%;
+        width: 15%;
       }
     }
     .nav_mini{
       &_main{
-        max-width: 449px;
+        max-width: 475px;
         
         a{
           font-size: 1.125em;
@@ -472,6 +472,12 @@
     margin-top: 28.5px;
   }
 
+  #petition{
+    > picture{
+      margin-top: 132px;
+    }
+  }
+
   #return-menu{
     a{
       margin-left: 40%;
@@ -496,6 +502,13 @@
     padding: 200px 0;
     margin-bottom: 20px;
   }
+
+  .nav_link{
+    &_container {
+        width: 20%;
+      }
+  }
+
 }
 
 @media screen and (min-width: 70em) {

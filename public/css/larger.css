@@ -5,7 +5,7 @@ h1, h2, h3, a {
   font-family: Reddit Sans, Calibri, sans-serif;
 }
 
-p, pre, label {
+p, pre, label, form {
   font-family: Reddit Sans, Arial, serif;
 }
 
@@ -174,6 +174,18 @@ nav ul {
 }
 .card_link:visited {
   text-decoration: none;
+}
+
+.contact-panel {
+  grid-column: 2/3;
+  grid-row: 2/2;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #89EC92;
+  border-radius: 30px;
+}
+.contact-panel .message_form h2 {
+  margin-top: 0px;
 }
 
 .countdown {
@@ -692,6 +704,10 @@ nav ul {
   font-weight: bold;
 }
 
+#streaming {
+  background-color: #953E2B;
+}
+
 @media screen and (min-width: 45em) {
   footer {
     display: flex;
@@ -713,10 +729,10 @@ nav ul {
   .about-panel .nav_link_container {
     float: left;
     margin-left: 0%;
-    width: 20%;
+    width: 15%;
   }
   .about-panel .nav_mini_main {
-    max-width: 449px;
+    max-width: 475px;
   }
   .about-panel .nav_mini_main a {
     font-size: 1.125em;
@@ -1031,6 +1047,9 @@ nav ul {
     top: 20%;
     margin-top: 28.5px;
   }
+  #petition > picture {
+    margin-top: 132px;
+  }
   #return-menu a {
     margin-left: 40%;
   }
@@ -1050,6 +1069,9 @@ nav ul {
     max-width: 550px;
     padding: 200px 0;
     margin-bottom: 20px;
+  }
+  .nav_link_container {
+    width: 20%;
   }
 }
 @media screen and (min-width: 70em) {
