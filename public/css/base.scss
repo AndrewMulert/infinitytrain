@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 
 
-$lighter-primary-color: #AAF0B0;
-$medium-primary-color: #89EC92;
-$neon-primary-color: #25EE37;
-$primary-color: #37BF6C;
-$mixed-primary-color: #438a49;
-$dark-primary-color: #426A46;
-$darker-primary-color: #334134;
-$darkest-primary-color: #171B18;
-$transparent-primary-color: #44954BBF;
+$white: #FBFCFA;
+$lightest: #D1FACD;
+$lighter: #98ED9F;
+$light: #65D681;
+$medium: #35B56A;
+$dark: #168758;
+$darker: #065C47;
+$transparent-darker: #012E2ABF;
+$darkest: #012E2A;
+$darkest-monotone: #131a19;
+$black: #000203;
 $secondary-color: #CF573C;
 $darker-secondary-color: #953E2B;
 $transparent-secondary-color: #BF5137BF;
@@ -25,35 +27,33 @@ $mixed-quaternary-color: #a98a39;
 $darker-quaternary-color: #957E44;
 $darkest-quaternary-color: #6A5F42;
 $transparent-quaternary-color: #BF9837BF;
-$primary-font-color: #FFFFFF;
-$secondary-font-color: #000000;
 
 
 
 /* mixins */
 
-@mixin border-values($style: none, $color: $dark-grey, $width: 2px, $radius: 2px) {
+@mixin border-values($style: none, $color: $darker, $width: 2px, $radius: 2px) {
     border-style: $style;
     border-color: $color;
     border-width: $width;
     border-radius: $radius;
 }
 
-@mixin box-style($background: $lighter-primary-color, $shadow: $secondary-font-color, $value: 0px) {
+@mixin box-style($background: $lighter-primary-color, $shadow: $black, $value: 0px) {
     background-color: $background;
     box-shadow: $value $value 50px 0px $shadow;
 }
 
-@mixin colors($background: $secondary-font-color, $text: $secondary-font-color) {
+@mixin colors($background: $black, $text: $black) {
     background-color: $background;
     color: $text;
 }
 
-@mixin outer-glow($background: $neon-primary-color, $value: 0px, $value2: 15px) {
+@mixin outer-glow($background: $lightest, $value: 0px, $value2: 15px) {
     box-shadow: $value $value 50px $value2 $background;
   }
 
-@mixin text-glow($background: $neon-primary-color, $value: 0px, $value2: 15px) {
+@mixin text-glow($background: $lighter, $value: 0px, $value2: 15px) {
     text-shadow: $value $value 50px $background;
 }
 
@@ -76,12 +76,12 @@ article {
 
 body {
     margin: 0px;
-    @include colors($dark-primary-color, $secondary-font-color);
+    @include colors($darker, $black);
 }
 
 footer {
     margin: 0px;
-    @include colors($darkest-primary-color, $primary-font-color);
+    @include colors($darkest-monotone, $white);
 
     > p{
         margin-top: 8px;
@@ -124,11 +124,11 @@ nav {
     grid-row: 2 /2;
 
     &-card{
-        background-color: $mixed-primary-color;
+        background-color: $light;
         margin-bottom: 50px;
         border-radius: 30px;
         border-style: solid;
-        border-color: $medium-primary-color;
+        border-color: $lighter;
         border-width: 10px;
         @include outer-glow;
         overflow: hidden;
@@ -139,7 +139,7 @@ nav {
             padding: 15px;
             min-width: 215px;
             border-radius: 15px 15px 0px 0px;
-            color: $primary-font-color;
+            color: $black;
 
             h3 {
                 font-size: 1.25em;
@@ -154,8 +154,8 @@ nav {
 
             a {
                 text-decoration: none;
-                color: white;
-                background-color: $darker-primary-color;
+                color: $lightest;
+                background-color: $darker;
                 border-radius: 15px;
                 padding: 10px;
                 width: 100%;
@@ -163,17 +163,17 @@ nav {
 
                 &:visited{
                     text-decoration: none;
-                    color: white;
+                    color: $lightest;
                 }
             }
         }
 
         &-alt{
-            background-color: $mixed-primary-color;
+            background-color: $light;
             margin-bottom: 50px;
             border-radius: 30px;
             border-style: solid;
-            border-color: $medium-primary-color;
+            border-color: $lighter;
             border-width: 10px;
             @include outer-glow;
             overflow: hidden;
@@ -186,7 +186,7 @@ nav {
                 min-width: 215px;
                 justify-content: right;
                 border-radius: 0px 0px 15px 15px;
-                color: $primary-font-color;
+                color: $black;
 
                 h3 {
                     font-size: 1.25em;
@@ -201,8 +201,8 @@ nav {
 
                 a {
                     text-decoration: none;
-                    color: white;
-                    background-color: $darker-primary-color;
+                    color: $lightest;
+                    background-color: $darker;
                     border-radius: 15px;
                     padding: 10px;
                     width: 100%;
@@ -210,7 +210,7 @@ nav {
 
                     &:visited{
                         text-decoration: none;
-                        color: white;
+                        color: $lightest;
                     }
                 }
             }
@@ -242,7 +242,7 @@ nav {
     text-align: center;
     width: 100%;
     height: 38px;
-    @include colors($darker-quaternary-color, $primary-font-color);
+    @include colors($darker-quaternary-color, $white);
 }
 
 .card_link {
@@ -259,7 +259,7 @@ nav {
     grid-row: 2 /2;
     margin-top: 20px;
     padding: 20px;
-    background-color: $medium-primary-color;
+    background-color: $light;
     border-radius: 30px;
 
     .message_form{
@@ -324,7 +324,7 @@ nav {
         top: 9%;
         padding: 20px;
         margin-top: -10px;
-        @include colors($transparent-primary-color, $primary-font-color);
+        @include colors($transparent-darker, $white);
         text-align: center;
 
         h2 {
@@ -349,15 +349,15 @@ nav {
         grid-row: 1 /2;
         grid-template-columns: 10px auto 10px;
         grid-template-rows: 70% 30%;
-        @include colors($darker-secondary-color, $primary-font-color);
+        @include colors($darker-secondary-color, $white);
         text-align: center;
         height: 210px;
 
         label {
             font-size: 2.25em;
-            outline: $medium-primary-color;
+            outline: $lighter;
             outline-width: 2px;
-            text-shadow: 0 5px 10px $lighter-primary-color;
+            text-shadow: 0 5px 10px $lightest;
         }
 
         p {
@@ -379,7 +379,7 @@ nav {
         margin-bottom: 15px;
         border-radius: 30px;
         border-style: solid;
-        border-color: $medium-primary-color;
+        border-color: $lighter;
         border-width: 10px;
         @include outer-glow;
         overflow: hidden;
@@ -397,7 +397,7 @@ nav {
 
             a{
                 text-decoration: none;
-                color: white;
+                color: $white;
                 border-radius: 15px;
                 padding: 10px;
                 width: 100%;
@@ -405,7 +405,7 @@ nav {
 
                 &:visited{
                     text-decoration: none;
-                    color: white;
+                    color: $white;
                 }
             }
         }
@@ -414,7 +414,7 @@ nav {
             margin-bottom: 15px;
             border-radius: 30px;
             border-style: solid;
-            border-color: $medium-primary-color;
+            border-color: $lighter;
             border-width: 10px;
             @include outer-glow;
             overflow: hidden;
@@ -443,7 +443,7 @@ nav {
 
                 a{
                     text-decoration: none;
-                    color: white;
+                    color: $white;
                     border-radius: 15px;
                     padding: 10px;
                     width: 100%;
@@ -451,7 +451,7 @@ nav {
 
                     &:visited{
                         text-decoration: none;
-                        color: white;
+                        color: $white;
                     }
                 }
             }
@@ -472,11 +472,11 @@ nav {
     grid-row: 2 /2;
 
     &-card{
-        background-color: $mixed-primary-color;
+        background-color: $light;
         margin-bottom: 50px;
         border-radius: 30px;
         border-style: solid;
-        border-color: $medium-primary-color;
+        border-color: $lighter;
         border-width: 10px;
         @include outer-glow;
         overflow: hidden;
@@ -487,7 +487,7 @@ nav {
             padding: 15px;
             min-width: 215px;
             border-radius: 15px 15px 0px 0px;
-            color: $primary-font-color;
+            color: $black;
 
             h3 {
                 font-size: 1.25em;
@@ -502,8 +502,8 @@ nav {
 
             a {
                 text-decoration: none;
-                color: white;
-                background-color: $darker-primary-color;
+                color: $lightest;
+                background-color: $darker;
                 border-radius: 15px;
                 padding: 10px;
                 width: 100%;
@@ -511,17 +511,17 @@ nav {
 
                 &:visited{
                     text-decoration: none;
-                    color: white;
+                    color: $lightest;
                 }
             }
         }
 
         &-alt{
-            background-color: $mixed-primary-color;
+            background-color: $light;
             margin-bottom: 50px;
             border-radius: 30px;
             border-style: solid;
-            border-color: $medium-primary-color;
+            border-color: $lighter;
             border-width: 10px;
             @include outer-glow;
             overflow: hidden;
@@ -534,7 +534,7 @@ nav {
                 min-width: 215px;
                 justify-content: right;
                 border-radius: 0px 0px 15px 15px;
-                color: $primary-font-color;
+                color: $black;
 
                 h3 {
                     font-size: 1.25em;
@@ -549,8 +549,8 @@ nav {
 
                 a {
                     text-decoration: none;
-                    color: white;
-                    background-color: $darker-primary-color;
+                    color: $lightest;
+                    background-color: $darker;
                     border-radius: 15px;
                     padding: 10px;
                     width: 100%;
@@ -558,7 +558,7 @@ nav {
 
                     &:visited{
                         text-decoration: none;
-                        color: white;
+                        color: $lightest;
                     }
                 }
             }
@@ -584,19 +584,19 @@ nav {
     &_bar {
         display:flex;
         border-bottom: 10px;
-        border-color: $medium-primary-color;
+        border-color: $darkest-monotone;
         z-index: 3;
     }
       
     &_items {
         list-style-type: none;
         border-bottom: 20px;
-        border-color: $medium-primary-color;
+        border-color: $darkest;
         margin: 0;
         padding-left: 0px;
         overflow: hidden;
         width: 100%;
-        @include colors($darkest-primary-color, $primary-font-color);
+        @include colors($darkest-monotone, $white);
     }
 
     &_link_container {
@@ -616,7 +616,7 @@ nav {
 
         &_main{
             display: flex;
-            background-color: $lighter-primary-color;
+            background-color: $lighter;
             border-radius: 15px;
             padding: 10px;
             max-width: 310px;
@@ -626,7 +626,7 @@ nav {
             a{
                 padding: 5px;
                 font-size: 0.95em;
-                color: $darkest-primary-color;
+                color: $darkest;
                 text-decoration: none;
                 text-align: center;
             }
@@ -654,7 +654,7 @@ nav {
                 padding: 5px;
                 margin-right: 3.5px;
                 margin-left: 3.5px;
-                color: $primary-font-color;
+                color: $white;
                 text-decoration: none;
                 font-size: 0.75em;
                 text-align: center;
@@ -671,10 +671,10 @@ nav {
     max-height: 60px;
     font-weight: 400;
     font-size: 1em;
-    @include colors($darkest-primary-color, $primary-font-color);
+    @include colors($darkest-monotone, $white);
 
     &:hover {
-        @include colors($primary-color, $secondary-font-color); 
+        @include colors($light, $black); 
         font-weight: 700;
     }
 }
@@ -692,21 +692,21 @@ nav {
 /* IDs */
 
 #about{
-    background: $dark-primary-color;
+    background: $light;
 
     .home-panel-card-alt-text{
-        background-color: $mixed-primary-color;
+        background-color: $light;
 
-        h3{
-        color: $darkest-primary-color;
+        h3 {
+        color: $black;
         }
 
-        a{
-        background-color: $darker-primary-color;
+        a {
+        background-color: $darker;
 
             &:hover{
-                background-color: $lighter-primary-color;
-                color: $darkest-primary-color;
+                background-color: $black;
+                color: $lightest;
                 font-weight: 700
             }
         }
@@ -720,13 +720,13 @@ nav {
     z-index: 2;
     height: 40px;
     width: 40px;
-    @include colors ($darker-secondary-color, $primary-font-color);
+    @include colors ($darker-secondary-color, $white);
     border-style: none;
     border-radius: 25px;
     transition: background-color 1s;
 
     &:focus {
-        @include colors($secondary-color, $secondary-font-color);
+        @include colors($secondary-color, $black);
         @include border-values (solid, $darker-secondary-color, 2px, 5px);
         transition: background-color 1s;
         border-radius: 25px;
@@ -736,7 +736,7 @@ nav {
 #error{
 
     &_Number{
-        color: $primary-font-color;
+        color: $white;
         @include text-glow;
         grid-column: 2/ 2;
         margin-left: auto;
@@ -748,7 +748,7 @@ nav {
     }
 
     &_Reference{
-        color: $primary-font-color;
+        color: $white;
         grid-column: 2/ 2;
         margin-left: auto;
         margin-right: auto;
@@ -757,7 +757,7 @@ nav {
     }
 
     &_Message{
-         color: $primary-font-color;
+         color: $white;
         grid-column: 2/ 2;
         margin-left: auto;
         margin-right: auto;
@@ -767,20 +767,20 @@ nav {
   
 #hidden_link {
     text-decoration: none;
-    @include colors($darker-secondary-color, $primary-font-color);
+    @include colors($darker-secondary-color, $white);
 }
 
 #home_link {
     position: relative;
     font-weight: 600;
     min-width: 200px;
-    @include colors($medium-primary-color, $primary-font-color);
+    @include colors($medium, $white);
     flex-grow: 4;
     align-self: auto;
 
     &:hover {
-        @include colors($lighter-primary-color, $lighter-primary-color);
-        box-shadow: 0px 0px 50px 60px $lighter-primary-color;
+        @include colors($lighter, $lighter);
+        box-shadow: 0px 0px 50px 60px $lighter;
         font-weight: bolder;
         animation: logoGlow 0.25s ease-in;
     }
@@ -794,7 +794,7 @@ nav {
     }
 
     h3{
-        color: $primary-font-color;
+        color: $white;
     }
 
     a{
@@ -835,8 +835,8 @@ nav {
     grid-row: 3/3;
 
     a{
-        background-color: $lighter-primary-color;
-        color: $darkest-primary-color;
+        background-color: $lighter;
+        color: $darkest;
         padding: 20px;
         border-radius: 15px;
         text-align: center;

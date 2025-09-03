@@ -1,6 +1,6 @@
-@import "base.scss";
+@use "base.scss" as base;
 
-@mixin box-style-animated($background: $lighter-primary-color, $shadow: $secondary-font-color, $value: 0px, $value2: 20px) {
+@mixin box-style-animated($background: base.$lighter, $shadow: base.$black, $value: 0px, $value2: 20px) {
     background-color: $background;
     box-shadow: $value $value 50px $value2 $shadow;
   }
@@ -73,9 +73,9 @@
       &-text{
         a{
           &:hover{
-            background-color: $lighter-primary-color;
-            color: $darkest-primary-color;
-            @include outer-glow ($neon-primary-color, 0px, 2px);
+            background-color: base.$black;
+            color: base.$lightest;
+            @include base.outer-glow (base.$lighter, 0px, 2px);
           }
         }
 
@@ -92,9 +92,9 @@
         &-text{
           a{
             &:hover{
-              background-color: $lighter-primary-color;
-              color: $darkest-primary-color;
-              @include outer-glow ($neon-primary-color, 0px, 2px);
+              background-color: base.$black;
+              color: base.$lightest;
+              @include base.outer-glow (base.$lighter, 0px, 2px);
             }
           }
 
@@ -324,9 +324,9 @@
       &-text{
         a{
           &:hover{
-            background-color: $lighter-primary-color;
-            color: $darkest-primary-color;
-            @include outer-glow ($neon-primary-color, 0px, 2px);
+            background-color: base.$black;
+            color: base.$lightest;
+            @include base.outer-glow (base.$lighter, 0px, 2px);
           }
         }
 
@@ -343,9 +343,9 @@
         &-text{
           a{
             &:hover{
-              background-color: $lighter-primary-color;
-              color: $darkest-primary-color;
-              @include outer-glow ($neon-primary-color, 0px, 2px);
+              background-color: base.$black;
+              color: base.$lightest;
+              @include base.outer-glow (base.$lighter, 0px, 2px);
             }
           }
 
@@ -424,15 +424,15 @@
   
   @keyframes logoGlow {
     0% {
-      @include box-style-animated($lighter-primary-color, $lighter-primary-color, 0px, 0px);
+      @include box-style-animated(base.$lighter, base.$lighter, 0px, 0px);
     }
 
     30% {
-      @include box-style-animated($lighter-primary-color, $lighter-primary-color, 0px, 60px);
+      @include box-style-animated(base.$lighter, base.$lighter, 0px, 60px);
     }
   
     60% {
-      @include box-style-animated($lighter-primary-color, $lighter-primary-color, 0px, 60px);
+      @include box-style-animated(base.$lighter, base.$lighter, 0px, 60px);
     }
   }
 
@@ -483,9 +483,9 @@
       margin-left: 40%;
 
       &:hover{
-        color: $primary-font-color;
-        background-color: $darker-primary-color;
-        @include outer-glow($neon-primary-color, 0px, 5px);
+        color: base.$lightest;
+        background-color: base.$black;
+        @include base.outer-glow(base.$lighter, 0px, 5px);
       }
     }
   }

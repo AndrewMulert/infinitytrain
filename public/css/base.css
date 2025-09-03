@@ -18,14 +18,14 @@ article {
 
 body {
   margin: 0px;
-  background-color: #426A46;
-  color: #000000;
+  background-color: #065C47;
+  color: #000203;
 }
 
 footer {
   margin: 0px;
-  background-color: #171B18;
-  color: #FFFFFF;
+  background-color: #131a19;
+  color: #FBFCFA;
 }
 footer > p {
   margin-top: 8px;
@@ -62,13 +62,13 @@ nav ul {
   grid-row: 2/2;
 }
 .about-panel-card {
-  background-color: #438a49;
+  background-color: #65D681;
   margin-bottom: 50px;
   border-radius: 30px;
   border-style: solid;
-  border-color: #89EC92;
+  border-color: #98ED9F;
   border-width: 10px;
-  box-shadow: 0px 0px 50px 15px #25EE37;
+  box-shadow: 0px 0px 50px 15px #D1FACD;
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto;
@@ -77,7 +77,7 @@ nav ul {
   padding: 15px;
   min-width: 215px;
   border-radius: 15px 15px 0px 0px;
-  color: #FFFFFF;
+  color: #000203;
 }
 .about-panel-card-text h3 {
   font-size: 1.25em;
@@ -90,8 +90,8 @@ nav ul {
 }
 .about-panel-card-text a {
   text-decoration: none;
-  color: white;
-  background-color: #334134;
+  color: #D1FACD;
+  background-color: #065C47;
   border-radius: 15px;
   padding: 10px;
   width: 100%;
@@ -99,16 +99,16 @@ nav ul {
 }
 .about-panel-card-text a:visited {
   text-decoration: none;
-  color: white;
+  color: #D1FACD;
 }
 .about-panel-card-alt {
-  background-color: #438a49;
+  background-color: #65D681;
   margin-bottom: 50px;
   border-radius: 30px;
   border-style: solid;
-  border-color: #89EC92;
+  border-color: #98ED9F;
   border-width: 10px;
-  box-shadow: 0px 0px 50px 15px #25EE37;
+  box-shadow: 0px 0px 50px 15px #D1FACD;
   overflow: hidden;
   align-items: start;
   display: grid;
@@ -119,7 +119,7 @@ nav ul {
   min-width: 215px;
   justify-content: right;
   border-radius: 0px 0px 15px 15px;
-  color: #FFFFFF;
+  color: #000203;
 }
 .about-panel-card-alt-text h3 {
   font-size: 1.25em;
@@ -132,8 +132,8 @@ nav ul {
 }
 .about-panel-card-alt-text a {
   text-decoration: none;
-  color: white;
-  background-color: #334134;
+  color: #D1FACD;
+  background-color: #065C47;
   border-radius: 15px;
   padding: 10px;
   width: 100%;
@@ -141,7 +141,7 @@ nav ul {
 }
 .about-panel-card-alt-text a:visited {
   text-decoration: none;
-  color: white;
+  color: #D1FACD;
 }
 .about-panel-card-alt-image {
   display: block;
@@ -166,7 +166,7 @@ nav ul {
   width: 100%;
   height: 38px;
   background-color: #957E44;
-  color: #FFFFFF;
+  color: #FBFCFA;
 }
 
 .card_link:link {
@@ -181,7 +181,7 @@ nav ul {
   grid-row: 2/2;
   margin-top: 20px;
   padding: 20px;
-  background-color: #89EC92;
+  background-color: #65D681;
   border-radius: 30px;
 }
 .contact-panel .message_form h2 {
@@ -236,8 +236,8 @@ nav ul {
   top: 9%;
   padding: 20px;
   margin-top: -10px;
-  background-color: rgba(68, 149, 75, 0.7490196078);
-  color: #FFFFFF;
+  background-color: rgba(1, 46, 42, 0.7490196078);
+  color: #FBFCFA;
   text-align: center;
 }
 .hero_text h2 {
@@ -259,15 +259,15 @@ nav ul {
   grid-template-columns: 10px auto 10px;
   grid-template-rows: 70% 30%;
   background-color: #953E2B;
-  color: #FFFFFF;
+  color: #FBFCFA;
   text-align: center;
   height: 210px;
 }
 .hero_countdown label {
   font-size: 2.25em;
-  outline: #89EC92;
+  outline: #98ED9F;
   outline-width: 2px;
-  text-shadow: 0 5px 10px #AAF0B0;
+  text-shadow: 0 5px 10px #D1FACD;
 }
 .hero_countdown p {
   font-size: 1em;
@@ -286,9 +286,9 @@ nav ul {
   margin-bottom: 15px;
   border-radius: 30px;
   border-style: solid;
-  border-color: #89EC92;
+  border-color: #98ED9F;
   border-width: 10px;
-  box-shadow: 0px 0px 50px 15px #25EE37;
+  box-shadow: 0px 0px 50px 15px #D1FACD;
   overflow: hidden;
 }
 .home-panel-card-text {
@@ -303,7 +303,7 @@ nav ul {
 }
 .home-panel-card-text a {
   text-decoration: none;
-  color: white;
+  color: #FBFCFA;
   border-radius: 15px;
   padding: 10px;
   width: 100%;
@@ -311,15 +311,15 @@ nav ul {
 }
 .home-panel-card-text a:visited {
   text-decoration: none;
-  color: white;
+  color: #FBFCFA;
 }
 .home-panel-card-alt {
   margin-bottom: 15px;
   border-radius: 30px;
   border-style: solid;
-  border-color: #89EC92;
+  border-color: #98ED9F;
   border-width: 10px;
-  box-shadow: 0px 0px 50px 15px #25EE37;
+  box-shadow: 0px 0px 50px 15px #D1FACD;
   overflow: hidden;
 }
 .home-panel-card-alt-image {
@@ -344,7 +344,7 @@ nav ul {
 }
 .home-panel-card-alt-text a {
   text-decoration: none;
-  color: white;
+  color: #FBFCFA;
   border-radius: 15px;
   padding: 10px;
   width: 100%;
@@ -352,7 +352,7 @@ nav ul {
 }
 .home-panel-card-alt-text a:visited {
   text-decoration: none;
-  color: white;
+  color: #FBFCFA;
 }
 .home-panel-card-image {
   display: block;
@@ -367,13 +367,13 @@ nav ul {
   grid-row: 2/2;
 }
 .merch-panel-card {
-  background-color: #438a49;
+  background-color: #65D681;
   margin-bottom: 50px;
   border-radius: 30px;
   border-style: solid;
-  border-color: #89EC92;
+  border-color: #98ED9F;
   border-width: 10px;
-  box-shadow: 0px 0px 50px 15px #25EE37;
+  box-shadow: 0px 0px 50px 15px #D1FACD;
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto;
@@ -382,7 +382,7 @@ nav ul {
   padding: 15px;
   min-width: 215px;
   border-radius: 15px 15px 0px 0px;
-  color: #FFFFFF;
+  color: #000203;
 }
 .merch-panel-card-text h3 {
   font-size: 1.25em;
@@ -395,8 +395,8 @@ nav ul {
 }
 .merch-panel-card-text a {
   text-decoration: none;
-  color: white;
-  background-color: #334134;
+  color: #D1FACD;
+  background-color: #065C47;
   border-radius: 15px;
   padding: 10px;
   width: 100%;
@@ -404,16 +404,16 @@ nav ul {
 }
 .merch-panel-card-text a:visited {
   text-decoration: none;
-  color: white;
+  color: #D1FACD;
 }
 .merch-panel-card-alt {
-  background-color: #438a49;
+  background-color: #65D681;
   margin-bottom: 50px;
   border-radius: 30px;
   border-style: solid;
-  border-color: #89EC92;
+  border-color: #98ED9F;
   border-width: 10px;
-  box-shadow: 0px 0px 50px 15px #25EE37;
+  box-shadow: 0px 0px 50px 15px #D1FACD;
   overflow: hidden;
   align-items: start;
   display: grid;
@@ -424,7 +424,7 @@ nav ul {
   min-width: 215px;
   justify-content: right;
   border-radius: 0px 0px 15px 15px;
-  color: #FFFFFF;
+  color: #000203;
 }
 .merch-panel-card-alt-text h3 {
   font-size: 1.25em;
@@ -437,8 +437,8 @@ nav ul {
 }
 .merch-panel-card-alt-text a {
   text-decoration: none;
-  color: white;
-  background-color: #334134;
+  color: #D1FACD;
+  background-color: #065C47;
   border-radius: 15px;
   padding: 10px;
   width: 100%;
@@ -446,7 +446,7 @@ nav ul {
 }
 .merch-panel-card-alt-text a:visited {
   text-decoration: none;
-  color: white;
+  color: #D1FACD;
 }
 .merch-panel-card-alt-image {
   display: block;
@@ -463,19 +463,19 @@ nav ul {
 .nav_bar {
   display: flex;
   border-bottom: 10px;
-  border-color: #89EC92;
+  border-color: #131a19;
   z-index: 3;
 }
 .nav_items {
   list-style-type: none;
   border-bottom: 20px;
-  border-color: #89EC92;
+  border-color: #012E2A;
   margin: 0;
   padding-left: 0px;
   overflow: hidden;
   width: 100%;
-  background-color: #171B18;
-  color: #FFFFFF;
+  background-color: #131a19;
+  color: #FBFCFA;
 }
 .nav_link_container {
   text-align: center;
@@ -492,7 +492,7 @@ nav ul {
 }
 .nav_mini_main {
   display: flex;
-  background-color: #AAF0B0;
+  background-color: #98ED9F;
   border-radius: 15px;
   padding: 10px;
   max-width: 310px;
@@ -502,7 +502,7 @@ nav ul {
 .nav_mini_main a {
   padding: 5px;
   font-size: 0.95em;
-  color: #171B18;
+  color: #012E2A;
   text-decoration: none;
   text-align: center;
 }
@@ -527,7 +527,7 @@ nav ul {
   padding: 5px;
   margin-right: 3.5px;
   margin-left: 3.5px;
-  color: #FFFFFF;
+  color: #FBFCFA;
   text-decoration: none;
   font-size: 0.75em;
   text-align: center;
@@ -541,12 +541,12 @@ nav ul {
   max-height: 60px;
   font-weight: 400;
   font-size: 1em;
-  background-color: #171B18;
-  color: #FFFFFF;
+  background-color: #131a19;
+  color: #FBFCFA;
 }
 .page_link:hover {
-  background-color: #37BF6C;
-  color: #000000;
+  background-color: #65D681;
+  color: #000203;
   font-weight: 700;
 }
 
@@ -562,20 +562,20 @@ nav ul {
 
 /* IDs */
 #about {
-  background: #426A46;
+  background: #65D681;
 }
 #about .home-panel-card-alt-text {
-  background-color: #438a49;
+  background-color: #65D681;
 }
 #about .home-panel-card-alt-text h3 {
-  color: #171B18;
+  color: #000203;
 }
 #about .home-panel-card-alt-text a {
-  background-color: #334134;
+  background-color: #065C47;
 }
 #about .home-panel-card-alt-text a:hover {
-  background-color: #AAF0B0;
-  color: #171B18;
+  background-color: #000203;
+  color: #D1FACD;
   font-weight: 700;
 }
 
@@ -587,14 +587,14 @@ nav ul {
   height: 40px;
   width: 40px;
   background-color: #953E2B;
-  color: #FFFFFF;
+  color: #FBFCFA;
   border-style: none;
   border-radius: 25px;
   transition: background-color 1s;
 }
 #dropDown:focus {
   background-color: #CF573C;
-  color: #000000;
+  color: #000203;
   border-style: solid;
   border-color: #953E2B;
   border-width: 2px;
@@ -604,8 +604,8 @@ nav ul {
 }
 
 #error_Number {
-  color: #FFFFFF;
-  text-shadow: 0px 0px 50px #25EE37;
+  color: #FBFCFA;
+  text-shadow: 0px 0px 50px #98ED9F;
   grid-column: 2/2;
   margin-left: auto;
   margin-right: auto;
@@ -615,7 +615,7 @@ nav ul {
   margin-bottom: 0px;
 }
 #error_Reference {
-  color: #FFFFFF;
+  color: #FBFCFA;
   grid-column: 2/2;
   margin-left: auto;
   margin-right: auto;
@@ -623,7 +623,7 @@ nav ul {
   margin-top: 20px;
 }
 #error_Message {
-  color: #FFFFFF;
+  color: #FBFCFA;
   grid-column: 2/2;
   margin-left: auto;
   margin-right: auto;
@@ -633,22 +633,22 @@ nav ul {
 #hidden_link {
   text-decoration: none;
   background-color: #953E2B;
-  color: #FFFFFF;
+  color: #FBFCFA;
 }
 
 #home_link {
   position: relative;
   font-weight: 600;
   min-width: 200px;
-  background-color: #89EC92;
-  color: #FFFFFF;
+  background-color: #35B56A;
+  color: #FBFCFA;
   flex-grow: 4;
   align-self: auto;
 }
 #home_link:hover {
-  background-color: #AAF0B0;
-  color: #AAF0B0;
-  box-shadow: 0px 0px 50px 60px #AAF0B0;
+  background-color: #98ED9F;
+  color: #98ED9F;
+  box-shadow: 0px 0px 50px 60px #98ED9F;
   font-weight: bolder;
   animation: logoGlow 0.25s ease-in;
 }
@@ -660,7 +660,7 @@ nav ul {
   background-color: #a98a39;
 }
 #merch h3 {
-  color: #FFFFFF;
+  color: #FBFCFA;
 }
 #merch a {
   background-color: #6A5F42;
@@ -694,8 +694,8 @@ nav ul {
   grid-row: 3/3;
 }
 #return-menu a {
-  background-color: #AAF0B0;
-  color: #171B18;
+  background-color: #98ED9F;
+  color: #012E2A;
   padding: 20px;
   border-radius: 15px;
   text-align: center;
