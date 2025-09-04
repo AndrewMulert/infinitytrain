@@ -21,7 +21,8 @@
     
   main {
     height: 100%;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows: 1fr auto 1fr;
   }
     
   nav{
@@ -33,6 +34,10 @@
   /*Classes*/
 
   .about-panel{
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr;
+    grid-template-rows: 154px 1fr 20px 1fr 20px 1fr;
+
     .nav_link{
       &_container {
         float: left;
@@ -40,14 +45,15 @@
         width: 15%;
       }
     }
+    
     .nav_mini{
       &_main{
         max-width: 475px;
         
         a{
           font-size: 1.125em;
-          margin-right: 0.25px;
-          margin-left: 0.25px;
+          margin-right: auto;
+          margin-left: auto;
           padding: 10px;
 
           &:hover{
@@ -70,6 +76,8 @@
     }
 
     &-card{
+      margin-bottom: 0px;
+
       &-text{
         a{
           &:hover{
@@ -89,6 +97,8 @@
       }
 
       &-alt{
+        margin-bottom: 0px;
+
         &-text{
           a{
             &:hover{
@@ -106,6 +116,11 @@
             margin-bottom: 25px;
           }
         }
+      }
+
+      &-full{
+        grid-template-rows: none;
+        grid-template-columns: 1fr auto;
       }
     }
   }
@@ -176,18 +191,14 @@
       z-index: 2;
       min-height: 125px;
       max-height: 150px;
-      grid-column: 1 /4;
+      grid-column: 1 /8;
       grid-row: 1 /2;
       display: grid;
       grid-template-columns: 10px 1fr 1fr 10px;
       grid-template-rows: 50% 10% 40%;
       min-width: 325px;
-      margin-top: -40px;
+      margin-top: -4px;
       padding: 0px;
-
-      label{
-        font-size: 2.5em;
-      }
 
       p{
         font-size: 1em;
@@ -196,15 +207,14 @@
   }
 
   .home-panel{
-    min-height: 635px;
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr;
+    grid-template-rows: 1fr 20px 1fr;
 
     &-card{
-      display: flex;
-      margin-bottom: 30px;
+      margin-bottom: 0px;
       height: auto;
       max-width: 1190px;
-      display: grid;
-      grid-template-columns: 1fr auto;
 
       &-text{
         border-radius: 15px 0px 0px 15px;
@@ -234,55 +244,24 @@
         max-width: 725px;
         min-width: 310px;
         justify-content: right;
-        border-radius: 0px 15px 15px 0px;
-      }
-
-      &-alt{
-        display: flex;
-        margin-bottom: 30px;
-        height: auto;
-        max-width: 1190px;
-        align-items: flex-start;
-        display: grid;
-        grid-template-columns: auto 1fr;
-
-        &-image{
-          display: block;
-          width: 100%;
-          height: auto;
-          max-width: 725px;
-          min-width: 310px;
-          justify-content: left;
-          border-radius: 15px 0px 0px 15px;
-        }
-
-        &-text{
-          padding: 15px;
-          padding-bottom: 25px;
-          grid-column: 2 /3;
-          align-items: end;
-          border-radius: 0px 15px 15px 0px;
-
-          h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-          }
-
-          a{
-            width: 100%;
-            padding: 15px;
-          }
-
-          p{
-            margin-bottom: 30px;
-          }
-        }
+        border-radius: 15px;
       }
     }
   }
 
   .merch-panel{
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr;
+    grid-template-rows: 184px 1fr 20px 1fr 20px 1fr;
+
+    &-card{
+      margin-bottom: 0px;
+
+      &-alt{
+        margin-bottom: 0px;
+      }
+    }
+
     .nav_link{
       &_container {
         float: left;
@@ -404,6 +383,82 @@
     
   .page_link {
     display: block;
+    width: 100%;
+    max-width: 175px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 9px;
+    border-radius: 20px;
+  }
+
+  .position-{
+    &1{
+      grid-column: 1 /1;
+      grid-row: 1 /1;
+
+      &-about{
+        grid-column: 1 /4;
+        grid-row: 1 /1;
+      }
+    }
+
+    &2{
+      grid-column: 3 /3;
+      grid-row: 1 /1;
+
+      &-about{
+        grid-column: 1 /1;
+        grid-row: 2 /2;
+      }
+
+      &-watch{
+        grid-column: 1 /4;
+        grid-row: 2 /2;
+      }
+    }
+
+    &3{
+      grid-column: 1 /1;
+      grid-row: 3 /3;
+
+      &-about{
+        grid-column: 3 /3;
+        grid-row: 2 /2;
+      }
+    }
+
+    &4{
+      &-about{
+        grid-column: 1 /1;
+        grid-row: 4 /4;
+      }
+    }
+
+    &5{
+      &-about{
+        grid-column: 3 /3;
+        grid-row: 4 /4;
+      }
+    }
+
+    &6{
+      &-about{
+        grid-column: 1 /1;
+        grid-row: 6 /6;
+      }
+    }
+
+    &7{
+      &-about{
+        grid-column: 3 /3;
+        grid-row: 6 /6;
+      }
+    }
+
+
   }
 
     
@@ -472,6 +527,10 @@
     margin-top: 28.5px;
   }
 
+  #home_link{
+    border-radius: 0px 60px 0px 0px;
+  }
+
   #petition{
     > picture{
       margin-top: 132px;
@@ -479,8 +538,10 @@
   }
 
   #return-menu{
+    margin-top: 60px;
+    margin-bottom: 40px;
+
     a{
-      margin-left: 40%;
 
       &:hover{
         color: base.$lightest;
@@ -512,6 +573,28 @@
 }
 
 @media screen and (min-width: 70em) {
+  main{
+    grid-template-columns: 20px 1fr 20px;
+  }
+
+  .about-panel{
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr 20px 1fr;
+    grid-template-rows: 154px 1fr 20px 1fr;
+  }
+
+  .card-text{
+    h3{
+      font-size: 2em;
+    }
+
+    &-alt{
+      h3{
+        font-size: 2em;
+      }
+    }
+  }
+  
   .hero_text{
     position: absolute;
     margin-right: auto;
@@ -533,14 +616,78 @@
     }
   }
 
-  .card-text{
-    h3{
-      font-size: 2em;
+  .home-panel{
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr 20px 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .merch-panel{
+    grid-template-columns: 1fr 20px 1fr 20px 1fr;
+    grid-template-rows: 184px 1fr 20px 1fr;
+  }
+
+  .position-{
+    &1{
+      grid-column: 1 /1;
+      grid-row: 1 /1;
+
+      &-about{
+        grid-column: 1 /6;
+        grid-row: 1 /1;
+      }
     }
 
-    &-alt{
-      h3{
-        font-size: 2em;
+    &2{
+      grid-column: 3 /3;
+      grid-row: 1 /1;
+
+      &-about{
+        grid-column: 1 /1;
+        grid-row: 2 /2;
+      }
+
+      &-watch{
+        grid-column: 1 /4;
+        grid-row: 2 /2;
+      }
+    }
+
+    &3{
+      grid-column: 5 /5;
+      grid-row: 1 /1;
+      
+      &-about{
+        grid-column: 3 /3;
+        grid-row: 2 /2;
+      }
+    }
+
+    &4{
+      &-about{
+        grid-column: 5 /5;
+        grid-row: 2 /2;
+      }
+    }
+
+    &5{
+      &-about{
+        grid-column: 1 /1;
+        grid-row: 4 /4;
+      }
+    }
+
+    &6{
+      &-about{
+        grid-column: 3 /3;
+        grid-row: 4 /4;
+      }
+    }
+
+    &7{
+      &-about{
+        grid-column: 5 /5;
+        grid-row: 4 /4;
       }
     }
   }
@@ -548,71 +695,24 @@
 
 @media screen and (min-width: 80em) {
   .home-panel{
-    min-height: 1015px;
     margin-bottom: 90px;
   }
 }
 
 @media screen and (min-width: 85em) {
-  .about-panel{
-    &-card{
-      grid-template-columns: 1fr auto;
-      grid-template-rows: none;
-    
-      &-alt{
-        grid-template-columns: auto 1fr;
-        grid-template-rows: none;
-
-        &-text{
-          grid-column: 2 /3;
-          align-items: end;
-        }
-
-        &-image{
-          width: auto;
-          min-height: 150px;
-          max-height: 675px;
-          border-radius: 15px 0px 0px 15px;
-        }
-      } 
-
-      &-image{
-        width: auto;
-        min-height: 150px;
-        max-height: 675px;
-        border-radius: 0px 15px 15px 0px;
-        margin-top: 0px;
-      } 
-    }
-  }
 
   .merch-panel{
     &-card{
-      grid-template-columns: 1fr auto;
-      grid-template-rows: none;
     
       &-alt{
-        grid-template-columns: auto 1fr;
-        grid-template-rows: none;
-
-        &-text{
-          grid-column: 2 /3;
-          align-items: end;
-        }
 
         &-image{
-          width: auto;
-          min-height: 150px;
-          max-height: 675px;
-          border-radius: 15px 0px 0px 15px;
+          border-radius: 15px;
         }
       } 
 
       &-image{
-        width: auto;
-        min-height: 150px;
-        max-height: 675px;
-        border-radius: 0px 15px 15px 0px;
+        border-radius: 15px;
         margin-top: 0px;
       } 
     }
@@ -634,19 +734,9 @@
     }
   }
 
-  .home-panel{
-    min-height: 1125px;
-  }
-
   #hero_single {
     top: 30%;
     margin-top: 50px;
-  }
-
-  #return-menu{
-    a{
-      margin-left: 50%;
-    }
   }
 }
 

@@ -24,7 +24,8 @@ body {
 
 footer {
   margin: 0px;
-  background-color: #131a19;
+  box-shadow: 0px 0px 0px 5px #65D681;
+  background-color: #012E2A;
   color: #FBFCFA;
 }
 footer > p {
@@ -36,7 +37,7 @@ footer > p {
 
 main {
   display: grid;
-  grid-template-columns: 10% 80% 10%;
+  grid-template-columns: 20px 1fr 20px;
   grid-template-rows: 1fr auto 60px;
 }
 
@@ -63,7 +64,7 @@ nav ul {
 }
 .about-panel-card {
   background-color: #65D681;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   border-radius: 30px;
   border-style: solid;
   border-color: #98ED9F;
@@ -103,7 +104,7 @@ nav ul {
 }
 .about-panel-card-alt {
   background-color: #65D681;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   border-radius: 30px;
   border-style: solid;
   border-color: #98ED9F;
@@ -148,25 +149,51 @@ nav ul {
   width: 100%;
   border-radius: 15px 15px 0px 0px;
 }
+.about-panel-card-full {
+  background-color: #65D681;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #98ED9F;
+  border-width: 10px;
+  box-shadow: 0px 0px 50px 15px #D1FACD;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.about-panel-card-full-text {
+  padding: 15px;
+  min-width: 215px;
+  border-radius: 15px 15px 0px 0px;
+  color: #000203;
+}
+.about-panel-card-full-text h3 {
+  font-size: 1.25em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.about-panel-card-full-text p {
+  text-indent: 20px;
+}
+.about-panel-card-full-text a {
+  text-decoration: none;
+  color: #D1FACD;
+  background-color: #065C47;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.about-panel-card-full-text a:visited {
+  text-decoration: none;
+  color: #D1FACD;
+}
 .about-panel-card-image {
   display: block;
   width: 100%;
-  border-radius: 0px 0px 15px 15px;
+  border-radius: 15px;
   margin-top: 7px;
-}
-
-.banner {
-  grid-column: 2/span 3;
-  grid-row: 1/span 1;
-  padding: 0px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-top: -30px;
-  text-align: center;
-  width: 100%;
-  height: 38px;
-  background-color: #957E44;
-  color: #FBFCFA;
 }
 
 .card_link:link {
@@ -189,14 +216,12 @@ nav ul {
 }
 
 .countdown {
-  background-color: #953E2B;
+  background-color: #872916;
 }
 .countdown_message {
   grid-column: 1/4;
   grid-row: 2/2;
-  background-color: rgba(191, 81, 55, 0.7490196078);
-  min-height: 85px;
-  margin-top: -30px;
+  background-color: #B54A35;
   padding: 5px;
 }
 .countdown_message h2 {
@@ -257,8 +282,8 @@ nav ul {
   grid-column: 1/4;
   grid-row: 1/2;
   grid-template-columns: 10px auto 10px;
-  grid-template-rows: 70% 30%;
-  background-color: #953E2B;
+  grid-template-rows: 50% 50%;
+  background-color: #872916;
   color: #FBFCFA;
   text-align: center;
   height: 210px;
@@ -277,12 +302,14 @@ nav ul {
 
 .home-panel {
   grid-column: 2/3;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-radius: 25px;
   margin-left: auto;
   margin-right: auto;
 }
 .home-panel-card {
+  background-color: #65D681;
   margin-bottom: 15px;
   border-radius: 30px;
   border-style: solid;
@@ -302,6 +329,7 @@ nav ul {
   margin-bottom: 20px;
 }
 .home-panel-card-text a {
+  background-color: #065C47;
   text-decoration: none;
   color: #FBFCFA;
   border-radius: 15px;
@@ -313,7 +341,12 @@ nav ul {
   text-decoration: none;
   color: #FBFCFA;
 }
+.home-panel-card-text a:hover {
+  background-color: #000203;
+  color: #98ED9F;
+}
 .home-panel-card-alt {
+  background-color: #65D681;
   margin-bottom: 15px;
   border-radius: 30px;
   border-style: solid;
@@ -327,7 +360,7 @@ nav ul {
   width: 100%;
   height: auto;
   min-width: 150px;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 15px;
 }
 .home-panel-card-alt-text {
   /*margin-bottom: 15px;*/
@@ -343,6 +376,7 @@ nav ul {
   margin-bottom: 20px;
 }
 .home-panel-card-alt-text a {
+  background-color: #065C47;
   text-decoration: none;
   color: #FBFCFA;
   border-radius: 15px;
@@ -354,12 +388,16 @@ nav ul {
   text-decoration: none;
   color: #FBFCFA;
 }
+.home-panel-card-alt-text a:hover {
+  background-color: #000203;
+  color: #98ED9F;
+}
 .home-panel-card-image {
   display: block;
   width: 100%;
   height: auto;
   min-width: 150px;
-  border-radius: 0px 0px 15px 15px;
+  border-radius: 15px;
 }
 
 .merch-panel {
@@ -463,7 +501,8 @@ nav ul {
 .nav_bar {
   display: flex;
   border-bottom: 10px;
-  border-color: #131a19;
+  border-color: #012E2A;
+  box-shadow: 0px 0px 0px 5px #65D681;
   z-index: 3;
 }
 .nav_items {
@@ -474,7 +513,7 @@ nav ul {
   padding-left: 0px;
   overflow: hidden;
   width: 100%;
-  background-color: #131a19;
+  background-color: #012E2A;
   color: #FBFCFA;
 }
 .nav_link_container {
@@ -489,6 +528,7 @@ nav ul {
   grid-row: 2/2;
   margin-top: 20px;
   margin-bottom: 35px;
+  z-index: 1;
 }
 .nav_mini_main {
   display: flex;
@@ -514,7 +554,7 @@ nav ul {
 }
 .nav_mini_page {
   display: flex;
-  background-color: #953E2B;
+  background-color: #012E2A;
   border-radius: 0px 0px 15px 15px;
   padding: 10px;
   width: 100%;
@@ -541,7 +581,7 @@ nav ul {
   max-height: 60px;
   font-weight: 400;
   font-size: 1em;
-  background-color: #131a19;
+  background-color: #012E2A;
   color: #FBFCFA;
 }
 .page_link:hover {
@@ -561,24 +601,6 @@ nav ul {
 }
 
 /* IDs */
-#about {
-  background: #65D681;
-}
-#about .home-panel-card-alt-text {
-  background-color: #65D681;
-}
-#about .home-panel-card-alt-text h3 {
-  color: #000203;
-}
-#about .home-panel-card-alt-text a {
-  background-color: #065C47;
-}
-#about .home-panel-card-alt-text a:hover {
-  background-color: #000203;
-  color: #D1FACD;
-  font-weight: 700;
-}
-
 #dropDown {
   position: absolute;
   top: 10px;
@@ -586,17 +608,17 @@ nav ul {
   z-index: 2;
   height: 40px;
   width: 40px;
-  background-color: #953E2B;
+  background-color: #012E2A;
   color: #FBFCFA;
   border-style: none;
   border-radius: 25px;
   transition: background-color 1s;
 }
 #dropDown:focus {
-  background-color: #CF573C;
+  background-color: #65D681;
   color: #000203;
   border-style: solid;
-  border-color: #953E2B;
+  border-color: #065C47;
   border-width: 2px;
   border-radius: 5px;
   transition: background-color 1s;
@@ -632,7 +654,7 @@ nav ul {
 
 #hidden_link {
   text-decoration: none;
-  background-color: #953E2B;
+  background-color: #872916;
   color: #FBFCFA;
 }
 
@@ -653,57 +675,31 @@ nav ul {
   animation: logoGlow 0.25s ease-in;
 }
 
-#merch {
-  background-color: #957E44;
-}
-#merch .home-panel-card-text {
-  background-color: #a98a39;
-}
-#merch h3 {
-  color: #FBFCFA;
-}
-#merch a {
-  background-color: #6A5F42;
-}
-#merch a:hover {
-  background-color: #FFF3D6;
-  color: #6A5F42;
-  font-weight: 700;
-}
-
-#petition {
-  background-color: #37BF8E;
-}
-#petition .home-panel-card-text {
-  background-color: #2ea379;
-}
-#petition h3 {
-  color: #0B261D;
-}
-#petition a {
-  background-color: #17513C;
-}
-#petition a:hover {
-  background-color: #85facf;
-  color: #0B261D;
-  font-weight: 700;
-}
-
 #return-menu {
+  margin-left: auto;
+  margin-right: auto;
   grid-column: 2/2;
   grid-row: 3/3;
 }
 #return-menu a {
   background-color: #98ED9F;
+  margin-left: auto;
+  margin-right: auto;
   color: #012E2A;
   padding: 20px;
   border-radius: 15px;
   text-align: center;
-  margin-left: 35%;
   text-decoration: none;
   font-weight: bold;
 }
 
 #streaming {
-  background-color: #953E2B;
+  background-color: #D67865;
+}
+#streaming a {
+  background-color: #872916;
+  color: #FBFCFA;
+}
+#streaming a:hover {
+  background-color: #000203;
 }/*# sourceMappingURL=base.css.map */
