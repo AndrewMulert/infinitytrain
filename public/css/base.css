@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 /* mixins */
 /* tags */
-h1, h2, h3, a {
+h1, h2, h3, h4, a {
   font-family: Reddit Sans, Calibri, sans-serif;
 }
 
@@ -598,6 +598,12 @@ nav ul {
   display: block;
   margin-left: 0%;
   width: 18%;
+}
+
+.store_link {
+  padding-top: 30px !important;
+  padding-bottom: 5px !important;
+  background-color: transparent !important;
 }
 
 /* IDs */

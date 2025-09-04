@@ -457,8 +457,13 @@
         grid-row: 6 /6;
       }
     }
+  }
 
+  .store_link{
+    &:hover{
+      background-color: base.$lighter !important;
 
+    }
   }
 
     

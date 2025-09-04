@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 /* mixins */
 /* tags */
-h1, h2, h3, a {
+h1, h2, h3, h4, a {
   font-family: Reddit Sans, Calibri, sans-serif;
 }
 
@@ -600,6 +600,11 @@ nav ul {
   width: 18%;
 }
 
+.store_link {
+  padding-top: 30px !important;
+  background-color: transparent !important;
+}
+
 /* IDs */
 #dropDown {
   position: absolute;
@@ -1029,6 +1034,9 @@ nav ul {
   .position-7-about {
     grid-column: 3/3;
     grid-row: 6/6;
+  }
+  .store_link:hover {
+    background-color: #98ED9F !important;
   }
   @keyframes glowAnimation {
     0% {
