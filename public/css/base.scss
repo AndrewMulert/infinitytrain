@@ -782,6 +782,64 @@ nav {
     }
 }
 
+.watch-panel{
+    grid-column: 2 /3;
+    grid-row: 2 /2;
+
+    &-card{
+        background-color: $light;
+        margin-bottom: 40px;
+        border-radius: 30px;
+        border-style: solid;
+        border-color: $lighter;
+        border-width: 10px;
+        @include outer-glow;
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: 1fr auto;
+
+        &-text{
+            padding: 15px;
+            min-width: 215px;
+            border-radius: 15px 15px 0px 0px;
+            color: $black;
+
+            h3 {
+                font-size: 1.25em;
+                margin-top: 0px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            p {
+                text-indent: 20px;
+            }
+
+            & > a {
+                text-decoration: none;
+                color: $lightest;
+                background-color: $darker;
+                border-radius: 15px;
+                padding: 10px;
+                width: 100%;
+                margin-bottom: 15px;
+
+                &:visited{
+                    text-decoration: none;
+                    color: $lightest;
+                }
+            }
+        }  
+
+        &-image{
+            display: block;
+            width: 100%;
+            border-radius: 20px;
+            margin-top: 7px;
+        }
+    }
+}
+
 /* IDs */
   
 #dropDown {

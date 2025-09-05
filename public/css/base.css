@@ -649,6 +649,57 @@ nav ul {
   margin-left: auto;
 }
 
+.watch-panel {
+  grid-column: 2/3;
+  grid-row: 2/2;
+}
+.watch-panel-card {
+  background-color: #65D681;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #98ED9F;
+  border-width: 10px;
+  box-shadow: 0px 0px 50px 15px #D1FACD;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.watch-panel-card-text {
+  padding: 15px;
+  min-width: 215px;
+  border-radius: 15px 15px 0px 0px;
+  color: #000203;
+}
+.watch-panel-card-text h3 {
+  font-size: 1.25em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.watch-panel-card-text p {
+  text-indent: 20px;
+}
+.watch-panel-card-text > a {
+  text-decoration: none;
+  color: #D1FACD;
+  background-color: #065C47;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.watch-panel-card-text > a:visited {
+  text-decoration: none;
+  color: #D1FACD;
+}
+.watch-panel-card-image {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 7px;
+}
+
 /* IDs */
 #dropDown {
   position: absolute;

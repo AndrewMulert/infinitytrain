@@ -649,6 +649,57 @@ nav ul {
   margin-left: auto;
 }
 
+.watch-panel {
+  grid-column: 2/3;
+  grid-row: 2/2;
+}
+.watch-panel-card {
+  background-color: #65D681;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #98ED9F;
+  border-width: 10px;
+  box-shadow: 0px 0px 50px 15px #D1FACD;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.watch-panel-card-text {
+  padding: 15px;
+  min-width: 215px;
+  border-radius: 15px 15px 0px 0px;
+  color: #000203;
+}
+.watch-panel-card-text h3 {
+  font-size: 1.25em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.watch-panel-card-text p {
+  text-indent: 20px;
+}
+.watch-panel-card-text > a {
+  text-decoration: none;
+  color: #D1FACD;
+  background-color: #065C47;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.watch-panel-card-text > a:visited {
+  text-decoration: none;
+  color: #D1FACD;
+}
+.watch-panel-card-image {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 7px;
+}
+
 /* IDs */
 #dropDown {
   position: absolute;
@@ -1085,6 +1136,52 @@ nav ul {
   .store-link:hover {
     background-color: #D1FACD;
   }
+  .watch-panel {
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr;
+    grid-template-rows: 154px 1fr 20px 1fr;
+  }
+  .watch-panel .nav_link_container {
+    float: left;
+    margin-left: 0%;
+    width: 15%;
+  }
+  .watch-panel .nav_mini_main {
+    max-width: 475px;
+  }
+  .watch-panel .nav_mini_main a {
+    font-size: 1.125em;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+  }
+  .watch-panel .nav_mini_main a:hover {
+    background-color: #012E2A;
+    color: #FBFCFA;
+  }
+  .watch-panel .nav_mini_page {
+    max-width: 421px;
+  }
+  .watch-panel .nav_mini_page a {
+    font-size: 1em;
+  }
+  .watch-panel .nav_mini_page a:hover {
+    text-decoration: underline;
+  }
+  .watch-panel-card {
+    margin-bottom: 0px;
+  }
+  .watch-panel-card-text > a:hover {
+    background-color: #000203;
+    color: #D1FACD;
+    box-shadow: 0px 0px 50px 2px #98ED9F;
+  }
+  .watch-panel-card-text h3 {
+    font-size: 1.65em;
+  }
+  .watch-panel-card-text p {
+    margin-bottom: 25px;
+  }
   @keyframes glowAnimation {
     0% {
       box-shadow: 10px 10px 50px rgba(127, 204, 112, 0);
@@ -1251,6 +1348,11 @@ nav ul {
   .position-7-about {
     grid-column: 5/5;
     grid-row: 4/4;
+  }
+  .watch-panel {
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr 20px 1fr;
+    grid-template-rows: 154px 1fr;
   }
 }
 @media screen and (min-width: 80em) {
