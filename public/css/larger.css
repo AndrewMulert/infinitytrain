@@ -89,7 +89,7 @@ nav ul {
 .about-panel-card-text p {
   text-indent: 20px;
 }
-.about-panel-card-text a {
+.about-panel-card-text > a {
   text-decoration: none;
   color: #D1FACD;
   background-color: #065C47;
@@ -98,7 +98,7 @@ nav ul {
   width: 100%;
   margin-bottom: 15px;
 }
-.about-panel-card-text a:visited {
+.about-panel-card-text > a:visited {
   text-decoration: none;
   color: #D1FACD;
 }
@@ -147,7 +147,7 @@ nav ul {
 .about-panel-card-alt-image {
   display: block;
   width: 100%;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 20px;
 }
 .about-panel-card-full {
   background-color: #65D681;
@@ -192,7 +192,7 @@ nav ul {
 .about-panel-card-image {
   display: block;
   width: 100%;
-  border-radius: 15px;
+  border-radius: 20px;
   margin-top: 7px;
 }
 
@@ -533,7 +533,7 @@ nav ul {
 .nav_mini_main {
   display: flex;
   background-color: #98ED9F;
-  border-radius: 15px;
+  border-radius: 30px;
   padding: 10px;
   max-width: 310px;
   margin-left: auto;
@@ -545,6 +545,7 @@ nav ul {
   color: #012E2A;
   text-decoration: none;
   text-align: center;
+  border-radius: 20px;
 }
 .nav_mini_main p {
   margin-top: 0px;
@@ -555,7 +556,7 @@ nav ul {
 .nav_mini_page {
   display: flex;
   background-color: #012E2A;
-  border-radius: 0px 0px 15px 15px;
+  border-radius: 0px 0px 30px 30px;
   padding: 10px;
   width: 100%;
   max-width: 265px;
@@ -579,7 +580,7 @@ nav ul {
   padding-bottom: 19px;
   display: block;
   max-height: 60px;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 1em;
   background-color: #012E2A;
   color: #FBFCFA;
@@ -600,9 +601,52 @@ nav ul {
   width: 18%;
 }
 
-.store_link {
-  padding-top: 30px !important;
-  background-color: transparent !important;
+.store-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  padding: 10px;
+  background-color: transparent;
+}
+.store-link-1 {
+  grid-column: 1/1;
+  grid-row: 2/2;
+}
+.store-link-2 {
+  grid-column: 2/2;
+  grid-row: 2/2;
+}
+.store-link-3 {
+  grid-column: 4/4;
+  grid-row: 2/2;
+}
+.store-link-4 {
+  grid-column: 5/5;
+  grid-row: 2/2;
+}
+.store-header {
+  text-align: center;
+  width: 125px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.store-header-1 {
+  grid-column: 1/3;
+  grid-row: 1/1;
+}
+.store-header-2 {
+  grid-column: 4/6;
+  grid-row: 1/1;
+}
+.store-section {
+  max-width: 360px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 20px 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* IDs */
@@ -692,7 +736,7 @@ nav ul {
   margin-right: auto;
   color: #012E2A;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 30px;
   text-align: center;
   text-decoration: none;
   font-weight: bold;
@@ -748,7 +792,8 @@ nav ul {
     padding: 10px;
   }
   .about-panel .nav_mini_main a:hover {
-    text-decoration: underline;
+    background-color: #012E2A;
+    color: #FBFCFA;
   }
   .about-panel .nav_mini_page {
     max-width: 421px;
@@ -762,7 +807,7 @@ nav ul {
   .about-panel-card {
     margin-bottom: 0px;
   }
-  .about-panel-card-text a:hover {
+  .about-panel-card-text > a:hover {
     background-color: #000203;
     color: #D1FACD;
     box-shadow: 0px 0px 50px 2px #98ED9F;
@@ -920,7 +965,8 @@ nav ul {
     padding: 10px;
   }
   .merch-panel .nav_mini_main a:hover {
-    text-decoration: underline;
+    background-color: #012E2A;
+    color: #FBFCFA;
   }
   .merch-panel .nav_mini_page {
     max-width: 502px;
@@ -968,7 +1014,8 @@ nav ul {
     padding: 10px;
   }
   .nav_mini_main a:hover {
-    text-decoration: underline;
+    background-color: #012E2A;
+    color: #FBFCFA;
   }
   .nav_mini_page {
     max-width: 502px;
@@ -1035,8 +1082,8 @@ nav ul {
     grid-column: 3/3;
     grid-row: 6/6;
   }
-  .store_link:hover {
-    background-color: #98ED9F !important;
+  .store-link:hover {
+    background-color: #D1FACD;
   }
   @keyframes glowAnimation {
     0% {

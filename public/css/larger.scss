@@ -57,7 +57,8 @@
           padding: 10px;
 
           &:hover{
-            text-decoration: underline;
+            background-color: base.$darkest;
+            color: base.$white;
           }
         }
       }
@@ -79,7 +80,7 @@
       margin-bottom: 0px;
 
       &-text{
-        a{
+        & > a{
           &:hover{
             background-color: base.$black;
             color: base.$lightest;
@@ -281,7 +282,8 @@
           padding: 10px;
 
           &:hover{
-            text-decoration: underline;
+            background-color: base.$darkest;
+            color: base.$white;
           }
         }
       }
@@ -362,7 +364,8 @@
           padding: 10px;
 
           &:hover{
-            text-decoration: underline;
+            background-color: base.$darkest;
+            color: base.$white;
           }
         }
       }
@@ -459,9 +462,9 @@
     }
   }
 
-  .store_link{
+  .store-link{
     &:hover{
-      background-color: base.$lighter !important;
+      background-color: base.$lightest;
 
     }
   }
