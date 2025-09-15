@@ -37,7 +37,7 @@ footer > p {
 
 main {
   display: grid;
-  grid-template-columns: 20px 1fr 20px;
+  grid-template-columns: 50px 1fr 50px;
   grid-template-rows: 1fr auto 60px;
 }
 
@@ -59,6 +59,7 @@ nav ul {
 
 /* classes */
 .about-panel {
+  padding-top: 20px;
   grid-column: 2/3;
   grid-row: 2/2;
 }
@@ -302,7 +303,7 @@ nav ul {
 
 .home-panel {
   grid-column: 2/3;
-  padding-top: 20px;
+  padding-top: 50px;
   padding-bottom: 20px;
   border-radius: 25px;
   margin-left: auto;
@@ -401,6 +402,7 @@ nav ul {
 }
 
 .merch-panel {
+  padding-top: 20px;
   grid-column: 2/3;
   grid-row: 2/2;
 }
@@ -570,7 +572,7 @@ nav ul {
   margin-left: 3.5px;
   color: #FBFCFA;
   text-decoration: none;
-  font-size: 0.75em;
+  font-size: 0.6em;
   text-align: center;
 }
 
@@ -816,7 +818,7 @@ nav ul {
   }
   main {
     height: 100%;
-    grid-template-columns: 20px 1fr 20px;
+    grid-template-columns: 50px 1fr 50px;
     grid-template-rows: 1fr auto 1fr;
   }
   nav {
@@ -993,7 +995,7 @@ nav ul {
   .merch-panel {
     display: grid;
     grid-template-columns: 1fr 20px 1fr;
-    grid-template-rows: 184px 1fr 20px 1fr 20px 1fr;
+    grid-template-rows: 205px 1fr 20px 1fr 20px 1fr;
   }
   .merch-panel-card {
     margin-bottom: 0px;
@@ -1267,7 +1269,7 @@ nav ul {
 }
 @media screen and (min-width: 70em) {
   main {
-    grid-template-columns: 20px 1fr 20px;
+    grid-template-columns: 50px 1fr 50px;
   }
   .about-panel {
     display: grid;
@@ -1303,7 +1305,7 @@ nav ul {
   }
   .merch-panel {
     grid-template-columns: 1fr 20px 1fr 20px 1fr;
-    grid-template-rows: 184px 1fr 20px 1fr;
+    grid-template-rows: 205px 1fr 20px 1fr;
   }
   .position-1 {
     grid-column: 1/1;

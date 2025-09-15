@@ -21,7 +21,7 @@
     
   main {
     height: 100%;
-    grid-template-columns: 20px 1fr 20px;
+    grid-template-columns: 50px 1fr 50px;
     grid-template-rows: 1fr auto 1fr;
   }
     
@@ -253,7 +253,7 @@
   .merch-panel{
     display: grid;
     grid-template-columns: 1fr 20px 1fr;
-    grid-template-rows: 184px 1fr 20px 1fr 20px 1fr;
+    grid-template-rows: 205px 1fr 20px 1fr 20px 1fr;
 
     &-card{
       margin-bottom: 0px;
@@ -648,7 +648,7 @@
 
 @media screen and (min-width: 70em) {
   main{
-    grid-template-columns: 20px 1fr 20px;
+    grid-template-columns: 50px 1fr 50px;
   }
 
   .about-panel{
@@ -698,7 +698,7 @@
 
   .merch-panel{
     grid-template-columns: 1fr 20px 1fr 20px 1fr;
-    grid-template-rows: 184px 1fr 20px 1fr;
+    grid-template-rows: 205px 1fr 20px 1fr;
   }
 
   .position-{
