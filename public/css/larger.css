@@ -35,6 +35,15 @@ footer > p {
   width: 80%;
 }
 
+form > div {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+form > div > h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 input {
   padding: 7px;
   border-radius: 15px;
@@ -220,6 +229,12 @@ nav ul {
 }
 .contact-panel .message_form h2 {
   margin-top: 0px;
+}
+.contact-panel .message_form p {
+  background: red;
+  color: black;
+  padding: 10px;
+  border-radius: 15px;
 }
 
 .countdown {

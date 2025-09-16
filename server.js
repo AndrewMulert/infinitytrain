@@ -1,3 +1,6 @@
+import 'dotenv/config';
+import connectDB from './src/config/db.js';
+
 import configNodeEnv from './src/middleware/node-env.js';
 import express from 'express';
 import homeRoute from './src/routes/index.js';
@@ -37,37 +40,48 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-
-app.use('/', homeRoute);
-app.use('/about', aboutRoute);
-app.use('/contact', contactRoute);
-app.use('/merch', merchRoute);
-app.use('/support', supportRoute);
-
-app.use(notFoundHandler);
-app.use(globalErrorHandler);
-
-
-if (mode.includes('dev')) {
-    const ws = await import('ws');
-
+async function startServer() {
     try {
-        const wsPort = parseInt(port) + 1;
-        const wsServer = new ws.WebSocketServer({ port: wsPort });
+        await connectDB();
+        app.use('/', homeRoute);
+        app.use('/about', aboutRoute);
+        app.use('/contact', contactRoute);
+        app.use('/merch', merchRoute);
+        app.use('/support', supportRoute);
 
-        wsServer.on('listening', () => {
-            console.log(`WebSocket server is running on port ${wsPort}`);
+        app.use(notFoundHandler);
+        app.use(globalErrorHandler);
+
+
+        if (mode.includes('dev')) {
+            const ws = await import('ws');
+
+            try {
+                const wsPort = parseInt(port) + 1;
+                const wsServer = new ws.WebSocketServer({ port: wsPort });
+
+                wsServer.on('listening', () => {
+                    console.log(`WebSocket server is running on port ${wsPort}`);
+                });
+
+                wsServer.on('error', (error) => {
+                    console.error('WebSocket server error:', error);
+                });
+            } catch (error) {
+                console.error('Failed to start WebSocket server:', error);
+            }
+        }
+
+
+        app.listen(port, async () => {
+                console.log(`Server running on http://127.0.0.1:${port}`);
         });
 
-        wsServer.on('error', (error) => {
-            console.error('WebSocket server error:', error);
-        });
     } catch (error) {
-        console.error('Failed to start WebSocket server:', error);
+        console.error('Failed to start server due to database connection error:', error);
+        process.exit(1);
     }
+
 }
 
-
-app.listen(port, async () => {
-    console.log(`Server running on http://127.0.0.1:${port}`);
-});
+startServer();

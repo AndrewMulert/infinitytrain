@@ -230,6 +230,12 @@ nav ul {
 .contact-panel .message_form h2 {
   margin-top: 0px;
 }
+.contact-panel .message_form p {
+  background: red;
+  color: black;
+  padding: 10px;
+  border-radius: 15px;
+}
 
 .countdown {
   background-color: #872916;
