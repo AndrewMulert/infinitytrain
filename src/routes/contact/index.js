@@ -82,8 +82,13 @@ router.post('/', async (req, res) => {
     const { fname, lname, email, tel, subject, msg } = req.body;
 
     const lowerCaseMsg = msg.toLowerCase();
-    const containsSpam = spamWords.some(word => lowerCaseMsg.includes(word));
-    const containsSwears = swearWords.some(word => lowerCaseMsg.includes(word));
+    const lowerCaseFname = fname.toLowerCase();
+    const lowerCaseLname = lname.toLowerCase();
+    const msgContainsSpam = spamWords.some(word => lowerCaseMsg.includes(word));
+    const msgContainsSwears = swearWords.some(word => lowerCaseMsg.includes(word));
+    const fnameContainsSpam = spamWords.some(word => lowerCaseFname.includes(word));
+    const fnameContainsSwears = swearWords.some(word => lowerCaseFname.includes(word));
+    const lnameContainsSwears = swearWords.some(word => lowerCaseLname.includes(word));
 
     if (!fname || fname.length < 2){
         return res.status(400).json({ message: "A first name is required."});
@@ -97,13 +102,25 @@ router.post('/', async (req, res) => {
     if (!msg || msg.length < 2){
         return res.status(400).json({ message: "A message is required."});
     }
-    if (containsSpam) {
+    if (msgContainsSpam) {
         console.log('Blocked spam message from:', email);
         return res.status(400).json({ message: "Your message was flagged as spam and could not be sent. If this is an error, please try again without using any promotional keywords."})
     }
-    if (containsSwears) {
+    if (msgContainsSwears) {
         console.log('Blocked inappropriate message from:', email);
         return res.status(400).json({ message: "Your message was flagged as inappropriate due to the use of certain keywords and could not be sent. Please review your message for any language, including slang, profanity, or threat-related terms, and try again."});
+    }
+    if (fnameContainsSpam) {
+        console.log('Blocked spam message from:', email);
+        return res.status(400).json({ message: "Your first name was flagged as spam and could not be sent. If this is an error, please try again without using any promotional keywords."})
+    }
+    if (fnameContainsSwears) {
+        console.log('Blocked inappropriate message from:', email);
+        return res.status(400).json({ message: "Your first name was flagged as inappropriate due to the use of certain keywords and could not be sent. Please review your message for any language, including slang, profanity, or threat-related terms, and try again."});
+    }
+    if (lnameContainsSwears) {
+        console.log('Blocked inappropriate message from:', email);
+        return res.status(400).json({ message: "Your last name was flagged as inappropriate due to the use of certain keywords and could not be sent. Please review your message for any language, including slang, profanity, or threat-related terms, and try again."});
     }
 
     try {

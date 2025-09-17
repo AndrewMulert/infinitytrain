@@ -54,6 +54,25 @@ const contactSchema = new mongoose.Schema({
                 fieldType: { type: String }
             }
         }],
+        subject: {
+            title: {
+                for: { type: String },
+                text: { type: String }
+            },
+            information: [{
+                input: {
+                    inputType: { type: String },
+                    inputId: { type: String },
+                    inputName: { type: String },
+                    required: { type: Boolean, default: false},
+                    value: { type: String }
+                },
+                label: {
+                    for: { type: String},
+                    text: { type: String}
+                }
+            }]
+        },
         submitButtonText: { type: String }
     }
 },
