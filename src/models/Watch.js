@@ -44,7 +44,8 @@ const watchSchema = new mongoose.Schema({
         position: {
             type: Number
         }
-    }
+    },
+    id: { type: String }
 },
 {collection: 'watch'});
 

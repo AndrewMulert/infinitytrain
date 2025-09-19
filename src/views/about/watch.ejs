@@ -8,64 +8,60 @@
             <a href="/about/watch">Where to Watch</a>
         </div>
     </div>
-    <div class="watch-panel-card position-2-about" id="streaming">
-        <div class="watch-panel-card-text">
-            <h3>Stream Now on... Nowhere</h3>
-            <p>Initially released on Cartoon Network, Infinity Train soon became an HBO Max Original in August of 2020 with the release of its third book.
-                But this didn't last long as the show was cancelled less than a year later in April of 2021. 
-                While this meant that there wouldn't be any new episodes the show could still be streamed on the service.
-                That was, until it was quietly removed in August of 2022 to the dismay of fans.</p>
-            <p>"[...] Cartoon Network warned them not to do this as it would hurt relationships with creators and talent, 
-                but they clearly do not care what any of this looks like publicly, much less about how we feel about it." <i>-Owen Dennis</i></p>
-            <a href="https://owendennis.substack.com/p/so-uh-whats-going-on-with-infinity" target="_blank">Read the full article here</a>
-        </div>
-        <picture>
-            <source srcset="../images/watch_hbo_ex-small.webp" media="(max-width: 500px)">
-            <source srcset="../images/watch_hbo_ex-medium.webp" media="(max-width: 1000px)">
-            <img class="watch-panel-card-image" src="../images/watch_hbo_ex-min.webp" alt="The entire main cast of the show Infinity Train, designed by Andrew Mulert">
-        </picture>
-    </div>
-    <div class="watch-panel-card position-3-about">
-        <div class="watch-panel-card-text">
-            <h3>Preserve Infinity Train on DVD</h3>
-            <p>Infinity Train became an exclusive on HBO Max when Book 3 premiered on August 13th, 2020 forever locking it to streaming and limiting its access to viewers.
-                Fortunately, before this happened, Books 1 and 2 were released to the public for purchase on the DVD format making it possible to preserve the show for home and personal viewing.
-                While Books 3 and 4 never got a DVD release, even purchasing a DVD copy and a portion of Infinity Train to watch can show Warner Brothers that us fans still enjoy this story.
-            </p>
-            <div class="store-section">
-                <h4 class="store-header store-header-1">Purchase Book 1</h4>
-                <a href="https://themysteryshack.com/collections/infinity-train/products/infinity-train-book-one-dvd?variant=31919985131635" target="_blank" title="TheMysteryShack" class="store-link store-link-1"><svg width="40px" height="40px"><image width="40px" height="40px" href="../images/shop_mysteryshack.svg"></image></svg></a>
-                <a href="https://www.amazon.com/Cartoon-Network-Infinity-Train-Book/dp/B0851LFNY6" target="_blank" title="Amazon" class="store-link store-link-2"><svg width="40px" height="40px"><image width="40px" height="40px" href="../images/shop_amazon.svg"></image></svg></a>
-                <h4 class="store-header store-header-2">Purchase Book 2</h4>
-                <a href="https://themysteryshack.com/collections/infinity-train/products/infinity-train-book-two-dvd?variant=39349406695539" target="_blank" title="TheMysteryShack" class="store-link store-link-3"><svg width="40px" height="40px"><image width="40px" height="40px" href="../images/shop_mysteryshack.svg"></image></svg></a>
-                <a href="https://www.amazon.com/Infinity-Train-Book-Two-DVD/dp/B08XFP69RD" target="_blank" title="Amazon" class="store-link store-link-4"><svg width="40px" height="40px"><image width="40px" height="40px" href="../images/shop_amazon.svg"></image></svg></a>
+    <% if (watch && watch.length > 0) { %>
+        <% watch.forEach((watch, index) => { %>
+            <%
+                let cardClasses = 'watch-panel-card ';
+                let cardIds = '';
+
+                if(watch.order) {
+                    cardClasses += `position-${watch.order.position}-about`;
+                }
+
+                if(watch.id) {
+                    cardIds += `${watch.id}`;
+                }
+            %>
+            <div class="<%= cardClasses %>" id="<%= cardIds %>">
+                <div class="watch-panel-card-text">
+                    <h3><%= watch.title %></h3>
+                    <% if (watch.description && watch.description.length > 0) { %>
+                        <% watch.description.forEach(desc => { %>
+                            <p><%= desc %></p>
+                        <% }) %>
+                    <% } %>
+                    <% if (watch.button && watch.button.length > 0) { %>
+                        <% watch.button.forEach(btn => { %>
+                            <% if (btn.text && btn.href) { %>
+                                <a href="<%= btn.text %>" target="<%= btn.target %>"><%= btn.text %></a>
+                           <% } %>
+                     <% }) %>
+                    <% } %>
+                    <% if (watch.shop && watch.shop.length > 0) { %>
+                        <div class="store-section">
+                            <% watch.shop.forEach(cat => { %>
+                                <% if (cat.item.text && cat.item.order) { %>
+                                    <h4 class="store-header store-header-<%= cat.item.order %>"><%= cat.item.text %></h4>
+                                    <% cat.item.links.forEach(link => { %>
+                                        <a href="<%= link.href %>" target="<%= link.target %>" title="<%= link.title %>" class="store-link store-link-<%= link.order %>">
+                                            <svg width="40px" height="40px">
+                                                <image width="40px" height="40px" href="../images/<%= link.svgHref %>.svg"></image>
+                                            </svg>
+                                        </a>
+                                    <% }) %>
+                                <% } %>
+                            <% }) %>
+                        </div>
+                    <% } %>
+                </div>
+                <picture>
+                    <source srcset="../images/<%= watch.image.src %>-small.webp" media="(max-width: 500px)">
+                    <source srcset="../images/<%= watch.image.src %>-medium.webp" media="(max-width: 1000px)">
+                    <img class="watch-panel-card-image" src="../images/<%= watch.image.src %>-min.webp" alt="<%= watch.image.alt %>">
+                </picture>
             </div>
-        </div>
-        <picture>
-            <source srcset="../images/watch_dvd-small.webp" media="(max-width: 500px)">
-            <source srcset="../images/watch_dvd-medium.webp" media="(max-width: 1000px)">
-            <img class="watch-panel-card-image" src="../images/watch_dvd-min.webp" alt="The entire main cast of the show Infinity Train, designed by Andrew Mulert">
-        </picture>
-    </div>
-    <div class="watch-panel-card position-4-about">
-        <div class="watch-panel-card-text">
-            <h3>Purchase Digitally</h3>
-            <p>On October 25, 2023 Infinity Train was not only gone from HBO Max, but became removed from digital retailers making it impossible to purchase in full in any form. 
-                A few episodes remained at a time on each site, but as a short form show, this drastically cut the plot and story that remained. 
-                Recently however, a few seasons have become available to purchase in full again, just not on one single platform.
-            </p>
-            <div class="store-section">
-                <h4 class="store-header store-header-1">Purchase Books 1, 2, & 4</h4>
-                <a href="https://www.amazon.com/gp/video/detail/B07W63YPKQ/ref=atv_dp_season_select_s1" target="_blank" title="Amazon" class="store-link store-link-1"><svg width="40px" height="40px"><image width="40px" height="40px" href="../images/shop_amazon.svg"></image></svg></a>
-                <h4 class="store-header store-header-2">Purchase Book 3</h4>
-                <a href="https://www.youtube.com/show/SCA8sgbHV8GjG96-9k9SGQnQ?season=3&sbp=CgEz" target="_blank" title="YouTube" class="store-link store-link-3"><svg width="40px" height="40px"><image width="40px" height="40px" href="../images/shop_youtube.svg"></image></svg></a>
-                <a href="https://play.google.com/store/tv/show/Infinity_Train?id=wqYfDGTBbZfPF4zh6hFmCA&cdid=tvseason-Q5CRScoWAB0.P" target="_blank" title="Google Play" class="store-link store-link-4"><svg width="40px" height="40px"><image width="40px" height="40px" href="../images/shop_play.svg"></image></svg></a>
-            </div>
-        </div>
-        <picture>
-            <source srcset="../images/watch_digital-small.webp" media="(max-width: 500px)">
-            <source srcset="../images/watch_digital-medium.webp" media="(max-width: 1000px)">
-            <img class="watch-panel-card-image" src="../images/watch_digital-min.webp" alt="The entire main cast of the show Infinity Train, designed by Andrew Mulert">
-        </picture>
-    </div>
+        <% }) %>
+    <% } else { %>
+        <h2>"Oh! Uh... it's broken! I broke it" ~One-One</h2>
+    <% } %>
 </div>

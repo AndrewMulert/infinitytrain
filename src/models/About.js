@@ -31,7 +31,8 @@ const aboutSchema = new mongoose.Schema({
         position: {
             type: Number
         }
-    }
+    },
+    id: { type: String }
 },
 {collection: 'about'});
 
