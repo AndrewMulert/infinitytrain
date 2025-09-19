@@ -1,36 +1,31 @@
 <%- include('partials/countdown') %>
 <div class="home-panel">
-    <div class="home-panel-card position-1">
-        <picture>
-            <source srcset="images/index_apex-small.webp" media="(max-width: 500px)">
-            <source srcset="images/index_apex-medium.webp" media="(max-width: 1000px)">
-            <img class="home-panel-card-image" src="images/index_apex-min.webp" alt="Simon and Grace raising their arms above the balcony in protest">
-        </picture>
-        <div class="home-panel-card-text">
-            <h3>Want more Infinity Train? <br> Show your support today!</h3>
-            <a href="https://www.change.org/p/cartoon-network-renew-infinity-train-for-books-5-8" target="_blank">Sign the Petition</a>
-        </div>
-    </div>
-    <div class="home-panel-card position-2">
-        <picture>
-            <source srcset="images/index_book-small.webp" media="(max-width: 500px)">
-            <source srcset="images/index_book-medium.webp" media="(max-width: 1000px)">
-            <img class="home-panel-card-image" src="images/index_book-min.webp" alt="Tulip eating a onion while reading a book">
-        </picture>
-        <div class="home-panel-card-text">
-            <h3>Learn more about the series and its lore</h3>
-            <a href="/about">About the Show</a>
-        </div>
-    </div>
-    <div class="home-panel-card position-3">
-        <picture>
-            <source srcset="images/index_donut_holer-small.webp" media="(max-width: 500px)">
-            <source srcset="images/index_donut_holer-medium.webp" media="(max-width: 1000px)">
-            <img class="home-panel-card-image" src="images/index_donut_holer-min.webp" alt="Atticus selling a Donut Holer">
-        </picture>
-        <div class="home-panel-card-text">
-            <h3>Looking for some cool Infinity Train gear? <br> Shop the collection!</h3>
-            <a href="/merch">Explore Merch</a>
-        </div>
-    </div>
+    <% if (home && home.length > 0) { %>
+        <% home.forEach((home, index) => { %>
+            <%
+                let cardClasses = 'home-panel-card ';
+
+                if (home.order) {
+                    cardClasses += `position-${home.order.position}`;
+                }
+            %>
+            <div class="<%= cardClasses %>">
+                <picture>
+                    <source srcset="images/<%= home.image.src %>-small.webp" media="(max-width: 500px)">
+                    <source srcset="images/<%= home.image.src %>-medium.webp" media="(max-width: 1000px)">
+                    <img class="home-panel-card-image" src="images/<%= home.image.src %>-min.webp" alt="<%= home.image.alt %>" loading="lazy">
+                </picture>
+                <div class="home-panel-card-text">
+                    <h3><%= home.title %></h3>
+                    <% if (home.button && home.button.length > 0) { %>
+                        <% home.button.forEach(btn => { %>
+                    <a href="<%= btn.href %>" target="<%= btn.target %>"><%= btn.text %></a>
+                    <% }) %>
+                <% } %>
+                </div>
+            </div>
+        <% }) %>
+    <% } else {%>
+        <h2>"Oh! Uh... it's broken! I broke it" ~One-One</h2>
+    <% } %>
 </div>
