@@ -8,7 +8,38 @@
             <a href="/support/watch">Where to Watch</a>
         </div>
     </div>
-    <div class="about-panel-card position-2-about" id="streaming">
+    <% if (support && support.length > 0) { %>
+        <% support.forEach((support, index) => { %>
+            <%
+                let cardClasses = 'about-panel-card ';
+
+                if(support.order) {
+                    cardClasses += `position-${support.order.position}-about`;
+                }
+            %>
+            <div class="<%= cardClasses %>">
+                <div class="about-panel-card-text">
+                    <h3><%= support.title %></h3>
+                    <% if (support.description && support.description.length > 0) { %>
+                        <% support.description.forEach(desc => { %>
+                            <p><%= desc %></p>
+                        <% }) %>
+                    <% } %>
+                    <% if (support.button && support.button.length > 0) { %>
+                        <% support.button.forEach(btn => { %>
+                            <a href="<%= btn.href %>" target="<%= btn.target %>"><%= btn.text %></a>
+                        <% }) %>
+                    <% } %>
+                </div>
+                <picture>
+                    <source srcset="../images/<%= support.image.src %>-small.webp" media="(max-width: 500px)">
+                    <source srcset="../images/<%= support.image.src %>-medium.webp" media="(max-width: 1000px)">
+                    <img class="about-panel-card-image" src="../images/<%= support.image.src %>-min.webp" alt="<%= support.image.alt %>">
+                </picture>
+            </div>
+        <% }) %>
+    <% } %>
+    <!--<div class="about-panel-card position-2-about" id="streaming">
         <div class="about-panel-card-text">
             <h3>Stream Now on... Nowhere</h3>
             <p>Initially released on Cartoon Network, Infinity Train soon became an HBO Max Original in August of 2020 with the release of its third book.
@@ -54,13 +85,12 @@
             <source srcset="images/watch_cancelled-small.webp" media="(max-width: 500px)">
             <source srcset="images/watch_cancelled-medium.webp" media="(max-width: 1000px)">
             <img class="about-panel-card-alt-image" src="images/watch_cancelled-min.webp" alt="Simon looking down, disgusted">
-            <!--All images on this page must be in a 8 by 10 aspect ratio-->
         </picture>
         <div class="about-panel-card-alt-text">
             <h3>Why was Infinity Train canceled?</h3>
             <p>Infinity Train was canceled shortly after Book 4 premiered, a direct result of the Warner Brothers-Discovery merger and subsequent restructuring. The reasoning was particularly frustrating: executives believed children couldn't relate to the planned Book 5 protagonist, an adult character named Amelia. While the show was aimed at a younger demographic, it had a notable appeal to all ages—an audience studios often struggle to acknowledge.</p>
         </div>
-    </div>
+    </div>-->
 </div>
 <div id="return-menu">
     <a href="#home">Back to Top</a>

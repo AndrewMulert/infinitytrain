@@ -63,11 +63,12 @@ router.get('/', async (req, res) => {
             title: 'Contact - Infinity Train',
             heroImage: 'contact_hero_music', 
             heroAlt: 'The stage in New York, rendered by Andrew Mulert',
-            heroText: 'A big thanks to those who made this site possible'
+            heroText: 'A big thanks to those who made this site possible',
+            contacts: contacts
         });
 
     } catch (err) {
-        console.error('Error fetching interests', err);
+        console.error('Error fetching contact', err);
         res.status(500).send('Error loading contact page.');
     }
 });

@@ -1,6 +1,54 @@
 <%- include('../partials/countdown') %>
 <div class="contact-panel">
-    <div class="message_form">
+    <% if (contacts && contacts.length > 0) { %>
+        <% contacts.forEach((contact, index) => { %>
+            <% 
+                let cardClasses = '';
+                let cardIds = '';
+
+                if(contact.order) {
+                    cardClasses += `position-${contact.order.position}`
+                }
+
+                if(contact.id) {
+                    cardIds += `${contact.id}`
+                }
+            %>
+            <div class="<%= cardClasses %>" id="<% cardIds %>">
+                <h2><%= contact.title %></h2>
+                <% if (contact.form && contact.form.information && contact.form.information.length > 0 ) { %>
+                    <p><b>Required fields are labeled with *</b></p>
+                    <h3 id="formStatus"></h3>
+                    <form id="emailForm">
+                        <% contact.form.information.forEach(topic => { %>
+                            <div>
+                                <label for="<%= topic.label.for %>"><%= topic.label.text %></label>
+                                <% if(topic.input.fieldType === 'input') { %>
+                                    <input 
+                                        type="<%= topic.input.inputType %>" 
+                                        id="<%= topic.input.inputId %>" 
+                                        name="<%= topic.input.inputName %>" 
+                                        placeholder="<%= topic.input.placeholder %>" 
+                                        <% if (topic.input.required) { %>required<% } %>
+                                        <% if (topic.input.pattern) { %> pattern="<%= topic.input.pattern %>"<% } %>
+                                    >
+                                <% } else if (topic.input.fieldType === 'textarea')  { %>
+                                    <textarea
+                                        id="<%= topic.input.inputName %>"
+                                        name="<%= topic.input.inputName %>"
+                                        placeholder="<%= topic.input.placeholder || '' %>"
+                                        <% if (topic.input.required) { %>required<% } %>
+                                        <% if (topic.input.pattern) { %> pattern="<%= topic.input.pattern %>"<% } %>
+                                    ></textarea>
+                                <% } %>%>
+                            </div>
+                        <% }) %>
+                    </form>
+                <% } %>
+            </div>
+        <% }) %>
+    <% } %>
+    <!--<div class="message_form">
         <p>This form is currently inactive. Sorry for the inconvenience</p>
         <h2>Leave us a message!</h2>
         <p><b>Required fields are labeled with *</b></p>
@@ -37,5 +85,5 @@
             </div>
             <button type="submit">Send</button>
         </form>
-    </div>
+    </div>-->
 </div>

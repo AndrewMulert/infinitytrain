@@ -74,7 +74,8 @@ const contactSchema = new mongoose.Schema({
             }]
         },
         submitButtonText: { type: String }
-    }
+    },
+    id: { type: String }
 },
 {collection: 'contact'});
 

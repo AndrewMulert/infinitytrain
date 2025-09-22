@@ -227,10 +227,10 @@ nav ul {
   background-color: #65D681;
   border-radius: 30px;
 }
-.contact-panel .message_form h2 {
+.contact-panel #message_form h2 {
   margin-top: 0px;
 }
-.contact-panel .message_form p {
+.contact-panel #message_form p {
   background: red;
   color: black;
   padding: 10px;

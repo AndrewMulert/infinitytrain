@@ -31,7 +31,8 @@ const merchSchema = new mongoose.Schema({
         position: {
             type: Number
         }
-    }
+    },
+    id: {type: String }
 },
 {collection: 'merch'});
 
