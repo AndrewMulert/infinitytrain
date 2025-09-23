@@ -135,8 +135,19 @@
 
   .contact-panel{
     display: grid;
-    grid-template-columns: 1fr 20px 1fr;
-    grid-template-rows: 1fr 20px 1fr 20px 1fr;
+    grid-template-columns: 1fr 20px 1fr 20px 1fr;
+    grid-template-rows: 1fr;
+    
+    &-card{
+      padding: 10px;
+
+      div{
+        textarea{
+          min-width: 200px;
+          max-width: 325px;
+        }
+      }
+    }
   }
 
   .countdown{
@@ -412,6 +423,11 @@
         grid-column: 1 /4;
         grid-row: 1 /1;
       }
+
+      &-contact{
+        grid-column: 1 /4;
+        grid-row: 1 /1;
+      }
     }
 
     &2{
@@ -596,10 +612,6 @@
     display: none;
   }
 
-  #emailForm{
-    padding: 10px;
-  }
-
   #error{
     &_Number {
       font-size: 300px;
@@ -681,8 +693,8 @@
 
   .contact-panel{
     display: grid;
-    grid-template-columns: 1fr 1fr 20px 1fr 1fr 20px 1fr 1fr;
-    grid-template-rows: 1fr 20px 1fr;
+    grid-template-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr;
+    grid-template-rows: 1fr;
   }
   
   .hero_text{
@@ -728,7 +740,7 @@
       }
 
       &-contact{
-        grid-column: 1 /5;
+        grid-column: 1 /6;
         grid-row: 1 /1;
       }
     }
@@ -740,6 +752,11 @@
       &-about{
         grid-column: 1 /1;
         grid-row: 2 /2;
+      }
+
+      &-contact{
+        grid-column: 7 /12;
+        grid-row: 1 /1
       }
 
       &-watch{
@@ -791,6 +808,16 @@
     display: grid;
     grid-template-columns: 1fr 20px 1fr 20px 1fr;
     grid-template-rows: 154px 1fr;
+  }
+
+  #emailForm{
+    padding: 10px;
+
+    div{
+      textarea{
+        max-width: 400px;
+      }
+    }
   }
 }
 

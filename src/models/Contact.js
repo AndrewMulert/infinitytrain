@@ -11,10 +11,10 @@ const contactSchema = new mongoose.Schema({
         required: true
     },
     image: {
-        smallSrc: { type: String, required: true},
-        mediumSrc: { type: String, required: true},
-        minSrc: { type: String, required: true},
-        alt: { type: String, required: true},
+        smallSrc: { type: String, required: true },
+        mediumSrc: { type: String, required: true },
+        minSrc: { type: String, required: true },
+        alt: { type: String, required: true },
         orientation: {
             type: String,
             enum: ['horizontal', 'vertical'], 
@@ -41,18 +41,19 @@ const contactSchema = new mongoose.Schema({
     form: {
         information: [{ 
             label: {
-                for: { type: String},
-                text: { type: String},
-                labelId: { type: String}
+                for: { type: String },
+                text: { type: String },
+                labelId: { type: String }
             },
             input: {
                 inputType: { type: String },
                 inputId: { type: String },
                 inputName: { type: String },
-                required: { type: Boolean, default: false},
+                required: { type: Boolean, default: false },
                 placeholder: { type: String },
                 pattern: { type: String },
-                fieldType: { type: String }
+                fieldType: { type: String },
+                autocomplete: { type: Boolean, default: false }
             }
         }],
         subject: {
@@ -69,13 +70,25 @@ const contactSchema = new mongoose.Schema({
                     value: { type: String }
                 },
                 label: {
-                    for: { type: String},
-                    text: { type: String}
+                    for: { type: String },
+                    text: { type: String }
                 }
             }]
         }
     },
-    id: { type: String }
+    id: { type: String },
+    acknowledgements: {
+        category: [{
+            title: { type: String },
+            subtitle: [{ 
+                classification: {type: String},
+                credit: [{
+                    names: { type: String},
+                    href: { type: String }
+                }] 
+            }],
+        }]
+    }
 },
 {collection: 'contact'});
 

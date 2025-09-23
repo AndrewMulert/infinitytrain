@@ -51,7 +51,7 @@ h1, h2, h3, h4, a {
     font-family: Reddit Sans, Calibri, sans-serif;
 }
 
-p, pre, label, form {
+p, pre, label, form, textarea, input {
     font-family: Reddit Sans, Arial, serif;
 }
 
@@ -312,21 +312,22 @@ nav {
     grid-row: 2 /2;
     margin-top: 20px;
 
-    #message_form{
+    &-card {
+
         padding: 20px;
         background-color: $light;
         border-radius: 30px;
         border: 10px solid $lighter;
+    }
 
-        h2{
-            margin-top: 0px;
-        }
+    h2{
+        margin-top: 0px;
+    }
 
-        p{
-            color: black;
-            padding: 10px;
-            border-radius: 15px;
-        }
+    p{
+        color: black;
+        padding: 10px;
+        border-radius: 15px;
     }
 }
 
@@ -660,7 +661,7 @@ nav {
         display:flex;
         border-bottom: 10px;
         border-color: $darkest;
-        box-shadow: 0px 0px 0px 5px $light /*, 0px 0px 40px 20px $shadow*/;
+        box-shadow: 0px 0px 0px 5px $light, 0px 0px 40px 20px $shadow;
         z-index: 3;
     }
       
@@ -882,6 +883,24 @@ nav {
 }
 
 /* IDs */
+
+#acknowledgements {
+    h2, h3, h4, p, a, div {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h4{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    &_section {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
   
 #dropDown {
     position: absolute;
@@ -905,24 +924,31 @@ nav {
 
 #emailForm {
 
-    button{
-        border: 3px $darker solid;
-        background-color: $darkest;
-        color: $white;
+        button{
+            border: 3px $darker solid;
+            background-color: $darkest;
+            color: $lightest;
 
-        &:hover{
-            background-color: $black;
-            border-color: $black;
+            &:hover{
+                background-color: $black;
+                border-color: $black;
+            }
         }
-    }
 
-    > div {
-        padding: 0px 10px 0px 10px;
-    }
+        div {
+            display: grid;
+            grid-template-rows: 20px 1fr;
+            padding: 0px 10px 0px 10px;
+        }
 
-    div {
-        display: grid;
-        grid-template-rows: 20px 1fr;
+        fieldset {
+            border-style: none;
+            padding: 10px;
+
+            div{
+                display: flow;
+            }
+        }
 
         input {
             max-width: 200px;
@@ -930,7 +956,8 @@ nav {
         }
 
         textarea {
-            max-width: 400px;
+            max-width: 200px;
+            width: 100%;
             height: 125px;
             margin: 5px;
             border-radius: 15px;
@@ -938,16 +965,6 @@ nav {
             border: 3px $darker solid;
         }
     }
-
-    fieldset {
-        border-style: none;
-        padding: 10px;
-
-        div{
-            display: flow;
-        }
-    }
-}
 
 #error{
 

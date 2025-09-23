@@ -3,7 +3,7 @@
     <% if (contacts && contacts.length > 0) { %>
         <% contacts.forEach((contact, index) => { %>
             <% 
-                let cardClasses = '';
+                let cardClasses = 'contact-panel-card ';
                 let cardIds = '';
 
                 if(contact.order) {
@@ -16,6 +16,24 @@
             %>
             <div class="<%= cardClasses %>" id="<%= cardIds %>">
                 <h2><%= contact.title %></h2>
+                <% if (contact.description && contact.description.length > 0) { %>
+                    <p><%= contact.description %></p>
+                <% } %>
+                <% if (contact.acknowledgements && contact.acknowledgements.category && contact.acknowledgements.category.length > 0) { %>
+                    <% contact.acknowledgements.category.forEach(acknowledgement => { %>
+                        <h3><%= acknowledgement.title %></h3>
+                        <% acknowledgement.subtitle.forEach(section => { %>
+                            <div id="acknowledgements_section">
+                                <h4><%= section.classification %></h4>
+                                <div>
+                                    <% section.credit.forEach(person => { %>
+                                        <a href="<%= person.href %>" target="_blank"><%= person.names %></a> | 
+                                    <% }) %>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% }) %>
+                <% } %>
                 <% if (contact.form && contact.form.information && contact.form.information.length > 0 ) { %>
                     <p><b>Required fields are labeled with *</b></p>
                     <h3 id="formStatus"></h3>
@@ -54,6 +72,7 @@
                                         id="<%= topic.input.inputName %>"
                                         name="<%= topic.input.inputName %>"
                                         placeholder="<%= topic.input.placeholder || '' %>"
+                                        <% if (topic.input.autocomplete) { %>autocomplete="on"<% } %>
                                         <% if (topic.input.required) { %>required<% } %>
                                         <% if (topic.input.pattern) { %> pattern="<%= topic.input.pattern %>"<% } %>
                                     ></textarea>
@@ -63,7 +82,16 @@
                         <button type="submit">Send</button>
                     </form>
                 <% } %>
+                <% if (contacts.image && contact.image.length > 0) { %>
+                    <picture>
+                        <source srcset="images/<%= contact.image.src %>-small.webp" media="(max-width: 500px)">
+                        <source srcset="images/<%= contact.image.src %>-medium.webp" media="(max-width: 1000px)">
+                        <img class="merch-panel-card-image" src="images/<%= contact.image.src %>-min.webp" alt="<%= contact.image.alt %>">
+                    </picture>
+                <% } %>
             </div>
         <% }) %>
+    <% } else { %>
+        <h2>"Oh! Uh... it's broken! I broke it" ~One-One</h2>
     <% } %>
 </div>

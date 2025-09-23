@@ -5,7 +5,7 @@ h1, h2, h3, h4, a {
   font-family: Reddit Sans, Calibri, sans-serif;
 }
 
-p, pre, label, form {
+p, pre, label, form, textarea, input {
   font-family: Reddit Sans, Arial, serif;
 }
 
@@ -235,16 +235,16 @@ nav ul {
   grid-row: 2/2;
   margin-top: 20px;
 }
-.contact-panel #message_form {
+.contact-panel-card {
   padding: 20px;
   background-color: #65D681;
   border-radius: 30px;
   border: 10px solid #98ED9F;
 }
-.contact-panel #message_form h2 {
+.contact-panel h2 {
   margin-top: 0px;
 }
-.contact-panel #message_form p {
+.contact-panel p {
   color: black;
   padding: 10px;
   border-radius: 15px;
@@ -538,7 +538,7 @@ nav ul {
   display: flex;
   border-bottom: 10px;
   border-color: #012E2A;
-  box-shadow: 0px 0px 0px 5px #65D681;
+  box-shadow: 0px 0px 0px 5px #65D681, 0px 0px 40px 20px #011c1a;
   z-index: 3;
 }
 .nav_items {
@@ -737,6 +737,20 @@ nav ul {
 }
 
 /* IDs */
+#acknowledgements h2, #acknowledgements h3, #acknowledgements h4, #acknowledgements p, #acknowledgements a, #acknowledgements div {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#acknowledgements h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#acknowledgements_section {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 #dropDown {
   position: absolute;
   top: 10px;
@@ -764,30 +778,16 @@ nav ul {
 #emailForm button {
   border: 3px #065C47 solid;
   background-color: #012E2A;
-  color: #FBFCFA;
+  color: #D1FACD;
 }
 #emailForm button:hover {
   background-color: #000203;
   border-color: #000203;
 }
-#emailForm > div {
-  padding: 0px 10px 0px 10px;
-}
 #emailForm div {
   display: grid;
   grid-template-rows: 20px 1fr;
-}
-#emailForm div input {
-  max-width: 200px;
-  border: 3px #065C47 solid;
-}
-#emailForm div textarea {
-  max-width: 400px;
-  height: 125px;
-  margin: 5px;
-  border-radius: 15px;
-  padding: 7px;
-  border: 3px #065C47 solid;
+  padding: 0px 10px 0px 10px;
 }
 #emailForm fieldset {
   border-style: none;
@@ -795,6 +795,19 @@ nav ul {
 }
 #emailForm fieldset div {
   display: flow;
+}
+#emailForm input {
+  max-width: 200px;
+  border: 3px #065C47 solid;
+}
+#emailForm textarea {
+  max-width: 200px;
+  width: 100%;
+  height: 125px;
+  margin: 5px;
+  border-radius: 15px;
+  padding: 7px;
+  border: 3px #065C47 solid;
 }
 
 #error_Number {
