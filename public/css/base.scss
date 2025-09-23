@@ -10,6 +10,7 @@ $dark: #168758;
 $darker: #065C47;
 $transparent-darker: #012E2ABF;
 $darkest: #012E2A;
+$shadow: #011c1a;
 $black: #000203;
 $light-warning: #D67865;
 $medium-warning: #B54A35;
@@ -85,9 +86,16 @@ form {
         margin-bottom: 5px;
 
         > h3{
-        margin-top: 0px;
-        margin-bottom: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
     }
+
+    button{
+        padding: 5px;
+        width: 65px;
+        height: 35px;
+        border-radius: 15px;
     }
 }
 
@@ -95,6 +103,11 @@ input {
     padding: 7px;
     border-radius: 15px;
     margin: 5px;
+}
+
+input[type="radio"] {
+  accent-color: $darkest;
+  background-color: $lighter;
 }
 
 main {
@@ -298,17 +311,18 @@ nav {
     grid-column: 2 /3;
     grid-row: 2 /2;
     margin-top: 20px;
-    padding: 20px;
-    background-color: $light;
-    border-radius: 30px;
 
     #message_form{
+        padding: 20px;
+        background-color: $light;
+        border-radius: 30px;
+        border: 10px solid $lighter;
+
         h2{
             margin-top: 0px;
         }
 
         p{
-            background: red;
             color: black;
             padding: 10px;
             border-radius: 15px;
@@ -646,7 +660,7 @@ nav {
         display:flex;
         border-bottom: 10px;
         border-color: $darkest;
-        box-shadow: 0px 0px 0px 5px $light;
+        box-shadow: 0px 0px 0px 5px $light /*, 0px 0px 40px 20px $shadow*/;
         z-index: 3;
     }
       
@@ -886,6 +900,52 @@ nav {
         @include border-values (solid, $darker, 2px, 5px);
         transition: background-color 1s;
         border-radius: 25px;
+    }
+}
+
+#emailForm {
+
+    button{
+        border: 3px $darker solid;
+        background-color: $darkest;
+        color: $white;
+
+        &:hover{
+            background-color: $black;
+            border-color: $black;
+        }
+    }
+
+    > div {
+        padding: 0px 10px 0px 10px;
+    }
+
+    div {
+        display: grid;
+        grid-template-rows: 20px 1fr;
+
+        input {
+            max-width: 200px;
+            border: 3px $darker solid;
+        }
+
+        textarea {
+            max-width: 400px;
+            height: 125px;
+            margin: 5px;
+            border-radius: 15px;
+            padding: 7px;
+            border: 3px $darker solid;
+        }
+    }
+
+    fieldset {
+        border-style: none;
+        padding: 10px;
+
+        div{
+            display: flow;
+        }
     }
 }
 

@@ -42,7 +42,8 @@ const contactSchema = new mongoose.Schema({
         information: [{ 
             label: {
                 for: { type: String},
-                text: { type: String}
+                text: { type: String},
+                labelId: { type: String}
             },
             input: {
                 inputType: { type: String },
@@ -72,8 +73,7 @@ const contactSchema = new mongoose.Schema({
                     text: { type: String}
                 }
             }]
-        },
-        submitButtonText: { type: String }
+        }
     },
     id: { type: String }
 },

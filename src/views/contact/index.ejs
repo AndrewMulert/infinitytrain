@@ -7,22 +7,39 @@
                 let cardIds = '';
 
                 if(contact.order) {
-                    cardClasses += `position-${contact.order.position}`
+                    cardClasses += `position-${contact.order.position}-contact`
                 }
 
                 if(contact.id) {
                     cardIds += `${contact.id}`
                 }
             %>
-            <div class="<%= cardClasses %>" id="<% cardIds %>">
+            <div class="<%= cardClasses %>" id="<%= cardIds %>">
                 <h2><%= contact.title %></h2>
                 <% if (contact.form && contact.form.information && contact.form.information.length > 0 ) { %>
                     <p><b>Required fields are labeled with *</b></p>
                     <h3 id="formStatus"></h3>
                     <form id="emailForm">
+                        <% if (contact.form.subject && contact.form.subject.information && contact.form.subject.information.length > 0) { %>
+                            <fieldset>
+                                <legend>Subject: *</legend>
+                                <% contact.form.subject.information.forEach(topic => { %>
+                                    <div>
+                                        <input 
+                                            type="<%= topic.input.inputType %>" 
+                                            id="<%= topic.input.inputId %>" 
+                                            name="<%= topic.input.inputName %>" 
+                                            value="<%= topic.input.value %>" 
+                                            <% if (topic.input.required) { %>required<% } %>
+                                        >
+                                        <label for="<%= topic.label.for %>"><%= topic.label.text %></label>
+                                    </div>
+                                <% }) %>
+                           </fieldset>
+                        <% } %>
                         <% contact.form.information.forEach(topic => { %>
                             <div>
-                                <label for="<%= topic.label.for %>"><%= topic.label.text %></label>
+                                <label for="<%= topic.label.for %>" id="<%= topic.label.labelId %>"><%= topic.label.text %><% if (topic.input.required) { %> *<% } %></label>
                                 <% if(topic.input.fieldType === 'input') { %>
                                     <input 
                                         type="<%= topic.input.inputType %>" 
@@ -40,50 +57,13 @@
                                         <% if (topic.input.required) { %>required<% } %>
                                         <% if (topic.input.pattern) { %> pattern="<%= topic.input.pattern %>"<% } %>
                                     ></textarea>
-                                <% } %>%>
+                                <% } %>
                             </div>
                         <% }) %>
+                        <button type="submit">Send</button>
                     </form>
                 <% } %>
             </div>
         <% }) %>
     <% } %>
-    <!--<div class="message_form">
-        <p>This form is currently inactive. Sorry for the inconvenience</p>
-        <h2>Leave us a message!</h2>
-        <p><b>Required fields are labeled with *</b></p>
-        <h3 id="formStatus"></h3>
-        <form id="emailForm">
-            <div>
-                <label for="fname">First Name: *</label>
-                <input type="text" id="fname" name="fname" placeholder="Tulip" required pattern="^[A-Za-z\\u00C0-\\u017F .\'\\-]+$">
-            </div>
-            <div>
-                <label for="lname">Last Name: *</label>
-                <input type="text" id="lname" name="lname" placeholder="Olsen" required pattern="^[A-Za-z\\u00C0-\\u017F .\'\\-]+$">
-            </div>
-            <div>
-                <label for="email">Email: *</label>
-                <input type="email" id="email" name="email" placeholder="ieatonions@example.com" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$">
-            </div>
-            <div>
-                <label for="tel">Phone:</label>
-                <input type="tel" id="tel" name="tel" placeholder="(651)-115-1141" pattern="^(?:\\(?\\d{3}\\)?[\\-. ]?){2}\\d{4}$">
-            </div>
-            <div>
-                <label for="subject">Subject: *</label><br>
-                    <input type="radio" id="bug" name="subject" value="Bug Report" required>
-                    <label for="bug">Report a Bug</label><br>
-                    <input type="radio" id="feature" name="subject" value="Feature Request">
-                    <label for="feature">Request a Feature</label><br>
-                    <input type="radio" id="feedback" name="subject" value="Feedback">
-                    <label for="feedback">Feedback</label><br>
-            </div>
-            <div>
-                <label for="msg">Message: *</label>
-                <textarea id="msg" name="msg" placeholder="H-Hey! I'm supposed to be going to Oshkosh. It's this place in Wisconsin. And, also, my name is Tulip. I should've said that earlier. But there's a game-design camp, and my parents signed a contract, and I ended up on this stupid train, and I don't want any of this!" required></textarea>
-            </div>
-            <button type="submit">Send</button>
-        </form>
-    </div>-->
 </div>

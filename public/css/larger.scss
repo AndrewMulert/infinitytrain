@@ -133,6 +133,12 @@
     height: 16px;
   }
 
+  .contact-panel{
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr;
+    grid-template-rows: 1fr 20px 1fr 20px 1fr;
+  }
+
   .countdown{
     &_message {
       grid-column: 3 /5;
@@ -590,6 +596,10 @@
     display: none;
   }
 
+  #emailForm{
+    padding: 10px;
+  }
+
   #error{
     &_Number {
       font-size: 300px;
@@ -668,6 +678,12 @@
       }
     }
   }
+
+  .contact-panel{
+    display: grid;
+    grid-template-columns: 1fr 1fr 20px 1fr 1fr 20px 1fr 1fr;
+    grid-template-rows: 1fr 20px 1fr;
+  }
   
   .hero_text{
     position: absolute;
@@ -708,6 +724,11 @@
 
       &-about{
         grid-column: 1 /6;
+        grid-row: 1 /1;
+      }
+
+      &-contact{
+        grid-column: 1 /5;
         grid-row: 1 /1;
       }
     }

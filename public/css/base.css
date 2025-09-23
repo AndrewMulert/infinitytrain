@@ -43,11 +43,22 @@ form > div > h3 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+form button {
+  padding: 5px;
+  width: 65px;
+  height: 35px;
+  border-radius: 15px;
+}
 
 input {
   padding: 7px;
   border-radius: 15px;
   margin: 5px;
+}
+
+input[type=radio] {
+  accent-color: #012E2A;
+  background-color: #98ED9F;
 }
 
 main {
@@ -223,15 +234,17 @@ nav ul {
   grid-column: 2/3;
   grid-row: 2/2;
   margin-top: 20px;
+}
+.contact-panel #message_form {
   padding: 20px;
   background-color: #65D681;
   border-radius: 30px;
+  border: 10px solid #98ED9F;
 }
 .contact-panel #message_form h2 {
   margin-top: 0px;
 }
 .contact-panel #message_form p {
-  background: red;
   color: black;
   padding: 10px;
   border-radius: 15px;
@@ -746,6 +759,42 @@ nav ul {
   border-radius: 5px;
   transition: background-color 1s;
   border-radius: 25px;
+}
+
+#emailForm button {
+  border: 3px #065C47 solid;
+  background-color: #012E2A;
+  color: #FBFCFA;
+}
+#emailForm button:hover {
+  background-color: #000203;
+  border-color: #000203;
+}
+#emailForm > div {
+  padding: 0px 10px 0px 10px;
+}
+#emailForm div {
+  display: grid;
+  grid-template-rows: 20px 1fr;
+}
+#emailForm div input {
+  max-width: 200px;
+  border: 3px #065C47 solid;
+}
+#emailForm div textarea {
+  max-width: 400px;
+  height: 125px;
+  margin: 5px;
+  border-radius: 15px;
+  padding: 7px;
+  border: 3px #065C47 solid;
+}
+#emailForm fieldset {
+  border-style: none;
+  padding: 10px;
+}
+#emailForm fieldset div {
+  display: flow;
 }
 
 #error_Number {
