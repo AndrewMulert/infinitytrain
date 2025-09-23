@@ -439,6 +439,11 @@
         grid-row: 2 /2;
       }
 
+      &-contact{
+        grid-column: 5 /7;
+        grid-row: 1 /1;
+      }
+
       &-watch{
         grid-column: 1 /4;
         grid-row: 2 /2;
@@ -610,6 +615,16 @@
     
   #dropDown {
     display: none;
+  }
+
+  #emailForm{
+    padding: 10px;
+
+    div{
+      textarea{
+        max-width: 400px;
+      }
+    }
   }
 
   #error{
@@ -808,16 +823,6 @@
     display: grid;
     grid-template-columns: 1fr 20px 1fr 20px 1fr;
     grid-template-rows: 154px 1fr;
-  }
-
-  #emailForm{
-    padding: 10px;
-
-    div{
-      textarea{
-        max-width: 400px;
-      }
-    }
   }
 }
 
