@@ -320,6 +320,33 @@ nav {
     }
 }
 
+.colon{
+    &_1{
+        grid-column: 3 /3;
+        grid-row: 1 /1;
+    }
+
+    &_2{
+        grid-column: 5 /5;
+        grid-row: 1 /1;
+    }
+
+    &_3{
+        grid-column: 7 /7;
+        grid-row: 1 /1;
+    }
+
+    &_4{
+        grid-column: 9 /9;
+        grid-row: 1 /1;
+    }
+
+    &_5{
+        grid-column: 11 /11;
+        grid-row: 1 /1;
+    }
+}
+
 .contact-panel{
     grid-column: 2 /3;
     grid-row: 2 /2;
@@ -348,6 +375,9 @@ nav {
     background-color: $dark-warning;
 
     &_message {
+        display: grid;
+        grid-template-columns: 20px 1fr 20px;
+        grid-template-rows: auto 1fr 2fr auto;
         grid-column: 1/4;
         grid-row: 2/2;
         background-color: $medium-warning;
@@ -357,10 +387,20 @@ nav {
             margin-top: 5px;
             margin-bottom: 5px;
             font-size: 1.25em;
+            grid-column: 2 /2;
+            grid-row: 2 /2;
+        }
+
+        p{
+            grid-column: 2 /2;
+            grid-row: 3 /3;
         }
     }
 
     &_timer{
+        display: grid;
+        grid-template-columns:  15px auto 15px auto 15px auto 15px auto 15px auto 15px auto 15px;
+        grid-template-rows: 1fr 1fr;
         grid-column: 2/2;
         grid-row: 1/2;
         max-height: 100px;
@@ -420,14 +460,14 @@ nav {
         z-index: 2;
         grid-column: 1 /4;
         grid-row: 1 /2;
-        grid-template-columns: 10px auto 10px;
+        grid-template-columns: 1px 1fr 1px;
         grid-template-rows: 50% 50%;
         @include colors($dark-warning, $white);
         text-align: center;
         height: 210px;
 
         label {
-            font-size: 2.25em;
+            font-size: 2em;
             outline: $lighter;
             outline-width: 2px;
             text-shadow: 0 5px 10px $lightest;
@@ -437,6 +477,10 @@ nav {
             font-size: 1em;
             margin-top: 5px;
             margin-bottom: 5px;
+        }
+
+        pre{
+            font-size: 0.75em;
         }
     }
 }
@@ -555,6 +599,38 @@ nav {
     }
 }
 
+.label{
+    &_years{
+        grid-column: 2 /2;
+        grid-row: 2 /2;
+    }
+
+    &_months{
+        grid-column: 4 /4;
+        grid-row: 2 /2;
+    }
+
+    &_days{
+        grid-column: 6 /6;
+        grid-row: 2 /2;
+    }
+
+    &_hours{
+        grid-column: 8 /8;
+        grid-row: 2 /2;
+    }
+
+    &_minutes{
+        grid-column: 10 /10;
+        grid-row: 2 /2;
+    }
+
+    &_seconds{
+        grid-column: 12 /12;
+        grid-row: 2 /2;
+    }
+}
+
 .merch-panel{
     padding-top: 20px;
     grid-column: 2 /3;
@@ -562,7 +638,7 @@ nav {
 
     &-card{
         background-color: $light;
-        margin-bottom: 50px;
+        margin-bottom: 25px;
         border-radius: 30px;
         border-style: solid;
         border-color: $lighter;
@@ -926,6 +1002,11 @@ nav {
         margin-bottom: 5px;
     }
 }
+
+#days{
+    grid-column: 6 /6;
+    grid-row: 1 /1;
+}
   
 #dropDown {
     position: absolute;
@@ -1044,6 +1125,21 @@ nav {
     }
 }
 
+#hours{
+    grid-column: 8 /8;
+    grid-row: 1 /1;
+}
+
+#minutes{
+    grid-column: 10 /10;
+    grid-row: 1 /1;
+}
+
+#months{
+    grid-column: 4 /4;
+    grid-row: 1 /1;
+}
+
 #return-menu{
     margin-left: auto;
     margin-right: auto;
@@ -1063,6 +1159,11 @@ nav {
     }
 }
 
+#seconds{
+    grid-column: 12 /12;
+    grid-row: 1 /1;
+}
+
 #streaming{
     background-color: $light-warning;
 
@@ -1074,4 +1175,9 @@ nav {
             background-color: $black;
         }
     }
+}
+
+#years {
+    grid-column: 2 /2;
+    grid-row: 1 /1;
 }
