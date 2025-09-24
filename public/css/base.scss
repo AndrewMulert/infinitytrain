@@ -298,6 +298,19 @@ nav {
     }
 }
 
+.acknowledgements_category {
+    background-color: $lightest;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    h3{
+        margin-top: 5px;
+        text-decoration: underline;
+        font-weight: 700px;
+    }
+}
+
 .card_link {
     &:link {
         text-decoration: none;
@@ -894,6 +907,18 @@ nav {
     h4{
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    a{
+        text-decoration: none;
+        color: $black;
+        padding: 5px;
+        border-radius: 10px;
+
+        &:hover {
+            color: $lightest;
+            background-color: $darker;
+        }
     }
 
     &_section {

@@ -144,7 +144,7 @@
       div{
         textarea{
           min-width: 200px;
-          max-width: 325px;
+          max-width: calc(100% - 20px);
         }
       }
     }

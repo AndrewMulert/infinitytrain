@@ -21,17 +21,22 @@
                 <% } %>
                 <% if (contact.acknowledgements && contact.acknowledgements.category && contact.acknowledgements.category.length > 0) { %>
                     <% contact.acknowledgements.category.forEach(acknowledgement => { %>
-                        <h3><%= acknowledgement.title %></h3>
-                        <% acknowledgement.subtitle.forEach(section => { %>
-                            <div id="acknowledgements_section">
-                                <h4><%= section.classification %></h4>
-                                <div>
-                                    <% section.credit.forEach(person => { %>
-                                        <a href="<%= person.href %>" target="_blank"><%= person.names %></a> | 
-                                    <% }) %>
+                        <div class="acknowledgements_category">
+                            <h3><%= acknowledgement.title %></h3>
+                            <% acknowledgement.subtitle.forEach(section => { %>
+                                <div id="acknowledgements_section">
+                                    <h4><%= section.classification %></h4>
+                                    <div>
+                                        <% section.credit.forEach((person, index, array )=> { %>
+                                            <a href="<%= person.href %>" target="_blank"><%= person.names %></a>
+                                            <% if (index < array.length - 1 ) { %>
+                                                |
+                                            <% } %>
+                                        <% }) %>
+                                    </div>
                                 </div>
-                            </div>
-                        <% }) %>
+                            <% }) %>
+                        </div>
                     <% }) %>
                 <% } %>
                 <% if (contact.form && contact.form.information && contact.form.information.length > 0 ) { %>
