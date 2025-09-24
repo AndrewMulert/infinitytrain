@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import Support from '../../models/Support.js'
+import Watch from '../../models/Watch.js'
 
 const router = Router();
 
@@ -39,12 +40,25 @@ router.get('/share', (req, res) => {
         heroText: 'Show Support for'});
 });
 
-router.get('/watch', (req, res) => {
-    res.render('support/watch', {
-        title: "Watch - Infinity Train",
-        heroImage: 'support_hero_color', 
-        heroAlt: 'The Color Clock Car, rendered by Andrew Mulert',
-        heroText: 'Show Support for'});
+router.get('/watch', async (req, res) => {
+     try {
+        const watch = await Watch.find().sort({_id: 1 });
+
+        console.log('Fetched Watch:', watch);
+        console.log('Number of Watch:', watch.length);
+    
+        res.render('support/watch', {
+            title: "Watch - Infinity Train",
+            heroImage: 'support_hero_color', 
+            heroAlt: 'The Color Clock Car, rendered by Andrew Mulert',
+            heroText: 'Show Support for',
+            watch: watch
+        });
+    
+    } catch (err){
+        console.error('Error fetching watch', err);
+        nextTick(err);
+    }
 });
 
 export default router;
