@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import Merch from '../../models/Merch.js'
+import Merch from '../../models/merch/Merch.js'
 
 const router = Router();
 

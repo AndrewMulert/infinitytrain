@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import About from '../../models/About.js'
+import About from '../../models/about/About.js'
 import Watch from '../../models/Watch.js'
+import charactersRouter from './characters.js'
 
 const router = Router();
 
@@ -24,13 +25,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/characters', (req, res) => {
-    res.render('about/characters', {
-        title: 'Characters - Infinity Train',
-        heroImage: 'about_hero_tape', 
-        heroAlt: 'The Tape Car, rendered by Andrew Mulert',
-        heroText: 'Passengers of the'});
-});
+router.use('/characters', charactersRouter);
 
 router.get('/locations', (req, res) => {
     res.render('about/locations', {

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import Contact from '../../models/Contact.js'
+import Contact from '../../models/contact/Contact.js'
 import dotenv from 'dotenv';
 import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
 

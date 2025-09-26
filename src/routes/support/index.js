@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import Support from '../../models/Support.js'
+import Support from '../../models/support/Support.js'
 import Watch from '../../models/Watch.js'
 
 const router = Router();
