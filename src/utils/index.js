@@ -45,11 +45,11 @@ const getNav = () => {
     return `
     <nav class="nav_bar">
         <ul class="nav_items">
-            <li class="nav_link_container"><a href="/" class="nav_links" id="home_link"><svg id="home_svg" width="200px" height="45px"><image width="200px" height="45px" href="/images/infinity_train_logo_black_bold.svg"></image></svg></a><button id="dropDown">▼</button></li>
-            <li class="nav_link_container"><a href="/about" class="page_link">About</a></li>
-            <li class="nav_link_container"><a href="/merch" class="page_link">Merchandise & Art</a></li>
-            <li class="nav_link_container"><a href="/support" class="page_link">Support the Show</a></li>
-            <li class="nav_link_container"><a href="/contact" class="page_link">Contact</a></li>
+            <li class="nav_link_container" id="nav_home"><a href="/" class="nav_links" id="home_link"><svg id="home_svg" width="175px" height="45px"><image width="175px" height="45px" href="/images/infinity_train_logo_black_bold.svg"></image></svg></a><button id="dropDown">▼</button></li>
+            <li class="nav_link_container" id="nav_about"><a href="/about" class="page_link">About</a></li>
+            <li class="nav_link_container" id="nav_merch"><a href="/merch" class="page_link">Merch & Art</a></li>
+            <li class="nav_link_container" id="nav_support"><a href="/support" class="page_link">Campaign</a></li>
+            <li class="nav_link_container" id="nav_contact"><a href="/contact" class="page_link">Contact</a></li>
         </ul>
     </nav>`;
 }
