@@ -12,9 +12,9 @@ $transparent-darker: #012E2ABF;
 $darkest: #012E2A;
 $shadow: #011c1a;
 $black: #000203;
-$light-warning: #D67865;
+$light-warning: #d68b65;
 $medium-warning: #B54A35;
-$dark-warning: #872916;
+$dark-warning: #871616;
 
 
 
@@ -304,10 +304,14 @@ nav {
     padding: 10px;
     margin-bottom: 10px;
 
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
     h3{
         margin-top: 5px;
         text-decoration: underline;
-        font-weight: 700px;
+        font-weight: 700;
     }
 }
 
@@ -990,6 +994,7 @@ nav {
         color: $black;
         padding: 5px;
         border-radius: 10px;
+        margin-bottom: 10px;
 
         &:hover {
             color: $lightest;
@@ -1029,48 +1034,52 @@ nav {
 }
 
 #emailForm {
+    background-color: $lightest;
+    border-radius: 20px;
 
-        button{
-            border: 3px $darker solid;
-            background-color: $darkest;
-            color: $lightest;
+    button{
+        border: 3px $darker solid;
+        border-radius: 15px;
+        background-color: $darkest;
+        color: $lightest;
+        margin: 0px 0px 10px 15px;
 
-            &:hover{
-                background-color: $black;
-                border-color: $black;
-            }
-        }
-
-        div {
-            display: grid;
-            grid-template-rows: 20px 1fr;
-            padding: 0px 10px 0px 10px;
-        }
-
-        fieldset {
-            border-style: none;
-            padding: 10px;
-
-            div{
-                display: flow;
-            }
-        }
-
-        input {
-            max-width: 200px;
-            border: 3px $darker solid;
-        }
-
-        textarea {
-            max-width: 200px;
-            width: 100%;
-            height: 125px;
-            margin: 5px;
-            border-radius: 15px;
-            padding: 7px;
-            border: 3px $darker solid;
+        &:hover{
+            background-color: $black;
+            border-color: $black;
         }
     }
+
+    div {
+        display: grid;
+        grid-template-rows: 20px 1fr;
+        padding: 0px 10px 0px 10px;
+    }
+
+    fieldset {
+        margin-top: 10px;
+        border-style: none;
+        padding: 10px;
+
+        div{
+            display: flow;
+        }
+    }
+
+    input {
+        max-width: 200px;
+        border: 3px $darker solid;
+    }
+
+    textarea {
+        height: 125px;
+        margin: 5px;
+        border-radius: 15px;
+        padding: 7px;
+        border: 3px $darker solid;
+        resize: none;
+    }
+}
 
 #error{
 
@@ -1128,6 +1137,17 @@ nav {
 #hours{
     grid-column: 8 /8;
     grid-row: 1 /1;
+}
+
+#message_form{
+    h2{
+        text-align: center;
+    }
+
+    p{
+        background-color: $light-warning;
+        border-radius: 20px;
+    }
 }
 
 #minutes{

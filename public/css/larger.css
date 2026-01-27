@@ -825,6 +825,7 @@ nav ul {
   color: #000203;
   padding: 5px;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 #acknowledgements a:hover {
   color: #D1FACD;
@@ -890,13 +891,12 @@ nav ul {
   border: 3px #065C47 solid;
 }
 #emailForm textarea {
-  max-width: 200px;
-  width: 100%;
   height: 125px;
   margin: 5px;
   border-radius: 15px;
   padding: 7px;
   border: 3px #065C47 solid;
+  resize: none;
 }
 
 #error_Number {
@@ -1006,7 +1006,6 @@ nav ul {
 @media screen and (min-width: 45em) {
   footer {
     display: flex;
-    max-height: 90px;
   }
   footer > p {
     width: 60%;
@@ -1092,17 +1091,11 @@ nav ul {
     max-width: 97%;
     height: 16px;
   }
-  .contact-panel {
-    display: grid;
-    grid-template-columns: 1fr 20px 1fr 20px 1fr;
-    grid-template-rows: 1fr;
-  }
   .contact-panel-card {
     padding: 10px;
   }
   .contact-panel-card div textarea {
     min-width: 200px;
-    max-width: calc(100% - 20px);
   }
   .countdown_message {
     grid-template-rows: auto auto;
@@ -1459,7 +1452,7 @@ nav ul {
     padding: 10px;
   }
   #emailForm div textarea {
-    max-width: 400px;
+    min-width: 200px;
   }
   #error_Number {
     font-size: 300px;

@@ -10,7 +10,6 @@
     
   footer{
     display: flex;
-    max-height: 90px;
   
     > p {
       width: 60%;
@@ -134,9 +133,6 @@
   }
 
   .contact-panel{
-    display: grid;
-    grid-template-columns: 1fr 20px 1fr 20px 1fr;
-    grid-template-rows: 1fr;
     
     &-card{
       padding: 10px;
@@ -144,7 +140,6 @@
       div{
         textarea{
           min-width: 200px;
-          max-width: calc(100% - 20px);
         }
       }
     }
@@ -633,7 +628,7 @@
 
     div{
       textarea{
-        max-width: 400px;
+        min-width: 200px;
       }
     }
   }
