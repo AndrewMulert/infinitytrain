@@ -12,7 +12,8 @@ router.get('/', async (req, res) => {
         console.log('Number of Support:', support.length);
 
         res.render('support/index', {
-            title: 'Support the Show - Infinity Train',
+            title: 'Campaign - Infinity Train',
+            description: 'Show your support for Infinity Train by signing the petition, posting to social media, and supporting the work of creators!',
             heroImage: 'support_hero_color', 
             heroAlt: 'The Color Clock Car, rendered by Andrew Mulert',
             heroText: 'Show Support for',

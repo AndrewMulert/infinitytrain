@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
         
         res.render('index', { 
             title: 'Infinity Train', 
+            description: 'A fanmade website dedicated to petitioning the return of the Cartoon Network show, Infinity Train. Learn about the current state of the show and how you can show your support',
             heroImage: 'index_hero_train_landscape', 
             heroAlt: 'The Infinity Train spanning against the horizon, rendered by Andrew Mulert',
             heroText: 'Climb Aboard the',

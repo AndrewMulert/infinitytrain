@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 $white: #FBFCFA;
@@ -99,6 +101,10 @@ form {
     }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 input {
     padding: 7px;
     border-radius: 15px;
@@ -113,7 +119,7 @@ input[type="radio"] {
 main {
     display: grid;
     grid-template-columns: 10% 1fr 10%;
-    grid-template-rows: 1fr auto 60px;
+    grid-template-rows: 1fr auto;
 }
 
 
@@ -142,6 +148,7 @@ nav {
     padding-top: 20px;
     grid-column: 2 /3;
     grid-row: 2 /2;
+    margin-bottom: 60px;
 
     &-card{
         background-color: $light;
@@ -154,6 +161,7 @@ nav {
         overflow: hidden;
         display: grid;
         grid-template-rows: 1fr auto;
+        scroll-margin-top: 80px;
 
         &-text{
             padding: 15px;
@@ -355,6 +363,7 @@ nav {
     grid-column: 2 /3;
     grid-row: 2 /2;
     margin-top: 20px;
+    margin-bottom: 60px;
 
     &-card {
         margin-top: 20px;
@@ -379,25 +388,22 @@ nav {
     background-color: $dark-warning;
 
     &_message {
-        display: grid;
-        grid-template-columns: 20px 1fr 20px;
-        grid-template-rows: auto 1fr 2fr auto;
-        grid-column: 1/4;
-        grid-row: 2/2;
         background-color: $medium-warning;
         padding: 5px;
+        grid-row: 2/2;
+        grid-column: 1/4;
 
         h2{
             margin-top: 5px;
             margin-bottom: 5px;
             font-size: 1.25em;
-            grid-column: 2 /2;
-            grid-row: 2 /2;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         p{
-            grid-column: 2 /2;
-            grid-row: 3 /3;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 
@@ -433,7 +439,7 @@ nav {
         max-height: 1000px;
         width: 100%;
         z-index: 0;
-        object-fit: cover;  
+        object-fit: cover; 
     }
         
     &_text {
@@ -492,7 +498,7 @@ nav {
 .home-panel {
     grid-column: 2 /3;
     padding-top: 50px;
-    padding-bottom: 20px;
+    margin-bottom: 40px;
     border-radius: 25px;
     margin-left: auto;
     margin-right: auto;
@@ -639,6 +645,7 @@ nav {
     padding-top: 20px;
     grid-column: 2 /3;
     grid-row: 2 /2;
+    margin-bottom: 60px;
 
     &-card{
         background-color: $light;
@@ -651,6 +658,7 @@ nav {
         overflow: hidden;
         display: grid;
         grid-template-rows: 1fr auto;
+        scroll-margin-top: 80px;
 
         &-text{
             padding: 15px;
@@ -861,6 +869,34 @@ nav {
     width: 18%;
 }
 
+.static{
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    max-height: 530px;
+    background: 
+        repeating-radial-gradient(#000 0 0.0001%,#fff 0 0.0002%) 50% 0/2500px 2500px,
+        repeating-conic-gradient(#000 0 0.0001%,#fff 0 0.0002%) 60% 60%/2500px 2500px;
+    background-blend-mode: overlay;
+    animation: b .2s infinite alternate, fade 1s infinite linear;
+    pointer-events: none;
+
+    transition: filter 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    filter: contrast(100%) brightness(100%);
+    opacity: 0.25;
+
+    &.active {
+        opacity: 0.5 !important;
+        filter: contrast(200%) brightness(1.3) !important;
+        // This "shakes" the grain by changing the scale slightly
+        transform: scale(1.05); 
+        // This makes the static "chunkier" or "finer" when active
+        background-size: 2200px 2200px, 2200px 2200px !important;
+    }
+}
+
 .store{
     &-link{
         width: 40px;
@@ -917,9 +953,172 @@ nav {
     }
 }
 
+.support-panel{
+    padding-top: 20px;
+    grid-column: 2 /3;
+    grid-row: 2 /2;
+    margin-bottom: 60px;
+
+    &-card{
+        background-color: $light;
+        margin-bottom: 40px;
+        border-radius: 30px;
+        border-style: solid;
+        border-color: $lighter;
+        border-width: 10px;
+        @include outer-glow;
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        scroll-margin-top: 80px;
+
+        &-text{
+            padding: 15px;
+            min-width: 215px;
+            border-radius: 15px 15px 0px 0px;
+            color: $black;
+
+            h3 {
+                font-size: 1.25em;
+                margin-top: 0px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            p {
+                text-indent: 20px;
+            }
+
+            & > a {
+                text-decoration: none;
+                color: $lightest;
+                background-color: $darker;
+                border-radius: 15px;
+                padding: 10px;
+                width: 100%;
+                margin-bottom: 15px;
+
+                &:visited{
+                    text-decoration: none;
+                    color: $lightest;
+                }
+            }
+        }
+
+        &-alt{
+            background-color: $light;
+            margin-bottom: 40px;
+            border-radius: 30px;
+            border-style: solid;
+            border-color: $lighter;
+            border-width: 10px;
+            @include outer-glow;
+            overflow: hidden;
+            align-items: start;
+            display: grid;
+            grid-template-rows: auto 1fr;
+
+            &-text{
+                padding: 15px;
+                min-width: 215px;
+                justify-content: right;
+                border-radius: 0px 0px 15px 15px;
+                color: $black;
+
+                h3 {
+                    font-size: 1.25em;
+                    margin-top: 0px;
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+
+                p {
+                    text-indent: 20px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $lightest;
+                    background-color: $darker;
+                    border-radius: 15px;
+                    padding: 10px;
+                    width: 100%;
+                    margin-bottom: 15px;
+
+                    &:visited{
+                        text-decoration: none;
+                        color: $lightest;
+                    }
+                }
+            }
+
+            &-image{
+                display: block;
+                width: 100%;
+                border-radius: 20px;
+            }
+        }
+
+        &-full{
+            background-color: $light;
+            margin-bottom: 40px;
+            border-radius: 30px;
+            border-style: solid;
+            border-color: $lighter;
+            border-width: 10px;
+            @include outer-glow;
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: 1fr auto;
+
+            &-text{
+                padding: 15px;
+                min-width: 215px;
+                border-radius: 15px 15px 0px 0px;
+                color: $black;
+
+                h3 {
+                    font-size: 1.25em;
+                    margin-top: 0px;
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+
+                p {
+                    text-indent: 20px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $lightest;
+                    background-color: $darker;
+                    border-radius: 15px;
+                    padding: 10px;
+                    width: 100%;
+                    margin-bottom: 15px;
+
+                    &:visited{
+                        text-decoration: none;
+                        color: $lightest;
+                    }
+                }
+            }
+        }
+        
+
+        &-image{
+            display: block;
+            width: 100%;
+            border-radius: 0px 0px 20px 20px;
+            margin-top: 7px;
+        }
+    }
+}
+
 .watch-panel{
     grid-column: 2 /3;
     grid-row: 2 /2;
+    margin-bottom: 60px;
 
     &-card{
         background-color: $light;
@@ -1093,6 +1292,8 @@ nav {
         font-weight: 300;
         margin-top: 0px;
         margin-bottom: 0px;
+        font-family: 'Reddit Sans', Consolas, 'Segoe UI';
+        animation: blink .9s infinite alternate;
     }
 
     &_Reference{
@@ -1101,7 +1302,14 @@ nav {
         margin-left: auto;
         margin-right: auto;
         font-size: 23px;
-        margin-top: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 60px;
+        font-family: 'Reddit Mono', Consolas, 'Segoe UI';
+
+        &:last-of-type {
+            margin-bottom: 60px;
+        }
     }
 
     &_Message{
@@ -1161,22 +1369,22 @@ nav {
 }
 
 #return-menu{
-    margin-left: auto;
-    margin-right: auto;
-    grid-column: 2/2;
-    grid-row: 3/3;
-
-    a{
-        background-color: $lighter;
-        margin-left: auto;
-        margin-right: auto;
-        color: $darkest;
-        padding: 20px;
-        border-radius: 30px;
-        text-align: center;
-        text-decoration: none;
-        font-weight: bold;
-    }
+    display: block;
+    z-index: 2;
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    bottom: 20px;
+    margin-inline: auto;
+    background-color: $lighter;
+    color: $darkest;
+    padding: 15px;
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 2px 2px 25px 10px #011c1a;
 }
 
 #seconds{
@@ -1200,4 +1408,28 @@ nav {
 #years {
     grid-column: 2 /2;
     grid-row: 1 /1;
+}
+
+@keyframes b{
+  100% {background-position: 50% 0, 60% 50%}
+}
+
+@keyframes blink{
+    0% {
+        color: $white;
+        text-shadow: 0px 0px 50px $lighter;
+    }
+    100% {
+        color: #00000000;
+        text-shadow: 0px 0px 0px #00000000;
+    }
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0.25;
+    }
 }

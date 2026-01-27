@@ -11,7 +11,8 @@ router.get('/', async (req, res) => {
         console.log('Number of Merch:', merch.length);
 
         res.render('merch/index', {
-            title: 'Merchandise and Art - Infinity Train',
+            title: 'Merch & Art - Infinity Train',
+            description: 'Find your next piece of Infinity Train Merch through one of the many fan art sites, explore official art from galleries, and learn more about the talent behind the Infinity Train',
             heroImage: 'merch_hero_randall', 
             heroAlt: 'Randall and One-One in the Beach Car, rendered by Andrew Mulert',
             heroText: 'Merchandise and Art',

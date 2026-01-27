@@ -63,56 +63,90 @@ function handleResize() {
 window.addEventListener('resize', handleResize);
 
 function countUp () {
-const startTime = new Date("2021-04-15 00:00:00");
-const currentTime = new Date();
+  const yearElement = document.getElementById("years")
 
-const timePast = currentTime - startTime;
-const totalSeconds = Math.floor(timePast / 1000); 
-
-// Calculate years
-const years = Math.floor(totalSeconds / 31557600); // Approximate year (365.25 days/year)
-
-
-// Calculate months
-const months = Math.floor(totalSeconds / 2630016); // Approximate month (30.44 days/month)
-const monthCalc = (Math.round(((months / 12) - years) * 12));
-
-//Calculate days
-const days = Math.floor(totalSeconds / (86400));
-const dayCalc = (Math.round(((days / 30.44) - months) * 30.44));
-
-// Calculate hours
-const hours = Math.floor(totalSeconds / (60 * 60));
-const hourCalc = (Math.round(((hours / 24) - days) * 24));
-
-const minutes = Math.floor(totalSeconds / 60);
-const minCalc = (Math.round(((minutes / 60) - hours) * 60));
-
-// Calculate seconds
-const secCalc = (Math.round(((totalSeconds/31540000) - years) * 31540000)-20);
-const lastDigit = (Math.round(secCalc % 60));
-
-
-
-
-function pad(val) {
-  var valString = val + "";
-  if(valString.length < 2) {
-    return "0" + valString;
-  } else {
-    return valString;
+  if (!yearElement) {
+    return;
   }
-}
 
-// Display the results
+  const startTime = new Date("2021-04-15 00:00:00");
+  const currentTime = new Date();
 
-yearLabel = document.getElementById("years").textContent = (`${years}`);
-monthLabel = document.getElementById("months").textContent = (`${pad(monthCalc)}`);
-dayLabel = document.getElementById("days").textContent = (`${pad(dayCalc)}`);
-hourLabel = document.getElementById("hours").textContent = (`${pad(hourCalc)}`);
-minuteLabel = document.getElementById("minutes").textContent = (`${pad(minCalc)}`);
-secondLabel = document.getElementById("seconds").textContent = (`${pad(lastDigit)}`);
+  const timePast = currentTime - startTime;
+  const totalSeconds = Math.floor(timePast / 1000); 
+
+  // Calculate years
+  const years = Math.floor(totalSeconds / 31557600); // Approximate year (365.25 days/year)
+
+
+  // Calculate months
+  const months = Math.floor(totalSeconds / 2630016); // Approximate month (30.44 days/month)
+  const monthCalc = (Math.round(((months / 12) - years) * 12));
+
+  //Calculate days
+  const days = Math.floor(totalSeconds / (86400));
+  const dayCalc = (Math.round(((days / 30.44) - months) * 30.44));
+
+  // Calculate hours
+  const hours = Math.floor(totalSeconds / (60 * 60));
+  const hourCalc = (Math.round(((hours / 24) - days) * 24));
+
+  const minutes = Math.floor(totalSeconds / 60);
+  const minCalc = (Math.round(((minutes / 60) - hours) * 60));
+
+  // Calculate seconds
+  const secCalc = (Math.round(((totalSeconds/31540000) - years) * 31540000)-20);
+  const lastDigit = (Math.round(secCalc % 60));
+
+
+
+
+  function pad(val) {
+    var valString = val + "";
+    if(valString.length < 2) {
+      return "0" + valString;
+    } else {
+      return valString;
+    }
+  }
+
+  // Display the results
+
+  yearLabel = document.getElementById("years").textContent = (`${years}`);
+  monthLabel = document.getElementById("months").textContent = (`${pad(monthCalc)}`);
+  dayLabel = document.getElementById("days").textContent = (`${pad(dayCalc)}`);
+  hourLabel = document.getElementById("hours").textContent = (`${pad(hourCalc)}`);
+  minuteLabel = document.getElementById("minutes").textContent = (`${pad(minCalc)}`);
+  secondLabel = document.getElementById("seconds").textContent = (`${pad(lastDigit)}`);
 
 }
 
 setInterval(countUp, 1000);
+
+
+
+document.addEventListener('click', (e) => {
+    const staticAudio = document.getElementById('static-audio');
+    const staticContainer = document.getElementById('static-trigger');
+
+    if (!staticAudio) return; // Not on the error page, ignore click
+
+    if (staticAudio.paused) {
+        staticAudio.play();
+        console.log("Signal Restored.");
+        
+        // Only touch the container if it actually exists
+        if (staticContainer) {
+            staticContainer.classList.add('active');
+            staticContainer.style.opacity = "0.3";
+        }
+    } else {
+        staticAudio.pause();
+        console.log("Signal Lost.");
+        
+        if (staticContainer) {
+            staticContainer.classList.remove('active');
+            staticContainer.style.opacity = "0.1";
+        }
+    }
+});

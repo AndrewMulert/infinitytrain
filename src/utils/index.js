@@ -5,7 +5,8 @@ import path from 'path';
 const staticPaths = [
     { route: '/css', dir: '/public/css' },
     { route: '/js', dir: '/public/js' },
-    { route: '/images', dir: '/public/images' }
+    { route: '/images', dir: '/public/images' },
+    { route: '/audio', dir: '/public/audio'}
  ];
  
  /** Brother Keer's Unique Function

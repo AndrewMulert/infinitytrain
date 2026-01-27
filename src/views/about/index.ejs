@@ -25,7 +25,7 @@
                     cardClasses += `position-${about.order.position}-about`;
                 }
             %>
-            <div class="<%= cardClasses %>" id=" <%= about.id %>">
+            <div class="<%= cardClasses %>" id="<%= about.id.trim() %>">
                 <div class="about-panel-card-text">
                     <h3><%= about.title %></h3>
                     <% if (about.description && about.description.length > 0) { %>
@@ -51,7 +51,4 @@
     <% } else { %>
         <h2>"Oh! Uh... it's broken! I broke it" ~One-One</h2>
     <% } %>
-</div>
-<div id="return-menu">
-    <a href="#home">Back to Top</a>
 </div>

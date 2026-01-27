@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
 
         res.render('about/index', {
             title: 'About - Infinity Train',
+            description: 'Learn about Infinity Train, the Books, characters, locations within the show, and where you can watch the show.',
             heroImage: 'about_hero_tape', 
             heroAlt: 'The Tape Car, rendered by Andrew Mulert',
             heroText: 'About the Show',
@@ -30,6 +31,7 @@ router.use('/characters', charactersRouter);
 router.get('/locations', (req, res) => {
     res.render('about/locations', {
         title: 'Locations - Infinity Train',
+        description: 'Learn about the cars and places within the constantly expanding Infinity Train',
         heroImage: 'about_hero_tape', 
         heroAlt: 'The Tape Car, rendered by Andrew Mulert',
         heroText: 'Locations'});
@@ -44,13 +46,14 @@ router.get('/watch', async (req, res) => {
 
         res.render('about/watch', {
             title: 'Watch - Infinity Train',
+            description: 'Purchase Infinity Train on Amazon and Google Play. Streaming is not currently available, as the show was removed in August 2022',
             heroImage: 'about_hero_tape', 
             heroAlt: 'The Tape Car, rendered by Andrew Mulert',
             heroText: 'Where to Watch',
             watch: watch
         });
     } catch (err){
-        console.error('Error fetching watch', err);
+        console.error('Error fetching contents of watch information from MongoDB', err);
         nextTick(err);
     }
 });

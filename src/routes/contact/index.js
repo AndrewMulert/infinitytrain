@@ -61,6 +61,7 @@ router.get('/', async (req, res) => {
 
         res.render('contact/index', {
             title: 'Contact - Infinity Train',
+            description: 'Feedback, Feature requests, or Bugs? Send us a message and let us how we can improve! A big thanks to those who make our site possible',
             heroImage: 'contact_hero_music', 
             heroAlt: 'The stage in New York, rendered by Andrew Mulert',
             heroText: 'A big thanks to those who made this site possible',

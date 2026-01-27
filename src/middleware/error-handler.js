@@ -103,6 +103,7 @@ export const globalErrorHandler = (err, req, res, next) => {
     // Prepare error context for rendering
     const context = {
         title: err.title || 'Error',
+        description: 'An error has occurred aboard the Infinity Train',
         error: err.message,
         status,
         heroImage: defaultHeroImage,
