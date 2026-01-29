@@ -19,9 +19,7 @@
   }
     
   main {
-    height: 100%;
     grid-template-columns: 10% 1fr 10%;
-    grid-template-rows: 1fr auto;
   }
     
   nav{
@@ -314,6 +312,7 @@
 
     &-card{
       margin-bottom: 0px;
+      /*max-width: 300px;*/
 
       &-alt{
         margin-bottom: 0px;
@@ -1013,7 +1012,7 @@
   }*/
 
   .hero_countdown {
-    top: 55%;
+    /*top: 55%;*/
     &_message {
       h2{
         font-size: 25px;

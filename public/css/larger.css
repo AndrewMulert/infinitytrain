@@ -70,11 +70,11 @@ input[type=radio] {
 main {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: auto;
   overflow-x: hidden;
   display: grid;
   grid-template-columns: 10% 1fr 10%;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto auto;
 }
 
 nav {
@@ -735,7 +735,7 @@ nav ul {
   position: absolute;
   grid-column: 1/-1;
   grid-row: 1/-1;
-  height: 100%;
+  min-height: -webkit-fill-available;
   inset: 0;
   z-index: -1;
   background: repeating-radial-gradient(#000 0 1px, #fff 0 2px) 50% 50%/200px 200px;
@@ -1247,9 +1247,7 @@ nav ul {
     padding-top: 0px;
   }
   main {
-    height: 100%;
     grid-template-columns: 10% 1fr 10%;
-    grid-template-rows: 1fr auto;
   }
   nav {
     transition: top 0.3s;
@@ -1475,6 +1473,7 @@ nav ul {
   }
   .merch-panel-card {
     margin-bottom: 0px;
+    /*max-width: 300px;*/
   }
   .merch-panel-card-alt {
     margin-bottom: 0px;
@@ -1952,7 +1951,7 @@ nav ul {
     top: 9%;
   }*/
   .hero_countdown {
-    top: 55%;
+    /*top: 55%;*/
   }
   .hero_countdown_message h2 {
     font-size: 25px;
