@@ -28,6 +28,7 @@ router.get('/', async (req, res) => {
 router.get('/creators', (req, res) => {
     res.render('support/creators', {
         title: 'Creators - Infinity Train',
+        description: 'Creators across social media who have posted in support of Infinity Train',
         heroImage: 'support_hero_color', 
         heroAlt: 'The Color Clock Car, rendered by Andrew Mulert',
         heroText: 'Show Support for'});
@@ -36,6 +37,7 @@ router.get('/creators', (req, res) => {
 router.get('/share', (req, res) => {
     res.render('support/share', {
         title: 'Share - Infinity Train',
+        description: 'Through your support, we can introduce more people to Infinity Train and show Warner Brothers that people still want a revival.',
         heroImage: 'support_hero_color', 
         heroAlt: 'The Color Clock Car, rendered by Andrew Mulert',
         heroText: 'Show Support for'});
@@ -50,6 +52,7 @@ router.get('/watch', async (req, res) => {
     
         res.render('support/watch', {
             title: "Watch - Infinity Train",
+            description: 'Where you can watch Infinity Train, through streaming, digital purchase, and collecting the DVDs',
             heroImage: 'support_hero_color', 
             heroAlt: 'The Color Clock Car, rendered by Andrew Mulert',
             heroText: 'Show Support for',

@@ -69,7 +69,10 @@
           font-size: 1em;
 
           &:hover{
-            text-decoration: underline;
+            background-color: base.$lighter;
+            color: base.$darkest;
+            border-radius: 20px;
+            text-decoration: none;
           }
         }
       }
@@ -157,6 +160,8 @@
       height: 94%;
       max-height: 100px;
       border-radius: 100px 0px 0px 0px;
+      background-image: none;
+      background-color: base.$medium-warning;
 
       h2{
         grid-row: 1 /1;
@@ -247,6 +252,7 @@
       margin-top: -4px;
       padding: 0px;
       overflow: hidden;
+      background-image: linear-gradient(to right, base.$dark-warning, base.$medium-warning);
 
       p{
         font-size: 1em;
@@ -346,7 +352,10 @@
           font-size: 1em;
 
           &:hover{
-            text-decoration: underline;
+            text-decoration: none;
+            background-color: base.$lighter;
+            color: base.$darkest;
+            border-radius: 20px;
           }
         }
       }
@@ -524,7 +533,7 @@
   }
 
   .static{
-    max-height: 620px;
+    height: 100%;
     background: 
             repeating-radial-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 0/2500px 2500px,
             repeating-conic-gradient(#000 0 0.0001%, #fff 0 0.0002%) 60% 60%/2500px 2500px;
@@ -669,7 +678,8 @@
           font-size: 1em;
 
           &:hover{
-            text-decoration: underline;
+            background-color: base.$lighter;
+            color: base.$darkest;
           }
         }
       }
