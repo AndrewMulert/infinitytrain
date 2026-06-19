@@ -428,13 +428,27 @@ nav {
     }
 }
 
-.footer_social {
-    width: 80%;
+.footer {
+    &_info {
+        padding-left: 20px;
 
-    > ul {
-        list-style-type: none;
-        text-align: left;
-      }
+        p:first-child{
+            margin-bottom: 5px;
+        }
+
+        p:last-child{
+            margin-top: 10px;
+        }
+    }
+
+    &_social {
+        width: 80%;
+
+        > ul {
+            list-style-type: none;
+            text-align: left;
+        }
+    }
 }
 
 .hero {

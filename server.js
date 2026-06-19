@@ -6,6 +6,7 @@ import express from 'express';
 import homeRoute from './src/routes/index.js';
 import aboutRoute from './src/routes/about/index.js';
 import contactRoute from './src/routes/contact/index.js';
+import gamesRoute from './src/routes/games/index.js';
 import merchRoute from './src/routes/merch/index.js';
 import supportRoute from './src/routes/support/index.js';
 import layouts from './src/middleware/layouts.js';
@@ -46,6 +47,7 @@ async function startServer() {
         app.use('/', homeRoute);
         app.use('/about', aboutRoute);
         app.use('/contact', contactRoute);
+        app.use('/games', gamesRoute);
         app.use('/merch', merchRoute);
         app.use('/support', supportRoute);
 

@@ -334,6 +334,15 @@ nav ul {
   margin-bottom: 6px;
 }
 
+.footer_info {
+  padding-left: 20px;
+}
+.footer_info p:first-child {
+  margin-bottom: 5px;
+}
+.footer_info p:last-child {
+  margin-top: 10px;
+}
 .footer_social {
   width: 80%;
 }
