@@ -250,6 +250,16 @@ nav ul {
   font-weight: 700;
 }
 
+.ar-container {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+}
+
 .card_link:link {
   text-decoration: none;
 }
@@ -334,6 +344,15 @@ nav ul {
   margin-bottom: 6px;
 }
 
+.footer_info {
+  padding-left: 20px;
+}
+.footer_info p:first-child {
+  margin-bottom: 5px;
+}
+.footer_info p:last-child {
+  margin-top: 10px;
+}
 .footer_social {
   width: 80%;
 }

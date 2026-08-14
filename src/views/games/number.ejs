@@ -1,1 +1,38 @@
 <%- include('../partials/countdown') %>
+
+<div class="ar-container">
+    <video id="webcam" autoplay playsinline></video>
+    <canvas id="ar-canvas"></canvas>
+
+    <div class="controls">
+        <button id="flip-camera-btn" class="btn btn-primary" type="button" aria-label="Flip Camera"></button>
+        <button id="capture-btn" class="btn btn-outline" type="button" aria-label="Take Photo"></button>
+    </div>
+</div>
+
+<script>
+    (function loadARScriptStack() {
+        const scripts = [
+            'https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js',
+            'https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'
+        ];
+
+        const loadScript = (src) => {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        };
+
+        Promise.all(scripts.map(loadScript)).then(() => {
+            const mainScript = document.createElement('script');
+            mainScript.type = 'module';
+            mainScript.src = '/js/number-ar.js';
+            document.body.appendChild(mainScript);
+        }).catch(err => console.error('Failed to load AR dependencies:', err));
+    })();
+</script>
