@@ -258,6 +258,7 @@ nav ul {
   overflow: hidden;
   border-radius: 12px;
   background: #000;
+  grid-column: 1/4;
 }
 .ar-container .controls {
   position: absolute;
