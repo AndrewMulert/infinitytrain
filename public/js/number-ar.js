@@ -57,27 +57,44 @@ function createTextureEngine() {
     const textureCtx = textureCanvas.getContext('2d');
     const dynamicTexture = new THREE.CanvasTexture(textureCanvas);
 
+    function drawBracketPaths(ctx) {
+        ctx.beginPath();
+        ctx.moveTo(96, 128);
+        ctx.lineTo(416, 128);
+        ctx.moveTo(96, 128);
+        ctx.lineTo(96, 160);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(96, 384);
+        ctx.lineTo(416, 384);
+        ctx.moveTo(416, 384);
+        ctx.lineTo(416, 352);
+        ctx.stroke();
+    }
+
     function updateTexture(num) {
         textureCtx.clearRect(0, 0, 512, 512);
+
         textureCtx.shadowColor = '#00ff66';
-        textureCtx.shadowBlur = 25;
+        textureCtx.shadowBlur = 30;
+
+        textureCtx.strokeStyle = 'rgba(0, 255, 102, 0.5)';
+        textureCtx.lineWidth = 36;
+        drawBracketPaths(textureCtx);
+
         textureCtx.strokeStyle = '#00ff66';
-        textureCtx.fillStyle = '#ffffff';
+        textureCtx.lineWidth = 24;
+        drawBracketPaths(textureCtx);
+
+        textureCtx.shadowBlur = 15;
+        textureCtx.strokeStyle = '#ffffff';
         textureCtx.lineWidth = 14;
+        drawBracketPaths(textureCtx);
 
-        textureCtx.beginPath();
-        textureCtx.moveTo(96, 128);
-        textureCtx.lineTo(416, 128);
-        textureCtx.moveTo(96, 128);
-        textureCtx.lineTo(96, 160);
-
-        textureCtx.moveTo(96, 384);
-        textureCtx.lineTo(416, 384);
-        textureCtx.moveTo(416, 384);
-        textureCtx.lineTo(416, 352);
-        textureCtx.stroke();
-
-        textureCtx.font = 'bold 160px Raleway, sans-serif';
+        textureCtx.shadowBlur = 25;
+        textureCtx.fillStyle = '#ffffff';
+        textureCtx.font = '160px Raleway, sans-serif';
         textureCtx.textAlign = 'center';
         textureCtx.textBaseline = 'middle';
         textureCtx.fillText(num.toString(), 256, 256);
@@ -143,6 +160,7 @@ function initAR() {
 
             const wrist = landmarks[0];
             const indexMCP = landmarks[5];
+            const middleMCP = landmarks[9];
             const pinkyMCP = landmarks[17];
 
             const palmX = (wrist.x + indexMCP.x + pinkyMCP.x) / 3;
