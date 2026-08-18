@@ -59,20 +59,16 @@ function createTextureEngine() {
 
     function drawBracketPaths(ctx) {
         ctx.beginPath();
-        ctx.moveTo(96, 128);
+        ctx.moveTo(96, 160);
+        ctx.lineTo(96, 128);
         ctx.lineTo(416, 128);
-        ctx.moveTo(96, 128);
-        ctx.lineTo(96, 160);
-        ctx.moveTo(416, 128);
         ctx.lineTo(416, 160);
         ctx.stroke();
 
         ctx.beginPath();
-        ctx.moveTo(96, 384);
+        ctx.moveTo(416, 352);
         ctx.lineTo(416, 384);
-        ctx.moveTo(416, 384);
-        ctx.lineTo(416, 352);
-        ctx.moveTo(96, 384);
+        ctx.lineTo(96, 384);
         ctx.lineTo(96, 352);
         ctx.stroke();
     }
@@ -81,17 +77,7 @@ function createTextureEngine() {
         textureCtx.clearRect(0, 0, 512, 512);
 
         textureCtx.shadowColor = '#00ff66';
-        textureCtx.shadowBlur = 30;
-
-        textureCtx.strokeStyle = 'rgba(0, 255, 102, 0.5)';
-        textureCtx.lineWidth = 36;
-        drawBracketPaths(textureCtx);
-
-        textureCtx.strokeStyle = '#00ff66';
-        textureCtx.lineWidth = 24;
-        drawBracketPaths(textureCtx);
-
-        textureCtx.shadowBlur = 15;
+        textureCtx.shadowBlur = 25;
         textureCtx.strokeStyle = '#ffffff';
         textureCtx.lineWidth = 14;
         drawBracketPaths(textureCtx);
