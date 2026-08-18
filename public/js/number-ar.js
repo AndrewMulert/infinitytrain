@@ -63,6 +63,8 @@ function createTextureEngine() {
         ctx.lineTo(416, 128);
         ctx.moveTo(96, 128);
         ctx.lineTo(96, 160);
+        ctx.moveTo(416, 128);
+        ctx.lineTo(416, 160);
         ctx.stroke();
 
         ctx.beginPath();
@@ -70,6 +72,8 @@ function createTextureEngine() {
         ctx.lineTo(416, 384);
         ctx.moveTo(416, 384);
         ctx.lineTo(416, 352);
+        ctx.moveTo(96, 384);
+        ctx.lineTo(96, 352);
         ctx.stroke();
     }
 
@@ -115,7 +119,7 @@ function initAR() {
     updateTexture(initialNum);
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, 640 / 480, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
     camera.position.z = 5;
 
     const renderer = new THREE.WebGLRenderer({
@@ -124,8 +128,19 @@ function initAR() {
         antialias: true,
         preserveDrawingBuffer: true
     });
-    renderer.setSize(640, 480);
     renderer.setPixelRatio(window.devicePixelRatio);
+
+    function syncCanvasDimensions() {
+        const width = videoElement.videoWidth || videoElement.clientWidth || 640;
+        const height = videoElement.videoHeight || videoElement.clientHeight || 480;
+
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height, false);
+    }
+
+    videoElement.addEventListener('loadedmetadata', syncCanvasDimensions);
+    window.addEventListener('resize', syncCanvasDimensions);
 
     const geometry = new THREE.PlaneGeometry(1.6, 1.6);
     const material = new THREE.MeshBasicMaterial({
@@ -163,6 +178,16 @@ function initAR() {
             const middleMCP = landmarks[9];
             const pinkyMCP = landmarks[17];
 
+            const vHandX = new THREE.Vector3(indexMCP.x - pinkyMCP.x, -(indexMCP.y - pinkyMCP.y), indexMCP.z - pinkyMCP.z);
+            const vHandY = new THREE.Vector3(middleMCP.x - wrist.x, -(middleMCP.y - wrist.y), middleMCP.z - wrist.z);
+            const normal = new THREE.Vector3().crossVectors(vHandX, vHandY).normalize();
+
+            if (normal.z < 0.05) {
+                numberMesh.visible = false;
+                renderer.render(scene, camera);
+                return;
+            }
+
             const palmX = (wrist.x + indexMCP.x + pinkyMCP.x) / 3;
             const palmY = (wrist.y + indexMCP.y + pinkyMCP.y) / 3;
 
@@ -174,14 +199,15 @@ function initAR() {
 
             numberMesh.position.copy(pos);
 
-            const v1 = new THREE.Vector3(indexMCP.x - wrist.x, -(indexMCP.y - wrist.y), indexMCP.z - wrist.z);
-            const v2 = new THREE.Vector3(pinkyMCP.x - wrist.x, -(pinkyMCP.y - wrist.y), pinkyMCP.z - wrist.z);
-            const normal = new THREE.Vector3().crossVectors(v1, v2).normalize();
+            const upVector = vHandY.clone().normalize();
+            const matrix = new THREE.Matrix4();
+            const xAxis = new THREE.Vector3().crossVectors(upVector, normal).normalize();
 
-            numberMesh.lookAt(numberMesh.position.clone().add(normal));
+            matrix.makeBasis(xAxis, upVector, normal);
+            numberMesh.rotation.setFromRotationMatrix(matrix);
 
             const handWidth = Math.hypot(indexMCP.x - pinkyMCP.x, indexMCP.y - pinkyMCP.y);
-            numberMesh.scale.setScalar(handWidth * 3.2);
+            numberMesh.scale.setScalar(handWidth * 4.2);
 
             numberMesh.visible = true;
         } else {
