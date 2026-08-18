@@ -193,6 +193,7 @@ function initAR() {
 
             const vector = new THREE.Vector3((palmX * 2) - 1, -(palmY * 2) + 1, 0.5);
             vector.unproject(camera);
+
             const dir = vector.sub(camera.position).normalize();
             const distance = -camera.position.z / dir.z;
             const pos = camera.position.clone().add(dir.multiplyScalar(distance));
@@ -206,8 +207,13 @@ function initAR() {
             matrix.makeBasis(xAxis, upVector, normal);
             numberMesh.rotation.setFromRotationMatrix(matrix);
 
-            const handWidth = Math.hypot(indexMCP.x - pinkyMCP.x, indexMCP.y - pinkyMCP.y);
-            numberMesh.scale.setScalar(handWidth * 4.2);
+            const dx = indexMCP.x - pinkyMCP.x;
+            const dy = indexMCP.y - pinkyMCP.y;
+            const dz = indexMCP.z - pinkyMCP.z;
+
+            const physicalHandWidth = Math.sqrt(dx * dx + dy * dy + dz * dz);
+
+            numberMesh.scale.setScalar(physicalHandWidth * 4);
 
             numberMesh.visible = true;
         } else {
