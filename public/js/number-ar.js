@@ -158,8 +158,10 @@ function initAR() {
     hands.onResults((results) => {
         if (results.multiHandLandmarks && results.multiHandLandmarks.length > 0) {
             const landmarks = results.multiHandLandmarks[0];
+            const handedness = results.multiHandedness?.[0]?.label;
 
             const wrist = landmarks[0];
+            const thumbCMC = landmarks[1];
             const indexMCP = landmarks[5];
             const middleMCP = landmarks[9];
             const pinkyMCP = landmarks[17];
@@ -168,7 +170,25 @@ function initAR() {
             const vHandY = new THREE.Vector3(middleMCP.x - wrist.x, -(middleMCP.y - wrist.y), middleMCP.z - wrist.z);
             const normal = new THREE.Vector3().crossVectors(vHandX, vHandY).normalize();
 
-            if (normal.z < 0.05) {
+            const isFrontCamera = currentFacingMode === 'user';
+            const isRightHand = (handedness === 'Right' && !isFrontCamera) || (handedness === 'Left' && isFrontCamera);
+
+            if (!isRightHand) {
+                normal.negate();
+            }
+
+            if (normal.z < 0.15) {
+                numberMesh.visible = false;
+                renderer.render(scene, camera);
+                return;
+            }
+
+            const vPinkyToThumb = new THREE.Vector3(thumbCMC.x - pinkyMCP.x, -(thumbCMC.y - pinkyMCP.y),thumbCMC.z - pinkyMCP.z);
+            const thumbProjection = vPinkyToThumb.dot(vHandX);
+
+            const validPalmFacing = isRightHand ? (thumbProjection > 0) : (thumbProjection < 0);
+
+            if (!validPalmFacing) {
                 numberMesh.visible = false;
                 renderer.render(scene, camera);
                 return;
@@ -193,13 +213,19 @@ function initAR() {
             matrix.makeBasis(xAxis, upVector, normal);
             numberMesh.rotation.setFromRotationMatrix(matrix);
 
-            const dx = indexMCP.x - pinkyMCP.x;
-            const dy = indexMCP.y - pinkyMCP.y;
-            const dz = indexMCP.z - pinkyMCP.z;
+            const vIndex = new THREE.Vector3((indexMCP.x * 2) - 1, -(indexMCP.y * 2) + 1, 0.5);
+            vIndex.unproject(camera);
+            const dirIndex = vIndex.sub(camera.position).normalize();
+            const posIndex = camera.position.clone().add(dirIndex.multiplyScalar(-camera.position.z / dirIndex.z));
 
-            const physicalHandWidth = Math.sqrt(dx * dx + dy * dy + dz * dz);
+            const vPinky = new THREE.Vector3((pinkyMCP.x * 2) - 1, -(pinkyMCP.y * 2) + 1, 0.5);
+            vPinky.unproject(camera);
+            const dirPinky = vPinky.sub(camera.position).normalize();
+            const posPinky = camera.position.clone().add(dirPinky.multiplyScalar(-camera.position.z / dirPinky.z));
 
-            numberMesh.scale.setScalar(physicalHandWidth * 4);
+            const physicalHandWidth = posIndex.distanceTo(posPinky);
+
+            numberMesh.scale.setScalar(physicalHandWidth * 1);
 
             numberMesh.visible = true;
         } else {
