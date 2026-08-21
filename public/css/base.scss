@@ -903,6 +903,14 @@ nav {
     }
 }
 
+.number_btn {
+    width: 40px;
+    height: 40px;
+    background-color: $darkest;
+    border: none;
+    border-radius: 20px;
+}
+
 .page_link {
     display: none;
     padding-top: 20px;

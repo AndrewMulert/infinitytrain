@@ -747,6 +747,12 @@ nav ul {
   text-align: center;
 }
 
+.number_btn {
+  width: 40px;
+  height: 40px;
+  background-color: #012E2A;
+}
+
 .page_link {
   display: none;
   padding-top: 20px;

@@ -52,42 +52,47 @@ function scheduleNextNumberTick(onUpdate) {
 
 function createTextureEngine() {
     const textureCanvas = document.createElement('canvas');
-    textureCanvas.width = 512;
-    textureCanvas.height = 512;
+    textureCanvas.width = 1024;
+    textureCanvas.height = 1024;
     const textureCtx = textureCanvas.getContext('2d');
     const dynamicTexture = new THREE.CanvasTexture(textureCanvas);
 
     function drawBracketPaths(ctx) {
         ctx.beginPath();
-        ctx.moveTo(96, 160);
-        ctx.lineTo(96, 128);
-        ctx.lineTo(416, 128);
-        ctx.lineTo(416, 160);
+        ctx.moveTo(192, 320);
+        ctx.lineTo(192, 256);
+        ctx.lineTo(832, 256);
+        ctx.lineTo(832, 320);
         ctx.stroke();
 
         ctx.beginPath();
-        ctx.moveTo(416, 352);
-        ctx.lineTo(416, 384);
-        ctx.lineTo(96, 384);
-        ctx.lineTo(96, 352);
+        ctx.moveTo(832, 704);
+        ctx.lineTo(832, 768);
+        ctx.lineTo(192, 768);
+        ctx.lineTo(192, 640);
         ctx.stroke();
     }
 
     function updateTexture(num) {
-        textureCtx.clearRect(0, 0, 512, 512);
+        textureCtx.clearRect(0, 0, 1024, 1024);
 
+        textureCtx.lineCap = 'butt';
+        textureCtx.lineJoin = 'miter';
+
+        textureCtx.filter = 'drop-shadow(0px 0px 45px #00ff66) drop-shadow(0px 0px 90px #00ff66)';
         textureCtx.shadowColor = '#00ff66';
-        textureCtx.shadowBlur = 25;
+        textureCtx.shadowBlur = 40;
         textureCtx.strokeStyle = '#ffffff';
-        textureCtx.lineWidth = 14;
+        textureCtx.lineWidth = 28;
         drawBracketPaths(textureCtx);
 
-        textureCtx.shadowBlur = 25;
         textureCtx.fillStyle = '#ffffff';
-        textureCtx.font = '160px Raleway, sans-serif';
+        textureCtx.font = '320px Raleway, sans-serif';
         textureCtx.textAlign = 'center';
         textureCtx.textBaseline = 'middle';
-        textureCtx.fillText(num.toString(), 256, 256);
+        textureCtx.fillText(num.toString(), 512, 512);
+
+        textureCtx.filter = 'none';
 
         dynamicTexture.needsUpdate = true;
     }
