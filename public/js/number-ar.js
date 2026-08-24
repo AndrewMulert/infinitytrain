@@ -234,14 +234,14 @@ function initAR() {
     }));
 
     trackedSlots.forEach((slot) => {
-        const material = new THREE.MeshBasicMaterial({
+        slot.material = new THREE.MeshBasicMaterial({
             map: slot.passenger.dynamicTexture,
             transparent: true,
             blending: THREE.AdditiveBlending,
             depthWrite: false,
             opacity: 1.0
         });
-        slot.mesh = new THREE.Mesh(geometry, material);
+        slot.mesh = new THREE.Mesh(geometry, slot.material);
         slot.mesh.visible = false;
         scene.add(slot.mesh);
     });
