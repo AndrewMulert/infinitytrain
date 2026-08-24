@@ -26,8 +26,8 @@ class PassengerInstance {
         this.tickTimerId = null;
 
         this.textureCanvas = document.createElement('canvas');
-        this.textureCanvas.width = 1024;
-        this.textureCanvas.height = 1024;
+        this.textureCanvas.width = 768;
+        this.textureCanvas.height = 768;
         this.textureCtx = this.textureCanvas.getContext('2d');
         this.dynamicTexture = new THREE.CanvasTexture(this.textureCanvas);
 
@@ -36,57 +36,62 @@ class PassengerInstance {
     }
 
     initFontAndDraw() {
-        document.fonts.ready.then(() => {
+        document.fonts.load('240px Raleway').then(() => {
+            this.updateTexture(this.currentPassengerNumber);
+        }).catch(() => {
             this.updateTexture(this.currentPassengerNumber);
         });
     }
 
     drawBracketPaths(ctx) {
         ctx.beginPath();
-        ctx.moveTo(192, 320);
-        ctx.lineTo(192, 256);
-        ctx.lineTo(832, 256);
-        ctx.lineTo(832, 320);
+        ctx.moveTo(144, 240);
+        ctx.lineTo(144, 192);
+        ctx.lineTo(624, 192);
+        ctx.lineTo(624, 240);
         ctx.stroke();
 
         ctx.beginPath();
-        ctx.moveTo(832, 704);
-        ctx.lineTo(832, 768);
-        ctx.lineTo(192, 768);
-        ctx.lineTo(192, 704);
+        ctx.moveTo(624, 528);
+        ctx.lineTo(624, 576);
+        ctx.lineTo(144, 576);
+        ctx.lineTo(144, 528);
         ctx.stroke();
     }
 
     updateTexture(num, blurAmount = 0, blurDirectionY = 1) {
         const ctx = this.textureCtx;
-        ctx.clearRect(0, 0, 1024, 1024);
+        ctx.clearRect(0, 0, 768, 768);
 
         ctx.lineCap = 'butt';
         ctx.lineJoin = 'miter';
 
-        ctx.filter = 'drop-shadow(0px 0px 45px #00ff66) drop-shadow(0px 0px 90px #00ff66)';
+        ctx.filter = 'drop-shadow(0px 0px 30px #00ff66) drop-shadow(0px 0px 60px #00ff66)';
         ctx.shadowColor = '#00ff66';
-        ctx.shadowBlur = 40;
+        ctx.shadowBlur = 30;
         ctx.strokeStyle = '#ffffff';
-        ctx.lineWidth = 28;
+        ctx.lineWidth = 20;
         this.drawBracketPaths(ctx);
 
         const yOffset = blurAmount * blurDirectionY * 0.5;
-        ctx.filter = `blur(0px ${blurAmount.toFixed(1)}px) drop-shadow(0px 0px 45px #00ff66) drop-shadow(0px 0px 90px #00ff66)`;
+        ctx.filter = `blur(0px ${blurAmount.toFixed(1)}px) drop-shadow(0px 0px 30px #00ff66) drop-shadow(0px 0px 60px #00ff66)`;
 
         ctx.fillStyle = '#ffffff';
-        ctx.font = '320px Raleway, sans-serif';
+        ctx.font = '240px Raleway, sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
 
-        ctx.fillText(num.toString(), 512, 512 + yOffset);
+        ctx.fillText(num.toString(), 384, 384 + yOffset);
         ctx.filter = 'none';
 
         this.dynamicTexture.needsUpdate = true;
     }
 
     animateNumberChange(fromNum, toNum) {
-        if (this.animationFrameId) cancelAnimationFrame(this.animationFrameId);
+        if (this.animationFrameId) {
+            cancelAnimationFrame(this.animationFrameId);
+            this.animationFrameId = null;
+        }
 
         const startTime = performance.now();
         const isGoingDown = toNum < fromNum;
@@ -104,13 +109,15 @@ class PassengerInstance {
                 : 1 - Math.pow(-2 * progress + 2, 3) / 2;
 
             const currentVal = Math.round(fromNum + (toNum - fromNum) * easeInOut);
-            this.currentDisplayNumber = currentVal;
-
             const velocity = 6 * progress * (1 - progress);
             const maxRatePerSecond = (totalDistance / (duration / 1000)) * 1.5;
             const blurAmount = Math.min(velocity * (maxRatePerSecond * 0.35), 24);
 
-            this.updateTexture(currentVal, blurAmount, isGoingDown ? 1 : -1);
+            if (currentVal !== this.currentDisplayNumber || Math.abs(blurAmount - this.lastBlurAmount) > 0.5) {
+                this.currentDisplayNumber = currentVal;
+                this.lastBlurAmount = blurAmount;
+                this.updateTexture(currentVal, blurAmount, isGoingDown ? 1 : -1);
+            }
 
             if (progress < 1) {
                 this.animationFrameId = requestAnimationFrame(step);
@@ -154,6 +161,20 @@ class PassengerInstance {
             this.scheduleNextNumberTick();
         }, nextInterval);
     }
+
+    dispose() {
+        if (this.tickTimerId) {
+            clearTimeout(this.tickTimerId);
+            this.tickTimerId = null;
+        }
+        if (this.animationFrameId) {
+            cancelAnimationFrame(this.animationFrameId);
+            this.animationFrameId = null;
+        }
+        if (this.dynamicTexture) {
+            this.dynamicTexture.dispose();
+        }
+    }
 }
 
 function initAR() {
@@ -195,16 +216,21 @@ function initAR() {
     hands.setOptions({
         maxNumHands: 4,
         modelComplexity: 1,
-        minDetectionConfidence: 0.7,
-        minTrackingConfidence: 0.7
+        minDetectionConfidence: 0.65,
+        minTrackingConfidence: 0.65
     });
 
+    const MAX_MISSED_FRAMES = 8;
     const maxSupportedHands = 4;
+
     let trackedSlots = Array.from({ length: maxSupportedHands }, (_, idx) => ({
         id: idx + 1,
         lastPosition: null,
+        velocity: new THREE.Vector3(0, 0, 0),
+        missedFrames: MAX_MISSED_FRAMES,
         passenger: new PassengerInstance(idx + 1),
-        mesh: null
+        mesh: null,
+        material: null
     }));
 
     trackedSlots.forEach((slot) => {
@@ -212,120 +238,149 @@ function initAR() {
             map: slot.passenger.dynamicTexture,
             transparent: true,
             blending: THREE.AdditiveBlending,
-            depthWrite: false
+            depthWrite: false,
+            opacity: 1.0
         });
         slot.mesh = new THREE.Mesh(geometry, material);
         slot.mesh.visible = false;
         scene.add(slot.mesh);
     });
 
+    const scratchVecA = new THREE.Vector3();
+    const scratchVecB = new THREE.Vector3();
+    const scratchNormal = new THREE.Vector3();
+    const scratchVecC = new THREE.Vector3();
+    const scratchVecD = new THREE.Vector3();
+    const scratchVecE = new THREE.Vector3();
+    const scratchVecF = new THREE.Vector3();
+    const scratchVecUp = new THREE.Vector3();
+    const scratchVecX = new THREE.Vector3();
+    const scratchPos = new THREE.Vector3();
+    const scratchPosIndex = new THREE.Vector3();
+    const scratchPosPinky = new THREE.Vector3();
+    const scratchMatrix = new THREE.Matrix4();
+
     hands.onResults((results) => {
-        trackedSlots.forEach(s => s.mesh.visible = false);
-
-        if (!results.multiHandLandmarks || results.multiHandLandmarks.length === 0) {
-            renderer.render(scene, camera);
-            return;
-        }
-
-        const isFrontCamera = currentFacingMode === 'user';
         const currentFrameHands = [];
 
-        for (let i = 0; i < results.multiHandLandmarks.length; i++) {
-            const rawLandmarks = results.multiHandLandmarks[i];
-            const handednessObj = results.multiHandedness?.[i];
-            const handedness = handednessObj?.label;
+        if (results.multiHandLandmarks && results.multiHandLandmarks.length > 0) {
+            for (let i = 0; i < results.multiHandLandmarks.length; i++) {
+                const rawLandmarks = results.multiHandLandmarks[i];
+                const handednessObj = results.multiHandedness?.[i];
+                const handedness = handednessObj?.label;
 
-            const expectedHandLabel = isFrontCamera ? 'Left' : 'Right';
-            if (handedness !== 'Left') continue;
+                if (handedness !== 'Left') continue;
 
-            const landmarks = rawLandmarks.map(pt => ({
-                x: pt.x,
-                y: pt.y,
-                z: pt.z
-            }));
+                const wrist = rawLandmarks[0];
+                const thumbCMC = rawLandmarks[1];
+                const indexMCP = rawLandmarks[5];
+                const middleMCP = rawLandmarks[9];
+                const pinkyMCP = rawLandmarks[17];
 
-            const wrist = landmarks[0];
-            const thumbCMC = landmarks[1];
-            const indexMCP = landmarks[5];
-            const middleMCP = landmarks[9];
-            const pinkyMCP = landmarks[17];
+                const palmX = (wrist.x + indexMCP.x + pinkyMCP.x) /3;
+                const palmY = (wrist.y + indexMCP.y + pinkyMCP.y) /3;
 
-            const palmX = (wrist.x + indexMCP.x + pinkyMCP.x) /3;
-            const palmY = (wrist.y + indexMCP.y + pinkyMCP.y) /3;
+                const vHandX = scratchVecA.set(indexMCP.x - pinkyMCP.x, -(indexMCP.y - pinkyMCP.y), indexMCP.z - pinkyMCP.z);
+                const vHandY = scratchVecB.set(middleMCP.x - wrist.x, -(middleMCP.y - wrist.y), middleMCP.z - wrist.z);
+                const normal = scratchNormal.crossVectors(vHandX, vHandY).normalize();
 
-            const vHandX = new THREE.Vector3(indexMCP.x - pinkyMCP.x, -(indexMCP.y - pinkyMCP.y), indexMCP.z - pinkyMCP.z);
-            const vHandY = new THREE.Vector3(middleMCP.x - wrist.x, -(middleMCP.y - wrist.y), middleMCP.z - wrist.z);
-            const normal = new THREE.Vector3().crossVectors(vHandX, vHandY).normalize();
+                const isPalmFacing = normal.z > 0.1;
+                if (!isPalmFacing) continue;
 
-            const isPalmFacing = normal.z > 0.1;
-            if (!isPalmFacing) continue;
+                const vPinkyToThumb = scratchVecC.set(thumbCMC.x - pinkyMCP.x, -(thumbCMC.y - pinkyMCP.y), thumbCMC.z - pinkyMCP.z);
+                const thumbProjection = vPinkyToThumb.dot(vHandX);
+                if (thumbProjection <= 0) continue;
 
-            const vPinkyToThumb = new THREE.Vector3(thumbCMC.x - pinkyMCP.x, -(thumbCMC.y - pinkyMCP.y), thumbCMC.z - pinkyMCP.z);
-            const thumbProjection = vPinkyToThumb.dot(vHandX);
-            if (thumbProjection <= 0) continue;
+                scratchVecD.set((palmX * 2) - 1, -(palmY * 2) + 1, 0.5).unproject(camera);
+                const dir = scratchVecD.sub(camera.position).normalize();
+                scratchPos.copy(camera.position).add(dir.multiplyScalar(-camera.position.z / dir.z));
 
-            const vector = new THREE.Vector3((palmX * 2) - 1, -(palmY * 2) + 1, 0.5);
-            vector.unproject(camera);
-            const dir = vector.sub(camera.position).normalize();
-            const pos = camera.position.clone().add(dir.multiplyScalar(-camera.position.z / dir.z));
+                scratchVecE.set((indexMCP.x * 2) - 1, -(indexMCP.y * 2) + 1, 0.5).unproject(camera);
+                const dirIndex = scratchVecE.sub(camera.position).normalize();
+                scratchPosIndex.copy(camera.position).add(dirIndex.multiplyScalar(-camera.position.z / dirIndex.z));
 
-            const vIndex = new THREE.Vector3((indexMCP.x * 2) - 1, -(indexMCP.y * 2) + 1, 0.5).unproject(camera);
-            const posIndex = camera.position.clone().add(vIndex.sub(camera.position).normalize().multiplyScalar(-camera.position.z / vIndex.z));
+                scratchVecF.set((pinkyMCP.x * 2) - 1, -(pinkyMCP.y * 2) + 1, 0.5).unproject(camera);
+                const dirPinky = scratchVecF.sub(camera.position).normalize();
+                scratchPosPinky.copy(camera.position).add(dirPinky.multiplyScalar(-camera.position.z / dirPinky.z));
 
-            const vPinky = new THREE.Vector3((pinkyMCP.x * 2) - 1, -(pinkyMCP.y * 2) + 1, 0.5).unproject(camera);
-            const posPinky = camera.position.clone().add(vPinky.sub(camera.position).normalize().multiplyScalar(-camera.position.z / vPinky.z));
+                const physicalHandWidth = scratchPosIndex.distanceTo(scratchPosPinky);
+                const upVector = scratchVecUp.copy(vHandY).normalize();
+                const xAxis = scratchVecX.crossVectors(upVector, normal).normalize();
 
-            const physicalHandWidth = posIndex.distanceTo(posPinky);
+                scratchMatrix.makeBasis(xAxis, upVector, normal);
 
-            const upVector = vHandY.clone().normalize();
-            const xAxis = new THREE.Vector3().crossVectors(upVector, normal).normalize();
-
-            const matrix = new THREE.Matrix4();
-            matrix.makeBasis(xAxis, upVector, normal);
-
-            currentFrameHands.push({ pos, matrix, scale: physicalHandWidth });
+                currentFrameHands.push({ 
+                    pos: scratchPos.clone(), 
+                    matrix: scratchMatrix.clone(), 
+                    scale: physicalHandWidth
+                 });
+            }
         }
+        
+        const claimedSlotIds = new Set();
 
-        const filteredHands = [];
-        for (const hand of currentFrameHands) {
-            const isDuplicate = filteredHands.some(h => h.pos.distanceTo(hand.pos) < 1.0);
-            if (!isDuplicate) filteredHands.push(hand);
-        }
-
-        const unassignedSlots = [...trackedSlots];
-
-        filteredHands.forEach((handData) => {
-            let bestSlotIndex = -1;
+        currentFrameHands.forEach((handData) => {
+            let bestSlot = null;
             let minDistance = Infinity;
 
-            unassignedSlots.forEach((slot, index) => {
+            trackedSlots.forEach((slot) => {
+                if (claimedSlotIds.has(slot.id)) return;
                 if (slot.lastPosition) {
                     const dist = slot.lastPosition.distanceTo(handData.pos);
-                    if (dist < minDistance && dist < 1.8) {
+                    if (dist < minDistance && dist < 2.0) {
                         minDistance = dist;
-                        bestSlotIndex = index;
+                        bestSlot = slot;
                     }
                 }
             });
 
-            if (bestSlotIndex === -1) {
-                bestSlotIndex = unassignedSlots.findIndex(s => s.id === 1);
-                if (bestSlotIndex === -1) {
-                    bestSlotIndex = unassignedSlots.findIndex(s => s.lastPosition === null);
-                }
+            if (!bestSlot) {
+                bestSlot = trackedSlots.find(s => !claimedSlotIds.has(s.id) && s.missedFrames >= MAX_MISSED_FRAMES);
             }
-            if (bestSlotIndex === -1) bestSlotIndex = 0;
+            if (!bestSlot) {
+                bestSlot = trackedSlots.find(s => !claimedSlotIds.has(s.id));
+            }
+            if (bestSlot) {
+                claimedSlotIds.add(bestSlot.id);
 
-            const slot = unassignedSlots.splice(bestSlotIndex, 1)[0];
-            slot.lastPosition = handData.pos.clone();
+                if (bestSlot.lastPosition) {
+                    bestSlot.velocity.subVectors(handData.pos, bestSlot.lastPosition);
+                }
 
-            slot.mesh.position.copy(handData.pos);
-            slot.mesh.rotation.setFromRotationMatrix(handData.matrix);
-            slot.mesh.scale.setScalar(handData.scale);
-            slot.mesh.visible = true;
+                if (!bestSlot.lastPosition || bestSlot.missedFrames >= MAX_MISSED_FRAMES) {
+                    bestSlot.mesh.position.copy(handData.pos);
+                } else {
+                    bestSlot.mesh.position.lerp(handData.pos, 0.45);
+                }
+
+                bestSlot.lastPosition = bestSlot.mesh.position.clone();
+                bestSlot.mesh.rotation.setFromRotationMatrix(handData.matrix);
+                bestSlot.mesh.scale.setScalar(handData.scale);
+
+                bestSlot.missedFrames = 0;
+                bestSlot.material.opacity = 1.0;
+                bestSlot.mesh.visible = true;
+            }
         });
 
-        unassignedSlots.forEach(s => s.lastPosition = null);
+        trackedSlots.forEach((slot) => {
+            if (!claimedSlotIds.has(slot.id)) {
+                slot.missedFrames += 1;
+
+                if (slot.missedFrames < MAX_MISSED_FRAMES && slot.lastPosition) {
+                    slot.velocity.multiplyScalar(0.75);
+                    slot.mesh.position.add(slot.velocity);
+                    slot.lastPosition.copy(slot.mesh.position);
+
+                    slot.material.opacity = 1.0 - (slot.missedFrames / MAX_MISSED_FRAMES);
+                    slot.mesh.visible = true;
+                } else {
+                    slot.mesh.visible = false;
+                    slot.lastPosition = null;
+                    slot.velocity.set(0, 0, 0);
+                }
+            }
+        });
 
         renderer.render(scene, camera);
     });
@@ -334,8 +389,17 @@ function initAR() {
     let cameraUtils = null;
 
     async function startCamera(facingMode) {
-        if (cameraUtils) cameraUtils.stop();
-        
+        if (cameraUtils) {
+            cameraUtils.stop();
+        }
+
+        if (videoElement.srcObject) {
+            const stream = videoElement.srcObject;
+            if (stream.getTracks) {
+                stream.getTracks().forEach(track => track.stop());
+            }
+        }
+
         try {
             const stream = await navigator.mediaDevices.getUserMedia({
                 video: {facingMode: facingMode }
@@ -369,18 +433,22 @@ function initAR() {
     document.getElementById('capture-btn')?.addEventListener('click', () => {
         const captureCanvas = document.createElement('canvas');
 
-        captureCanvas.width = 480;
-        captureCanvas.height = 640;
+        const captureWidth = videoElement.videoWidth || 480;
+        const captureHeight = videoElement.videoHeight || 640;
+
+        captureCanvas.width = captureWidth;
+        captureCanvas.height = captureHeight;
 
         const ctx = captureCanvas.getContext('2d');
 
         if (currentFacingMode === 'user') {
-            ctx.translate(480, 0);
+            ctx.translate(captureWidth, 0);
             ctx.scale(-1, 1);
         }
 
-        ctx.drawImage(videoElement, 0, 0, 480, 640);
-        ctx.drawImage(canvasElement, 0, 0, 480, 640);
+        ctx.drawImage(videoElement, 0, 0, captureWidth, captureHeight);
+        renderer.render(scene, camera);
+        ctx.drawImage(canvasElement, 0, 0, captureWidth, captureHeight);
         
         ctx.setTransform(1, 0, 0, 1, 0, 0);
 
