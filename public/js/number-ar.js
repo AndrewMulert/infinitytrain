@@ -216,11 +216,11 @@ function initAR() {
     hands.setOptions({
         maxNumHands: 4,
         modelComplexity: 1,
-        minDetectionConfidence: 0.65,
-        minTrackingConfidence: 0.65
+        minDetectionConfidence: 0.5,
+        minTrackingConfidence: 0.5
     });
 
-    const MAX_MISSED_FRAMES = 8;
+    const MAX_MISSED_FRAMES = 15;
     const maxSupportedHands = 4;
 
     let trackedSlots = Array.from({ length: maxSupportedHands }, (_, idx) => ({
@@ -289,7 +289,7 @@ function initAR() {
 
                 const vPinkyToThumb = scratchVecC.set(thumbCMC.x - pinkyMCP.x, -(thumbCMC.y - pinkyMCP.y), thumbCMC.z - pinkyMCP.z);
                 const thumbProjection = vPinkyToThumb.dot(vHandX);
-                if (thumbProjection <= 0) continue;
+                if (normal.z < 0.25 && thumbProjection <= -0.1) continue;
 
                 scratchVecD.set((palmX * 2) - 1, -(palmY * 2) + 1, 0.5).unproject(camera);
                 const dir = scratchVecD.sub(camera.position).normalize();
@@ -321,22 +321,27 @@ function initAR() {
 
         currentFrameHands.forEach((handData) => {
             let bestSlot = null;
-            let minDistance = Infinity;
+            let minDistance = 2.5;
 
-            trackedSlots.forEach((slot) => {
-                if (claimedSlotIds.has(slot.id)) return;
-                if (slot.lastPosition) {
-                    const dist = slot.lastPosition.distanceTo(handData.pos);
-                    if (dist < minDistance && dist < 2.0) {
-                        minDistance = dist;
-                        bestSlot = slot;
-                    }
+            if (currentFrameHands.length === 1) {
+                const primarySlot = trackedSlots[0];
+                if (!claimedSlotIds.has(primarySlot.id)) {
+                    bestSlot = primarySlot;
                 }
-            });
-
-            if (!bestSlot) {
-                bestSlot = trackedSlots.find(s => !claimedSlotIds.has(s.id) && s.missedFrames >= MAX_MISSED_FRAMES);
             }
+            if (!bestSlot) {
+                trackedSlots.forEach((slot) => {
+                    if (claimedSlotIds.has(slot.id)) return;
+                    if (slot.lastPosition && slot.missedFrames < MAX_MISSED_FRAMES * 2) {
+                        const dist = slot.lastPosition.distanceTo(handData.pos);
+                        if (dist < minDistance) {
+                            minDistance = dist;
+                            bestSlot = slot;
+                        }
+                    }
+                });
+            }
+
             if (!bestSlot) {
                 bestSlot = trackedSlots.find(s => !claimedSlotIds.has(s.id));
             }
@@ -347,10 +352,11 @@ function initAR() {
                     bestSlot.velocity.subVectors(handData.pos, bestSlot.lastPosition);
                 }
 
-                if (!bestSlot.lastPosition || bestSlot.missedFrames >= MAX_MISSED_FRAMES) {
+                const distanceToNewPos = bestSlot.lastPosition ? bestSlot.lastPosition.distanceTo(handData.pos) : 0;
+                if (!bestSlot.lastPosition || bestSlot.missedFrames > 0 || distanceToNewPos > 0.4) {
                     bestSlot.mesh.position.copy(handData.pos);
                 } else {
-                    bestSlot.mesh.position.lerp(handData.pos, 0.45);
+                    bestSlot.mesh.position.lerp(handData.pos, 0.65);
                 }
 
                 bestSlot.lastPosition = bestSlot.mesh.position.clone();
@@ -368,16 +374,22 @@ function initAR() {
                 slot.missedFrames += 1;
 
                 if (slot.missedFrames < MAX_MISSED_FRAMES && slot.lastPosition) {
-                    slot.velocity.multiplyScalar(0.75);
-                    slot.mesh.position.add(slot.velocity);
-                    slot.lastPosition.copy(slot.mesh.position);
+                    slot.velocity.set(0,0,0);
 
-                    slot.material.opacity = 1.0 - (slot.missedFrames / MAX_MISSED_FRAMES);
-                    slot.mesh.visible = true;
+                    const FADE_HOLD_FRAMES = 6;
+                    if (slot.missedFrames <= FADE_HOLD_FRAMES) {
+                        const fadeProgress = (slot.missedFrames - FADE_HOLD_FRAMES) / (MAX_MISSED_FRAMES - FADE_HOLD_FRAMES);
+                        slot.material.opacity = Math.max(0, 1.0 - fadeProgress);
+                    }
+
+                    slot.mesh.visible = slot.material.opacity > 0;
                 } else {
                     slot.mesh.visible = false;
-                    slot.lastPosition = null;
                     slot.velocity.set(0, 0, 0);
+
+                    if (slot.missedFrames > MAX_MISSED_FRAMES * 3) {
+                        slot.lastPosition = null;
+                    }
                 }
             }
         });
